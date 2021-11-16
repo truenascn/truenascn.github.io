@@ -1,0 +1,927 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.1.4.登录到TrueNAS WebUI · TrueNAS中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="EASTMOE">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Storage_Configuration.html" />
+    
+    
+    <link rel="prev" href="Console_Setup_Menu.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.TrueNAS Core和Enterprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.1.TrueNAS初探
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="core_hardware_guide.html">
+            
+                <a href="core_hardware_guide.html">
+            
+                    
+                    1.1.1.TrueNAS Core 硬件指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="INSTALL.html">
+            
+                <a href="INSTALL.html">
+            
+                    
+                    1.1.2.安装TrueNAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="Console_Setup_Menu.html">
+            
+                <a href="Console_Setup_Menu.html">
+            
+                    
+                    1.1.3.控制台设置菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.4" data-path="log_in.html">
+            
+                <a href="log_in.html">
+            
+                    
+                    1.1.4.登录到TrueNAS WebUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="Storage_Configuration.html">
+            
+                <a href="Storage_Configuration.html">
+            
+                    
+                    1.1.5.存储配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="Sharing_Storage.html">
+            
+                <a href="Sharing_Storage.html">
+            
+                    
+                    1.1.6.存储共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="Data_Backups.html">
+            
+                <a href="Data_Backups.html">
+            
+                    
+                    1.1.7.数据备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="Applications.html">
+            
+                <a href="Applications.html">
+            
+                    
+                    1.1.8.应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Accounts/">
+            
+                <a href="../Accounts/">
+            
+                    
+                    1.2.账户
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../Accounts/Groups.html">
+            
+                <a href="../Accounts/Groups.html">
+            
+                    
+                    1.2.1.TrueNAS用户组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../Accounts/Users.html">
+            
+                <a href="../Accounts/Users.html">
+            
+                    
+                    1.2.2.TrueNAS用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../System/">
+            
+                <a href="../System/">
+            
+                    
+                    1.3.系统设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../System/General/">
+            
+                <a href="../System/General/">
+            
+                    
+                    1.3.1.通用设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="../System/General/Setting.html">
+            
+                <a href="../System/General/Setting.html">
+            
+                    
+                    1.3.1.1.通用设置页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="../System/General/System_Config_Backups.html">
+            
+                <a href="../System/General/System_Config_Backups.html">
+            
+                    
+                    1.3.1.2.系统备份设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="../System/General/Managing_TLS_Ciphers.html">
+            
+                <a href="../System/General/Managing_TLS_Ciphers.html">
+            
+                    
+                    1.3.1.3.管理TLS加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../System/NTP_Servers.html">
+            
+                <a href="../System/NTP_Servers.html">
+            
+                    
+                    1.3.2.时间同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../System/Boot/">
+            
+                <a href="../System/Boot/">
+            
+                    
+                    1.3.3.启动与引导
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.3.1" data-path="../System/Boot/Boot_Screen.html">
+            
+                <a href="../System/Boot/Boot_Screen.html">
+            
+                    
+                    1.3.3.1.引导备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3.2" data-path="../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                <a href="../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                    
+                    1.3.3.2.启动池镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../System/Advanced.html">
+            
+                <a href="../System/Advanced.html">
+            
+                    
+                    1.3.4.高级设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../System/View_Enclosure.html">
+            
+                <a href="../System/View_Enclosure.html">
+            
+                    
+                    1.3.5.机箱监视
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="../System/Email.html">
+            
+                <a href="../System/Email.html">
+            
+                    
+                    1.3.6.电子邮件通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7" data-path="../System_Dataset.md">
+            
+                <span>
+            
+                    
+                    1.3.7.系统数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.8" data-path="../System/Reporting.html">
+            
+                <a href="../System/Reporting.html">
+            
+                    
+                    1.3.8.系统报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.9" data-path="../System/Alert.html">
+            
+                <a href="../System/Alert.html">
+            
+                    
+                    1.3.9.警告服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.10" data-path="../System/Cloud_Credentials.html">
+            
+                <a href="../System/Cloud_Credentials.html">
+            
+                    
+                    1.3.10.云服务与云同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.11" data-path="../System/SSH.html">
+            
+                <a href="../System/SSH.html">
+            
+                    
+                    1.3.11.SSH客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.12" data-path="../System/Tunables.html">
+            
+                <a href="../System/Tunables.html">
+            
+                    
+                    1.3.12.可调参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.13" data-path="../System/Update.html">
+            
+                <a href="../System/Update.html">
+            
+                    
+                    1.3.13.系统更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.14" data-path="../System/CAs.html">
+            
+                <a href="../System/CAs.html">
+            
+                    
+                    1.3.14.证书颁发机构（CA）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.15" data-path="../System/Certificates.html">
+            
+                <a href="../System/Certificates.html">
+            
+                    
+                    1.3.15.证书管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.16" data-path="../System/KMIP.html">
+            
+                <a href="../System/KMIP.html">
+            
+                    
+                    1.3.16.密钥管理互通协议（KMIP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.17" data-path="../System/Failover_HA.html">
+            
+                <a href="../System/Failover_HA.html">
+            
+                    
+                    1.3.17.故障转移与高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.18" data-path="../System/Support.html">
+            
+                <a href="../System/Support.html">
+            
+                    
+                    1.3.18.帮助与支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.19" data-path="../System/2FA.html">
+            
+                <a href="../System/2FA.html">
+            
+                    
+                    1.3.19.两步验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Tasks/">
+            
+                <a href="../Tasks/">
+            
+                    
+                    1.4.任务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Tasks/Cron_Jobs.html">
+            
+                <a href="../Tasks/Cron_Jobs.html">
+            
+                    
+                    1.4.1.定时任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Tasks/Init_Shutdown_Scripts.html">
+            
+                <a href="../Tasks/Init_Shutdown_Scripts.html">
+            
+                    
+                    1.4.2.开/关机脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../Tasks/Rsync_Tasks.html">
+            
+                <a href="../Tasks/Rsync_Tasks.html">
+            
+                    
+                    1.4.3.同步任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../Tasks/SMART_TEST.md.md">
+            
+                <span>
+            
+                    
+                    1.4.4.硬盘检测任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.1.4.登录到TrueNAS WebUI</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x767B;&#x9646;&#x5230;truenas">&#x767B;&#x9646;&#x5230;TrueNAS</h1>
+<p>&#x73B0;&#x5728;&#x60A8;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x597D;&#x4E86;&#x4E86; TrueNAS&#xFF0C;&#x662F;&#x65F6;&#x5019;&#x767B;&#x5F55; Web &#x754C;&#x9762;&#x5E76;&#x5F00;&#x59CB;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x4E86;&#xFF01;</p>
+<table>
+<thead>
+<tr>
+<th>&#x6211;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; CLI &#x914D;&#x7F6E; TrueNAS &#x5417;&#xFF1F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5B89;&#x88C5;TrueNAS&#x540E;&#xFF0C;&#x7CFB;&#x7EDF;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x4F7F;&#x7528;&#x5168;&#x90E8;&#x901A;&#x8FC7;Web&#x754C;&#x9762;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002; &#x4EC5;&#x4F7F;&#x7528; Web &#x754C;&#x9762;&#x5BF9;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x66F4;&#x6539;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x754C;&#x9762; (CLI) &#x4FEE;&#x6539;&#x7CFB;&#x7EDF;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x3002; &#x6BCF;&#x5F53;&#x7CFB;&#x7EDF;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x6240;&#x505A;&#x7684;&#x4EFB;&#x4F55;&#x66F4;&#x6539;&#x90FD;&#x4F1A;&#x4E22;&#x5931;&#x5E76;&#x6062;&#x590D;&#x4E3A;&#x539F;&#x59CB;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x7F6E;&#x3002; TrueNAS &#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x591A;&#x79CD;&#x8BBF;&#x95EE; Web &#x754C;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x60A8;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x8C03;&#x6574;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x4EE5;&#x66F4;&#x597D;&#x5730;&#x9002;&#x5E94;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x7CFB;&#x7EDF;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x83B7;&#x53D6;&#x7F51;&#x7EDC;&#x754C;&#x9762;&#xFF08;webui&#xFF09;&#x5730;&#x5740;">&#x83B7;&#x53D6;&#x7F51;&#x7EDC;&#x754C;&#x9762;&#xFF08;WebUI&#xFF09;&#x5730;&#x5740;</h2>
+<h3 id="core&#x7248;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;">CORE&#x7248;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;</h3>
+<p>&#x6253;&#x5F00; TrueNAS &#x7CFB;&#x7EDF;&#x7535;&#x6E90;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x5C1D;&#x8BD5;&#x4ECE;&#x6240;&#x6709;&#x5B9E;&#x65F6;&#x63A5;&#x53E3;&#x8FDE;&#x63A5;&#x5230; DHCP &#x670D;&#x52A1;&#x5668;&#x5E76;&#x63D0;&#x4F9B;&#x5BF9; Web &#x754C;&#x9762;&#x7684;&#x8BBF;&#x95EE;&#x3002; &#x5728;&#x652F;&#x6301;&#x591A;&#x64AD;&#x57DF;&#x540D;&#x670D;&#x52A1; (mDNS) &#x7684;&#x7F51;&#x7EDC;&#x4E0A;&#xFF0C;&#x4E3B;&#x673A;&#x540D;&#x548C;&#x57DF;&#x53EF;&#x7528;&#x4E8E;&#x8BBF;&#x95EE; TrueNAS Web &#x754C;&#x9762;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;TrueNAS &#x914D;&#x7F6E;&#x4E3A;&#x4F7F;&#x7528;&#x4E3B;&#x673A;&#x540D;&#x548C;&#x57DF; truenas.local &#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x767B;&#x5F55; Web &#x754C;&#x9762;&#x540E;&#x901A;&#x8FC7;&#x8F6C;&#x5230;&#x7F51;&#x7EDC;&#xFF08;<strong>Network</strong>&#xFF09; &gt; &#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF08;<strong>Global Configuration</strong>&#xFF09;&#x5E76;&#x8BBE;&#x7F6E;&#x65B0;&#x7684;&#x4E3B;&#x673A;&#x540D;&#xFF08;<strong>Hostname</strong>&#xFF09;&#x548C;&#x57DF;&#xFF08;<strong>Domain</strong>&#xFF09;&#x6765;&#x66F4;&#x6539;&#x6B64;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981; IP &#x5730;&#x5740;&#xFF0C;&#x8BF7;&#x5C06;&#x663E;&#x793A;&#x5668;&#x8FDE;&#x63A5;&#x5230; TrueNAS &#x7CFB;&#x7EDF;&#x5E76;&#x67E5;&#x770B;&#x5F15;&#x5BFC;&#x8FC7;&#x7A0B;&#x7ED3;&#x675F;&#x65F6;&#x663E;&#x793A;&#x7684;&#x63A7;&#x5236;&#x53F0;&#x8BBE;&#x7F6E;&#x83DC;&#x5355;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/ConsoleSetupMenu.png" alt=""></p>
+<p>&#x5F53;&#x80FD;&#x591F;&#x81EA;&#x52A8;&#x914D;&#x7F6E;&#x8FDE;&#x63A5;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8BBE;&#x7F6E;&#x83DC;&#x5355;&#x5E95;&#x90E8;&#x663E;&#x793A; Web &#x754C;&#x9762; IP &#x5730;&#x5740;&#x3002; &#x5982;&#x679C;&#x9700;&#x8981;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728; TrueNAS &#x63A7;&#x5236;&#x53F0;&#x8BBE;&#x7F6E;&#x83DC;&#x5355;&#x4E2D;&#x6216;&#x901A;&#x8FC7;&#x5355;&#x51FB; Web &#x754C;&#x9762;&#x4E2D;&#x7684;&#x8BBE;&#x7F6E;&#xFF08;<strong>Settings</strong>&#xFF09; &gt; &#x66F4;&#x6539;&#x5BC6;&#x7801;&#xFF08;<strong>Change Password</strong>&#xFF09;&#x6765;&#x91CD;&#x7F6E; root &#x5BC6;&#x7801;&#x3002; &#x8981;&#x5728;&#x663E;&#x793A;&#x7CFB;&#x7EDF;&#x63A7;&#x5236;&#x53F0;&#x83DC;&#x5355;&#x4E4B;&#x524D;&#x8981;&#x6C42;&#x767B;&#x5F55;&#x7CFB;&#x7EDF;&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x7CFB;&#x7EDF;&#xFF08;<strong>System</strong>&#xFF09; &gt; &#x9AD8;&#x7EA7;&#xFF08;<strong>Advanced</strong>&#xFF09;&#x5E76;&#x53D6;&#x6D88;&#x8BBE;&#x7F6E;&#x4E0D;&#x5E26;&#x5BC6;&#x7801;&#x63D0;&#x793A;&#x7684;&#x663E;&#x793A;&#x6587;&#x672C;&#x63A7;&#x5236;&#x53F0;&#xFF08;<em>Show Text Console without Password Prompt</em>.&#xFF09;&#x3002;</p>
+<h3 id="enterprise&#x7248;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;">Enterprise&#x7248;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;</h3>
+<p>iXsystems &#x7684; <a href="https://www.truenas.com/docs/hardware/" target="_blank">TrueNAS Enterprise &#x786C;&#x4EF6;</a>&#x5DF2;&#x4F7F;&#x7528;&#x60A8;&#x63D0;&#x4F9B;&#x7684;&#x7F51;&#x7EDC;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x9884;&#x914D;&#x7F6E;&#x3002; TrueNAS &#x7F51;&#x7EDC;&#x754C;&#x9762;&#x7684; IP &#x5730;&#x5740;&#x5728;&#x7CFB;&#x7EDF;&#x9500;&#x552E;&#x8BA2;&#x5355;&#x6216;&#x914D;&#x7F6E;&#x8868;&#x4E0A;&#x63D0;&#x4F9B;&#x3002; &#x5982;&#x679C; TrueNAS &#x7F51;&#x7EDC;&#x754C;&#x9762; IP &#x5730;&#x5740;&#x672A;&#x968F;&#x8FD9;&#x4E9B;&#x6587;&#x6863;&#x63D0;&#x4F9B;&#x6216;&#x65E0;&#x6CD5;&#x4ECE; TrueNAS &#x7CFB;&#x7EDF;&#x63A7;&#x5236;&#x53F0;&#x8BC6;&#x522B;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB; iX &#x652F;&#x6301;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8054;&#x7CFB;&#x65B9;&#x5F0F;</th>
+<th>&#x8054;&#x7CFB;&#x4FE1;&#x606F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x7F51;&#x7AD9;</td>
+<td><a href="https://support.ixsystems.com/" target="_blank">https://support.ixsystems.com</a></td>
+</tr>
+<tr>
+<td>&#x7535;&#x5B50;&#x90AE;&#x4EF6;</td>
+<td><a href="mailto://support.ixsystems.com" target="_blank">support@ixsystems.com</a></td>
+</tr>
+<tr>
+<td>&#x7535;&#x8BDD;</td>
+<td>&#x5468;&#x4E00; - &#x5468;&#x4E94;, &#x4E0A;&#x5348;6:00 &#x81F3; &#x4E0B;&#x5348; 6:00 &#x592A;&#x5E73;&#x6D0B;&#x6807;&#x51C6;&#x65F6;&#x95F4;&#xFF1A;1-855-473-7449 &#x6309;2&#xFF08;&#x4EC5;&#x9650;&#x7F8E;&#x56FD;&#xFF09;&#xFF1B;1-408-943-4100 &#x6309;&#xB7;2&#xFF08;&#x56FD;&#x9645;&#xFF09;</td>
+</tr>
+<tr>
+<td>&#x7535;&#x8BDD;</td>
+<td>7x24&#x5C0F;&#x65F6;&#x5728;&#x7EBF;&#xFF1A;1-855-499-5131&#xFF08;&#x4EC5;&#x9650;&#x7F8E;&#x56FD;&#xFF09;&#xFF1B;1-408-878-3140&#xFF08;&#x56FD;&#x9645;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x914D;&#x7F6E;-web-&#x754C;&#x9762;&#x8BBF;&#x95EE;">&#x914D;&#x7F6E; Web &#x754C;&#x9762;&#x8BBF;&#x95EE;</h3>
+<p>&#x5982;&#x679C; TrueNAS &#x7CFB;&#x7EDF;&#x672A;&#x901A;&#x8FC7; DHCP &#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x5230;&#x7F51;&#x7EDC;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x63A7;&#x5236;&#x53F0;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x83DC;&#x5355;&#x624B;&#x52A8;&#x914D;&#x7F6E;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/ConsoleSetupMenu.png" alt=""></p>
+<p>&#x5982;&#x679C; TrueNAS &#x672A;&#x901A;&#x8FC7; DHCP &#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x5230;&#x7F51;&#x7EDC;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x63A7;&#x5236;&#x53F0;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x83DC;&#x5355;&#x624B;&#x52A8;&#x914D;&#x7F6E;&#x63A5;&#x53E3;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;TrueNAS &#x7CFB;&#x7EDF;&#x6709;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#xFF0C;<code>em0</code>&#x3002;</p>
+<p><code>1) em0</code>
+<code>Select an interface (q to quit): 1</code>
+<code>Remove the current settings of this interface? (This causes a momentary disconnec</code>
+<code>tion of the network.) (y/n) n</code>
+<code>Configure interface for DHCP? (y/n) n</code>
+<code>Configure IPv4? (y/n) y</code>
+<code>Interface name:     (press enter, the name can be blank)</code>
+<code>Several input formats are supported</code>
+<code>Example 1 CIDR Notation:</code>
+ <code>192.168.1.1/24</code>
+<code>Example 2 IP and Netmask separate:</code>
+ <code>IP: 192.168.1.1</code>
+ <code>Netmask: 255.255.255.0, or /24 or 24</code>
+<code>IPv4 Address: 192.168.1.108/24</code>
+<code>Saving interface configuration: Ok</code>
+<code>Configure IPv6? (y/n) n</code>
+<code>Restarting network: ok</code>
+<code>...</code>
+<code>The web user interface is at</code>
+<code>http://192.168.1.108</code></p>
+<p>&#x6839;&#x636E;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#xFF0C;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;&#x9009;&#x9879;&#x4EE5;&#x5B9A;&#x4E49;&#x60A8;&#x7684; IPv4 &#x6216; IPv6 &#x9ED8;&#x8BA4;&#x7F51;&#x5173;&#x3002; &#x914D;&#x7F6E;&#x9759;&#x6001;&#x8DEF;&#x7531;&#x5141;&#x8BB8;&#x6DFB;&#x52A0;&#x76EE;&#x6807;&#x7F51;&#x7EDC;&#x548C;&#x7F51;&#x5173; IP &#x5730;&#x5740;&#xFF0C;&#x6BCF;&#x4E2A;&#x8DEF;&#x7531;&#x4E00;&#x4E2A;&#x3002; &#x8981;&#x66F4;&#x6539; DNS &#x57DF;&#x5E76;&#x6DFB;&#x52A0;&#x540D;&#x79F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8BF7;&#x9009;&#x62E9;&#x914D;&#x7F6E; DNS&#xFF08;<strong>Configure DNS</strong>)&#x3002;</p>
+<p>&#x7A0D;&#x540E;&#x53EF;&#x4EE5;&#x5728; Web &#x754C;&#x9762;&#x4E2D;&#x53EF;&#x7528;&#x7684;&#x5404;&#x79CD;&#x7F51;&#x7EDC;&#xFF08;<strong>Network</strong>&#xFF09;&#x9009;&#x9879;&#x4E2D;&#x8C03;&#x6574;&#x8FD9;&#x4E9B;&#x8BBE;&#x7F6E;&#x3002;</p>
+<h2 id="&#x767B;&#x9646;">&#x767B;&#x9646;</h2>
+<p>&#x5728;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x4E0E; TrueNAS &#x7CFB;&#x7EDF;&#x76F8;&#x540C;&#x7684;&#x7F51;&#x7EDC;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#xFF0C;&#x5728; Web &#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;&#x4E3B;&#x673A;&#x540D;&#x548C;&#x57DF;&#x6216; IP &#x5730;&#x5740;&#x4EE5;&#x8FDE;&#x63A5;&#x5230; Web &#x754C;&#x9762;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/LoginCORE.png" alt=""></p>
+<p>&#x53EA;&#x6709; root &#x7528;&#x6237;&#x53EF;&#x4EE5;&#x767B;&#x5F55; Web &#x754C;&#x9762;&#x3002; &#x8F93;&#x5165;&#x5728;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x4E2D;&#x521B;&#x5EFA;&#x7684; root &#x5E10;&#x6237;&#x5BC6;&#x7801;&#x3002;</p>
+<h3 id="&#x6545;&#x969C;&#x6392;&#x9664;">&#x6545;&#x969C;&#x6392;&#x9664;</h3>
+<p>&#x5982;&#x679C;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x7684; IP &#x5730;&#x5740;&#x8BBF;&#x95EE;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x4EE5;&#x4E0B;&#x4E8B;&#x9879;&#xFF1A;</p>
+<p>1&#x3001;&#x6D4F;&#x89C8;&#x5668;&#x914D;&#x7F6E;&#x4E2D;&#x662F;&#x5426;&#x542F;&#x7528;&#x4E86;&#x4EE3;&#x7406;&#x8BBE;&#x7F6E;&#xFF1F; &#x5982;&#x679C;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x8BF7;&#x7981;&#x7528;&#x8BBE;&#x7F6E;&#x5E76;&#x518D;&#x6B21;&#x5C1D;&#x8BD5;&#x8FDE;&#x63A5;&#x3002;
+2&#x3001;&#x5982;&#x679C;&#x9875;&#x9762;&#x672A;&#x52A0;&#x8F7D;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x53EF;&#x4EE5; ping &#x901A; TrueNAS &#x7CFB;&#x7EDF;&#x7684; IP &#x5730;&#x5740;&#x3002; &#x5982;&#x679C;&#x5730;&#x5740;&#x5728;&#x4E13;&#x7528; IP &#x5730;&#x5740;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x5219;&#x53EA;&#x80FD;&#x4ECE;&#x8BE5;&#x4E13;&#x7528;&#x7F51;&#x7EDC;&#x5185;&#x8BBF;&#x95EE;&#x5B83;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x663E;&#x793A; Web &#x754C;&#x9762;&#x4F46;&#x4F3C;&#x4E4E;&#x6CA1;&#x6709;&#x54CD;&#x5E94;&#x6216;&#x4E0D;&#x5B8C;&#x6574;&#xFF1A;</p>
+<p>1&#x3001;&#x786E;&#x4FDD;&#x6D4F;&#x89C8;&#x5668;&#x5141;&#x8BB8;&#x6765;&#x81EA; TrueNAS &#x7CFB;&#x7EDF;&#x7684; cookie&#x3001;Javascript &#x548C;&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#x3002;
+2&#x3001;&#x5C1D;&#x8BD5;&#x4E0D;&#x540C;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x3002; &#x63A8;&#x8350;&#x4F7F;&#x7528;&#x706B;&#x72D0;&#x6D4F;&#x89C8;&#x5668;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5728;&#x5347;&#x7EA7;&#x6216;&#x5176;&#x4ED6;&#x7CFB;&#x7EDF;&#x64CD;&#x4F5C;&#x540E; UI &#x53D8;&#x5F97;&#x65E0;&#x54CD;&#x5E94;&#xFF0C;&#x8BF7;&#x6E05;&#x9664;&#x7AD9;&#x70B9;&#x6570;&#x636E;&#x5E76;&#x5237;&#x65B0;&#x6D4F;&#x89C8;&#x5668; (Shift+F5)&#x3002;</p>
+<h2 id="&#x4EEA;&#x8868;&#x76D8;">&#x4EEA;&#x8868;&#x76D8;</h2>
+<p>&#x767B;&#x5F55;&#x540E;&#xFF0C;&#x663E;&#x793A;&#x7CFB;&#x7EDF;&#x4EEA;&#x8868;&#x677F;&#xFF08;<strong>Dashboard</strong>&#xFF09;&#x3002; &#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x3001;&#x7CFB;&#x7EDF;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x548C;&#x7F51;&#x7EDC;&#x6D41;&#x91CF;&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x90FD;&#x663E;&#x793A;&#x5728;&#x6B64;&#x5C4F;&#x5E55;&#x4E0A;&#x3002; &#x5BF9;&#x4E8E;&#x5177;&#x6709;&#x517C;&#x5BB9; TrueNAS &#x786C;&#x4EF6;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5355;&#x51FB;&#x7CFB;&#x7EDF;&#x56FE;&#x50CF;&#x5C06;&#x5E26;&#x60A8;&#x8FDB;&#x5165;&#x7CFB;&#x7EDF;&#xFF08;<strong>System</strong>&#xFF09; &gt; &#x67E5;&#x770B;&#x9644;&#x4EF6;&#xFF08;<strong>View Enclosure</strong>&#xFF09;&#x9875;&#x9762;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/DashboardCORE.png" alt=""></p>
+<p>&#x4EEA;&#x8868;&#x677F;&#x63D0;&#x4F9B;&#x5BF9;&#x6240;&#x6709; TrueNAS &#x7BA1;&#x7406;&#x9009;&#x9879;&#x7684;&#x8BBF;&#x95EE;&#x3002; &#x9876;&#x884C;&#x662F;&#x6307;&#x5411;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#x7684;&#x94FE;&#x63A5;&#x548C;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#x7684;&#x6309;&#x94AE;&#x3002; &#x5C4F;&#x5E55;&#x5DE6;&#x4FA7;&#x8FD8;&#x6709;&#x4E00;&#x5217;&#x9009;&#x9879;&#xFF0C;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x5404;&#x79CD; TrueNAS &#x914D;&#x7F6E;&#x3002;</p>
+<p>&#x9876;&#x884C;&#x4E2D;&#x7684;&#x5FBD;&#x6807;&#x662F;&#x6307;&#x5411; iXsystems &#x7AD9;&#x70B9;&#x7684;&#x94FE;&#x63A5;&#x3002; iXsystems &#x5FBD;&#x6807;&#x65C1;&#x8FB9;&#x7684;&#x6309;&#x94AE;&#x663E;&#x793A; <a href="https://www.truenas.com/truecommand/" target="_blank">TrueCommand</a> &#x8FDE;&#x63A5;&#x9009;&#x9879;&#x3002; &#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4E24;&#x4E2A;&#x6309;&#x94AE;&#x663E;&#x793A;&#x6709;&#x5173;&#x7CFB;&#x7EDF;&#x4E0A;&#x6B63;&#x5728;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x60C5;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#x6D3B;&#x52A8;&#x6216;&#x4EE5;&#x524D;&#x7684;&#x4EFB;&#x52A1;&#x4EE5;&#x53CA;&#x7CFB;&#x7EDF;&#x6761;&#x4EF6;&#x751F;&#x6210;&#x7684;&#x4EFB;&#x4F55;&#x8B66;&#x62A5;&#x3002; &#x5176;&#x4F59;&#x6309;&#x94AE;&#x94FE;&#x63A5;&#x5230;&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x6216;&#x53EF;&#x7528;&#x4E8E;&#x6CE8;&#x9500;&#x3001;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x6216;&#x5173;&#x95ED;&#x7269;&#x7406;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x9876;&#x884C;&#x6709;&#x7528;&#x4E8E;&#x9690;&#x85CF;&#x5DE6;&#x4FA7;&#x5217;&#x7684;&#x6309;&#x94AE;&#x3002; &#x6B64;&#x5217;&#x7684;&#x9876;&#x90E8;&#x663E;&#x793A;&#x7CFB;&#x7EDF;&#x4E3B;&#x673A;&#x540D;&#x548C;&#x6D3B;&#x52A8;&#x7528;&#x6237;&#x3002; TrueNAS &#x914D;&#x7F6E;&#x5C4F;&#x5E55;&#x94FE;&#x63A5;&#x5728;&#x5DE6;&#x4FA7;&#x680F;&#x4E2D;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x60A8;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; TrueNAS &#x7F51;&#x7EDC;&#x754C;&#x9762;&#x5E76;&#x67E5;&#x770B;&#x6240;&#x6709;&#x7BA1;&#x7406;&#x9009;&#x9879;&#xFF0C;&#x662F;&#x65F6;&#x5019;&#x5F00;&#x59CB;<a href="https://www.truenas.com/docs/core/gettingstarted/storingdata/" target="_blank">&#x5B58;&#x50A8;&#x6570;&#x636E;</a>&#x4E86;&#xFF01;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Console_Setup_Menu.html" class="navigation navigation-prev " aria-label="Previous page: 1.1.3.控制台设置菜单">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Storage_Configuration.html" class="navigation navigation-next " aria-label="Next page: 1.1.5.存储配置">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.1.4.登录到TrueNAS WebUI","level":"1.2.1.4","depth":3,"next":{"title":"1.1.5.存储配置","level":"1.2.1.5","depth":3,"path":"TrueNAS_CORE_and_Enterprise/gettingstarted/Storage_Configuration.md","ref":"TrueNAS_CORE_and_Enterprise/gettingstarted/Storage_Configuration.md","articles":[]},"previous":{"title":"1.1.3.控制台设置菜单","level":"1.2.1.3","depth":3,"path":"TrueNAS_CORE_and_Enterprise/gettingstarted/Console_Setup_Menu.md","ref":"TrueNAS_CORE_and_Enterprise/gettingstarted/Console_Setup_Menu.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/gettingstarted/log_in.md","mtime":"2021-11-14T12:04:58.023Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-16T14:00:39.578Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

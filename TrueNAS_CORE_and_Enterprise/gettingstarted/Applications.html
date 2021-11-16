@@ -1,0 +1,933 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.1.8.应用 · TrueNAS中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="EASTMOE">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Accounts/" />
+    
+    
+    <link rel="prev" href="Data_Backups.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.TrueNAS Core和Enterprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.1.TrueNAS初探
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="core_hardware_guide.html">
+            
+                <a href="core_hardware_guide.html">
+            
+                    
+                    1.1.1.TrueNAS Core 硬件指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="INSTALL.html">
+            
+                <a href="INSTALL.html">
+            
+                    
+                    1.1.2.安装TrueNAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="Console_Setup_Menu.html">
+            
+                <a href="Console_Setup_Menu.html">
+            
+                    
+                    1.1.3.控制台设置菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="log_in.html">
+            
+                <a href="log_in.html">
+            
+                    
+                    1.1.4.登录到TrueNAS WebUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="Storage_Configuration.html">
+            
+                <a href="Storage_Configuration.html">
+            
+                    
+                    1.1.5.存储配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="Sharing_Storage.html">
+            
+                <a href="Sharing_Storage.html">
+            
+                    
+                    1.1.6.存储共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="Data_Backups.html">
+            
+                <a href="Data_Backups.html">
+            
+                    
+                    1.1.7.数据备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.8" data-path="Applications.html">
+            
+                <a href="Applications.html">
+            
+                    
+                    1.1.8.应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Accounts/">
+            
+                <a href="../Accounts/">
+            
+                    
+                    1.2.账户
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../Accounts/Groups.html">
+            
+                <a href="../Accounts/Groups.html">
+            
+                    
+                    1.2.1.TrueNAS用户组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../Accounts/Users.html">
+            
+                <a href="../Accounts/Users.html">
+            
+                    
+                    1.2.2.TrueNAS用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../System/">
+            
+                <a href="../System/">
+            
+                    
+                    1.3.系统设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../System/General/">
+            
+                <a href="../System/General/">
+            
+                    
+                    1.3.1.通用设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="../System/General/Setting.html">
+            
+                <a href="../System/General/Setting.html">
+            
+                    
+                    1.3.1.1.通用设置页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="../System/General/System_Config_Backups.html">
+            
+                <a href="../System/General/System_Config_Backups.html">
+            
+                    
+                    1.3.1.2.系统备份设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="../System/General/Managing_TLS_Ciphers.html">
+            
+                <a href="../System/General/Managing_TLS_Ciphers.html">
+            
+                    
+                    1.3.1.3.管理TLS加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../System/NTP_Servers.html">
+            
+                <a href="../System/NTP_Servers.html">
+            
+                    
+                    1.3.2.时间同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../System/Boot/">
+            
+                <a href="../System/Boot/">
+            
+                    
+                    1.3.3.启动与引导
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.3.1" data-path="../System/Boot/Boot_Screen.html">
+            
+                <a href="../System/Boot/Boot_Screen.html">
+            
+                    
+                    1.3.3.1.引导备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3.2" data-path="../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                <a href="../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                    
+                    1.3.3.2.启动池镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../System/Advanced.html">
+            
+                <a href="../System/Advanced.html">
+            
+                    
+                    1.3.4.高级设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../System/View_Enclosure.html">
+            
+                <a href="../System/View_Enclosure.html">
+            
+                    
+                    1.3.5.机箱监视
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="../System/Email.html">
+            
+                <a href="../System/Email.html">
+            
+                    
+                    1.3.6.电子邮件通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7" data-path="../System_Dataset.md">
+            
+                <span>
+            
+                    
+                    1.3.7.系统数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.8" data-path="../System/Reporting.html">
+            
+                <a href="../System/Reporting.html">
+            
+                    
+                    1.3.8.系统报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.9" data-path="../System/Alert.html">
+            
+                <a href="../System/Alert.html">
+            
+                    
+                    1.3.9.警告服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.10" data-path="../System/Cloud_Credentials.html">
+            
+                <a href="../System/Cloud_Credentials.html">
+            
+                    
+                    1.3.10.云服务与云同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.11" data-path="../System/SSH.html">
+            
+                <a href="../System/SSH.html">
+            
+                    
+                    1.3.11.SSH客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.12" data-path="../System/Tunables.html">
+            
+                <a href="../System/Tunables.html">
+            
+                    
+                    1.3.12.可调参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.13" data-path="../System/Update.html">
+            
+                <a href="../System/Update.html">
+            
+                    
+                    1.3.13.系统更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.14" data-path="../System/CAs.html">
+            
+                <a href="../System/CAs.html">
+            
+                    
+                    1.3.14.证书颁发机构（CA）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.15" data-path="../System/Certificates.html">
+            
+                <a href="../System/Certificates.html">
+            
+                    
+                    1.3.15.证书管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.16" data-path="../System/KMIP.html">
+            
+                <a href="../System/KMIP.html">
+            
+                    
+                    1.3.16.密钥管理互通协议（KMIP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.17" data-path="../System/Failover_HA.html">
+            
+                <a href="../System/Failover_HA.html">
+            
+                    
+                    1.3.17.故障转移与高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.18" data-path="../System/Support.html">
+            
+                <a href="../System/Support.html">
+            
+                    
+                    1.3.18.帮助与支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.19" data-path="../System/2FA.html">
+            
+                <a href="../System/2FA.html">
+            
+                    
+                    1.3.19.两步验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Tasks/">
+            
+                <a href="../Tasks/">
+            
+                    
+                    1.4.任务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Tasks/Cron_Jobs.html">
+            
+                <a href="../Tasks/Cron_Jobs.html">
+            
+                    
+                    1.4.1.定时任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Tasks/Init_Shutdown_Scripts.html">
+            
+                <a href="../Tasks/Init_Shutdown_Scripts.html">
+            
+                    
+                    1.4.2.开/关机脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../Tasks/Rsync_Tasks.html">
+            
+                <a href="../Tasks/Rsync_Tasks.html">
+            
+                    
+                    1.4.3.同步任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../Tasks/SMART_TEST.md.md">
+            
+                <span>
+            
+                    
+                    1.4.4.硬盘检测任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.1.8.应用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="truenas&#x5E94;&#x7528;">TrueNAS&#x5E94;&#x7528;</h1>
+<p>&#x5728;&#x7CFB;&#x7EDF;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x914D;&#x7F6E;&#x597D;&#x5E76;&#x4E14;&#x6570;&#x636E;&#x901A;&#x8FC7;&#x7F51;&#x7EDC;&#x5171;&#x4EAB;&#x540E;&#xFF0C;&#x9996;&#x6B21;&#x8BBE;&#x7F6E;&#x8981;&#x8003;&#x8651;&#x7684;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x662F;&#x5B89;&#x88C5;&#x4E00;&#x4E9B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002; &#x6DFB;&#x52A0;&#x5230; TrueNAS &#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6216;&#x529F;&#x80FD;&#x662F;&#x5728;&#x4E0E;&#x57FA;&#x7840; TrueNAS &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5206;&#x5F00;&#x7684;&#x5355;&#x72EC;&#x201C;&#x63D2;&#x4EF6;&#x201D;&#xFF08;<strong>Plugins</strong>&#xFF09;&#x3001;<strong>Jail</strong> &#x6216;&#x201C;&#x865A;&#x62DF;&#x673A;&#x201D;&#xFF08;<strong>Virtual Machines</strong>&#xFF09;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x3002;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x4EFB;&#x4F55;&#x95EE;&#x9898;&#x6216;&#x5728;&#x8FD9;&#x4E9B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x73AF;&#x5883;&#x4E2D;&#x5B58;&#x5728;&#x5B89;&#x5168;&#x6F0F;&#x6D1E;&#xFF0C; TrueNAS&#x5219;&#x4E0D;&#x53D7;&#x5F71;&#x54CD;&#xFF0C;&#x8FD9;&#x4E9B;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4EE5;&#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x65B9;&#x5F0F;&#x5B89;&#x5168;&#x5730;&#x6269;&#x5C55;&#x4E86; TrueNAS &#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5B89;&#x88C5;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x4E3B;&#x8981;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;&#x63D2;&#x4EF6;&#xFF08;<strong>Plugins</strong>&#xFF09;&#x3002; &#x8FD9;&#x4E9B;&#x662F;&#x9884;&#x5148;&#x6253;&#x5305;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x53EF;&#x5728;&#x91CF;&#x8EAB;&#x5B9A;&#x5236;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x5FEB;&#x901F;&#x5B89;&#x88C5;&#x3002; &#x4E00;&#x4E9B;&#x63D2;&#x4EF6;&#x7531; iXsystems &#x652F;&#x6301;&#xFF0C;&#x800C;&#x53E6;&#x4E00;&#x4E9B;&#x5219;&#x7531;&#x5F00;&#x6E90;&#x793E;&#x533A;&#x63D0;&#x4F9B;&#x548C;&#x7EF4;&#x62A4;&#x3002;</p>
+<p><strong>Jail</strong> &#x662F;&#x4E00;&#x4E2A;&#x53D7;&#x9650;&#x7684; FreeBSD &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F5C;&#x4E3A; TrueNAS &#x7684;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x5B50;&#x96C6;&#x5B89;&#x88C5;&#x3002; Jails &#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5E76;&#x9488;&#x5BF9;&#x975E;&#x5E38;&#x7279;&#x5B9A;&#x7684;&#x7528;&#x4F8B;&#x8FDB;&#x884C;&#x8C03;&#x6574;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x66F4;&#x5E7F;&#x6CDB;&#x7684; FreeBSD &#x548C;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;&#x77E5;&#x8BC6;&#x3002;</p>
+<p>&#x865A;&#x62DF;&#x673A;&#xFF08;<strong>Virtual Machine</strong>&#xFF09;&#x662F;&#x5B8C;&#x5168;&#x72EC;&#x7ACB;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002; &#x8FD9;&#x4F1A;&#x4FDD;&#x7559;&#x6216;&#x62C6;&#x5206;&#x53EF;&#x7528;&#x7684;&#x786C;&#x4EF6;&#x8D44;&#x6E90;&#x4EE5;&#x521B;&#x5EFA;&#x4E0D;&#x540C;&#x7684;&#x3001;&#x5B8C;&#x6574;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4F53;&#x9A8C;&#x3002; TrueNAS &#x53EF;&#x4EE5;&#x5728;&#x865A;&#x62DF;&#x673A; (VM) &#x4E2D;&#x5B89;&#x88C5; Windows &#x6216;&#x7C7B; Unix &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F46;&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x65F6;&#x4F1A;&#x964D;&#x4F4E;&#x5E38;&#x89C4;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7F51;&#x7EDC;&#x786C;&#x4EF6;&#x5378;&#x8F7D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x4F7F;&#x7528;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x7684;&#x63D2;&#x4EF6;&#x9700;&#x8981;&#x5728;&#x7F51;&#x7EDC;&#xFF08;<strong>Network</strong>&#xFF09; -&gt; &#x63A5;&#x53E3;&#xFF08; <strong>Interface</strong>&#xFF09;&#x4E2D;&#x7981;&#x7528;&#x786C;&#x4EF6;&#x5378;&#x8F7D;&#x3002; &#x7981;&#x7528;&#x786C;&#x4EF6;&#x5378;&#x8F7D;&#x4F1A;&#x964D;&#x4F4E;&#x8BE5;&#x63A5;&#x53E3;&#x7684;&#x4E00;&#x822C;&#x7F51;&#x7EDC;&#x6027;&#x80FD;&#xFF0C;&#x56E0;&#x6B64;&#x5EFA;&#x8BAE;&#x5BF9;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x73AF;&#x5883;&#x4F7F;&#x7528;&#x8F85;&#x52A9;&#x63A5;&#x53E3;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4E00;&#x3001;&#x63D2;&#x4EF6;">&#x4E00;&#x3001;&#x63D2;&#x4EF6;</h2>
+<p>&#x672C;&#x8BF4;&#x660E;&#x901A;&#x8FC7;&#x5F15;&#x5BFC;&#x60A8;&#x5B89;&#x88C5;&#x793E;&#x533A;&#x6700;&#x559C;&#x6B22;&#x7684; Plex &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6765;&#x6F14;&#x793A;&#x63D2;&#x4EF6;&#x3002; &#x60A8;&#x9700;&#x8981;&#x4E00;&#x4E2A; Plex &#x5E10;&#x6237;&#x624D;&#x80FD;&#x6309;&#x7167;&#x8FD9;&#x4E9B;&#x8BF4;&#x660E;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</p>
+<h3 id="&#x5B89;&#x88C5;plex">&#x5B89;&#x88C5;PLEX</h3>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; audio &#x7684;&#x6570;&#x636E;&#x96C6;&#x548C;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; video &#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x7528;&#x4F5C; Plex &#x7684;&#x6302;&#x8F7D;&#x70B9;&#x3002; &#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x8F6C;&#x5230;&#x63D2;&#x4EF6;&#xFF08;<strong>Plugins</strong>&#xFF09;&#x9875;&#x9762;&#x3002;</p>
+<p>&#x5B89;&#x88C5;&#x57FA;&#x672C;&#x7684; PlexMedia &#x63D2;&#x4EF6;&#xFF1A;</p>
+<p>1&#x3001;&#x9009;&#x62E9; Plex Media Server &#x63D2;&#x4EF6;&#x5E76;&#x5355;&#x51FB;&#x5B89;&#x88C5;&#xFF08;INSTALL&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/PluginsPlexInstallButton.png" alt=""></p>
+<p>2&#x3001;&#x5728;Jail&#x540D;&#x79F0;&#x4E0B;&#xFF0C;&#x8F93;&#x5165;&#x60A8;&#x559C;&#x6B22;&#x7684;&#x4EFB;&#x4F55;&#x540D;&#x79F0;&#xFF08;&#x5373;&#x201C;Plex&#x201D;&#xFF09;&#x3002;
+3&#x3001;DHCP &#x4F1A;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x3002;
+4&#x3001;&#x5355;&#x51FB;&#x4FDD;&#x5B58;&#xFF08;<strong>SAVE</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/PluginsPlexMediaSave.png" alt=""></p>
+<p>5&#x3001;&#x4F1A;&#x5F39;&#x51FA;&#x4E00;&#x4E2A;&#x5BF9;&#x8BDD;&#x7A97;&#x53E3;&#x663E;&#x793A;&#x5B89;&#x88C5;&#x8FDB;&#x5EA6;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/PluginsPlexInstallProgress.png" alt=""></p>
+<p>&#x5982;&#x679C;&#x53EF;&#x7528;&#xFF0C;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x65F6;&#x4F1A;&#x663E;&#x793A;&#x63D2;&#x4EF6;&#x5B89;&#x88C5;&#x8BF4;&#x660E;&#x3002;</p>
+<p>6&#x3001;&#x63D2;&#x4EF6;&#x72B6;&#x6001;&#x663E;&#x793A;&#x4E3A; <strong>up</strong>&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x4E86; Boot &#x9009;&#x9879;&#x3002;
+7&#x3001;&#x5355;&#x51FB;&#x201D; &gt;&#x201C; &#x5C55;&#x5F00; Plex &#x8868;&#x6761;&#x76EE;&#xFF1A;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/PluginsPlexJailUp.png" alt=""></p>
+<p>8&#x3001;&#x505C;&#x6B62; up &#x63D2;&#x4EF6;&#x3002;
+9&#x3001;&#x5355;&#x51FB;&#x6302;&#x8F7D;&#x70B9;&#xFF08;<strong><em>MOUNT POINTS</em></strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/PluginsPlexSetMountpoints.png" alt=""></p>
+<p>10&#x3001;&#x5355;&#x51FB;&#x64CD;&#x4F5C;&#xFF08;<strong>Actions</strong>&#xFF09;&#xFF0C;&#x6DFB;&#x52A0;&#xFF08;<strong>Add</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/JailsMountPointsPlexAddMountpoint.png" alt=""></p>
+<p>11&#x3001;&#x4E3A;&#x6BCF;&#x4E2A;&#x5148;&#x524D;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x96C6;&#x586B;&#x5199;&#x4E00;&#x4E2A;&#x6302;&#x8F7D;&#x70B9;&#x3002; Source &#x662F;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;Destination &#x662F;&#x9644;&#x52A0;&#x4E86; /datasetname &#x7684;&#x5A92;&#x4F53;&#x76EE;&#x5F55;&#xFF08;&#x53C2;&#x89C1;&#x793A;&#x4F8B;&#xFF09;&#xFF1A;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/JailsMountPointsPlexSetMountpoint.png" alt=""></p>
+<p>12&#x3001;&#x5355;&#x51FB;&#x63D0;&#x4EA4;&#xFF08;<strong><em>Submit</em>.</strong>&#xFF09;&#x3002; &#x6839;&#x636E;&#x9700;&#x8981;&#x5BF9;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x6302;&#x8F7D;&#x70B9;&#x6267;&#x884C;&#x6B64;&#x64CD;&#x4F5C;&#x3002; &#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6709;<em>audio</em>&#x548C;<em>video</em>&#x3002;</p>
+<p>13&#x3001;&#x8F6C;&#x81F3;&#x5B58;&#x50A8;&#xFF08;<strong>Storage</strong>&#xFF09; &gt; &#x6C60;&#xFF08;<strong>Pools</strong>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB;&#x53F3;&#x8FB9;&#x7684;&#x4E09;&#x4E2A;&#x70B9; &gt; &#x6E90;&#x6570;&#x636E;&#x96C6;&#x7684;&#x7F16;&#x8F91;&#x6743;&#x9650;&#xFF08;<strong><em>Edit Permissions</em></strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/StoragePoolsPlexEditPermissions.png" alt=""></p>
+<p>14&#x3001;&#x5355;&#x51FB;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49; ACL &#x5E76;&#x7EE7;&#x7EED;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/StoragePoolsPermissionsPlexACL.png" alt=""></p>
+<p>15&#x3001;&#x5355;&#x51FB;&#x6DFB;&#x52A0; ACL ITEM &#x5E76;&#x8F93;&#x5165;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x7684;&#x503C;&#xFF1A;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/StoragePoolsPermissionsPlexPermissions.png" alt=""></p>
+<p>&#x8BBE;&#x7F6E;&#x9012;&#x5F52;&#x5E94;&#x7528;&#x6743;&#x9650;&#xFF08;<strong><em>Apply permissions recursively</em></strong>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB;&#x4FDD;&#x5B58;&#x3002;</p>
+<p>16&#x3001;&#x8F6C;&#x5230;&#x63D2;&#x4EF6;&#xFF08;<strong>Plugins</strong>&#xFF09;&#xFF0C;&#x627E;&#x5230; <strong>Plex</strong>&#x6761;&#x76EE;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB; &gt;&#x3002; &#x542F;&#x52A8;&#x63D2;&#x4EF6;&#x3002;</p>
+<h3 id="&#x8BBF;&#x95EE;-plex">&#x8BBF;&#x95EE; PLEX</h3>
+<p>1&#x3001;&#x5F53; Plex &#x63D2;&#x4EF6;&#x72B6;&#x6001;&#x4E3A; up &#x65F6;&#xFF0C;&#x5355;&#x51FB; &gt; &#x548C;&#x7BA1;&#x7406;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/PluginsPlexManage.png" alt=""></p>
+<p>2&#x3001;&#x8F93;&#x5165;&#x60A8;&#x7684; Plex &#x767B;&#x5F55;&#x4FE1;&#x606F;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/PluginsPlexLogin.png" alt=""></p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/PluginsPlexSuccess.png" alt=""></p>
+<h2 id="&#x4E8C;&#x3001;freebsd-jails">&#x4E8C;&#x3001;FreeBSD Jails</h2>
+<h3 id="&#x5B89;&#x88C5;jail">&#x5B89;&#x88C5;Jail</h3>
+<p>1&#x3001;&#x8F6C;&#x5230; Jails &#x9875;&#x9762;&#x5E76;&#x5355;&#x51FB; <strong>ADD</strong>&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/Jails.png" alt=""></p>
+<p>2&#x3001;&#x8F93;&#x5165; jail Name&#xFF0C;&#x9009;&#x62E9; Release &#x7248;&#x672C;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB; NEXT&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/JailsAddName.png" alt=""></p>
+<p>3&#x3001;&#x8981;&#x5141;&#x8BB8;jail &#x8BBF;&#x95EE;&#x4E92;&#x8054;&#x7F51;&#xFF0C;&#x8BF7;&#x8BBE;&#x7F6E;<em>DHCP Autoconfigure IPv4</em>  &#x5E76;&#x5355;&#x51FB;NEXT&#x3002; &#x8BBE;&#x7F6E; DHCP &#x9009;&#x9879;&#x65F6;&#x4F1A;&#x8BBE;&#x7F6E;&#x5176;&#x4ED6;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/JailsAddNetworkingDHCP.png" alt=""></p>
+<p>4&#x3001;&#x67E5;&#x770B;jail&#x6458;&#x8981;&#xFF08;<strong>Jail Summary</strong>&#xFF09;&#x5E76;&#x5355;&#x51FB;&#x63D0;&#x4EA4;&#xFF08;<strong>SUBMIT</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/JailsAddConfirm.png" alt=""></p>
+<h3 id="&#x8BBF;&#x95EE;jail">&#x8BBF;&#x95EE;Jail</h3>
+<p>1&#x3001;&#x8F6C;&#x5230; Jails &#x5E76;&#x5355;&#x51FB;&#x65B0;&#x521B;&#x5EFA;&#x7684; jail &#x65C1;&#x8FB9;&#x7684; &gt;&#x3002; &#x5355;&#x51FB;&#x5F00;&#x59CB;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/JailsStart.png" alt=""></p>
+<p>2&#x3001;&#x5F53; jail State &#x53D8;&#x4E3A; up &#x65F6;&#xFF0C;&#x5355;&#x51FB; &gt; SHELL &#x67E5;&#x770B; jail &#x547D;&#x4EE4;&#x884C;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/JailShell.png" alt=""></p>
+<h2 id="&#x4E09;&#x3001;&#x865A;&#x62DF;&#x673A;">&#x4E09;&#x3001;&#x865A;&#x62DF;&#x673A;</h2>
+<h3 id="&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;">&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;</h3>
+<p>&#x865A;&#x62DF;&#x673A;&#x9700;&#x8981;&#x5C06;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF; .iso &#x4E0A;&#x4F20;&#x5230; TrueNAS&#x3002; &#x6B64;&#x793A;&#x4F8B;&#x663E;&#x793A;&#x4F7F;&#x7528; Ubuntu .iso&#xFF1A;</p>
+<p>1&#x3001;&#x8F6C;&#x5230;&#x865A;&#x62DF;&#x673A;&#xFF08;<strong>Virtual Machines</strong>&#xFF09;&#x5E76;&#x5355;&#x51FB;&#x6DFB;&#x52A0;&#xFF08;<strong>ADD</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/VirtualMachines.png" alt=""></p>
+<p>2&#x3001;&#x9009;&#x62E9;&#x5BA2;&#x6237;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5E76;&#x8F93;&#x5165;&#x540D;&#x79F0;&#x3002; &#x5728;&#x672C;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x5BA2;&#x6237;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8BBE;&#x7F6E;&#x4E3A; Linux&#x3002; &#x70B9;&#x51FB;&#x4E0B;&#x4E00;&#x6B65;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/VirtualMachinesAddOperatingSystemLinux.png" alt=""></p>
+<p>3&#x3001;&#x73B0;&#x5728;&#x8F93;&#x5165;&#x7269;&#x7406;&#x8D44;&#x6E90;&#x7ED9;VM&#x3002; &#x5206;&#x914D;&#x66F4;&#x591A;&#x7684;&#x865A;&#x62DF; CPU&#x3001;&#x5185;&#x6838;&#x3001;&#x7EBF;&#x7A0B;&#x548C;&#x5185;&#x5B58;&#x4F1A;&#x4F7F;&#x865A;&#x62DF;&#x673A;&#x6027;&#x80FD;&#x66F4;&#x597D;&#xFF0C;&#x4F46;&#x4F1A;&#x964D;&#x4F4E; TrueNAS &#x5BBF;&#x4E3B;&#x673A;&#x7CFB;&#x7EDF;&#x7684;&#x6027;&#x80FD;&#x3002; &#x70B9;&#x51FB;&#x4E0B;&#x4E00;&#x6B65;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/VirtualMachinesAddCPU.png" alt=""></p>
+<p>4&#x3001;&#x8BBE;&#x7F6E;&#x521B;&#x5EFA;&#x65B0;&#x78C1;&#x76D8;&#x6620;&#x50CF;&#x5E76;&#x4E3A; VM &#x5B58;&#x50A8;&#x9009;&#x62E9; Zvol &#x4F4D;&#x7F6E;&#x3002; &#x8F93;&#x5165;&#x53EF;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x5927;&#x5C0F;&#xFF08;&#x793A;&#x4F8B;&#x663E;&#x793A; 50 GiB&#xFF09;&#x5E76;&#x5355;&#x51FB;&#x4E0B;&#x4E00;&#x6B65;&#x6309;&#x94AE;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/VirtualMachinesAddDisks.png" alt=""></p>
+<p>5&#x3001;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#xFF08;<strong>Network Interface</strong>&#xFF09;&#x81EA;&#x52A8;&#x68C0;&#x6D4B;&#x786C;&#x4EF6;&#x5E76;&#x8BBE;&#x7F6E;&#x5141;&#x8BB8;&#x7F51;&#x7EDC;&#x8BBF;&#x95EE;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002; &#x786E;&#x4FDD;&#x8FD9;&#x4E9B;&#x8BBE;&#x7F6E;&#x6709;&#x6548;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB; NEXT&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/VirtualMachinesAddNetworkInterface.png" alt=""></p>
+<p>6&#x3001;&#x4E0A;&#x4F20;&#x865A;&#x62DF;&#x673A;&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x7A0B;&#x5E8F;&#x6620;&#x50CF;&#x6587;&#x4EF6;&#x540E;&#x3002;&#x5728; TrueNAS &#x7CFB;&#x7EDF;&#x4E0A;&#x9009;&#x62E9; ISO &#x4FDD;&#x5B58;&#x4F4D;&#x7F6E;&#x3002;&#x800C;&#x73B0;&#x5728;&#x5219;&#x5355;&#x51FB;&#x9009;&#x62E9;&#x6587;&#x4EF6;&#x5E76;&#x6D4F;&#x89C8;&#x5230;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5B89;&#x88C5; .iso&#x76F4;&#x63A5;&#x4E0A;&#x4F20;&#x5230;TrueNAS&#x4E2D;&#xFF0C;&#x5355;&#x51FB;&#x4E0A;&#x4F20;&#x5E76;&#x7B49;&#x5F85;&#x8BE5;&#x8FC7;&#x7A0B;&#x5B8C;&#x6210;&#xFF08;&#x8FD9;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x65F6;&#x95F4;&#xFF09;&#x3002; &#x70B9;&#x51FB;&#x4E0B;&#x4E00;&#x6B65;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/VirtualMachinesAddInstallationMedia.png" alt=""></p>
+<p>7&#x3001;&#x786E;&#x8BA4;&#x865A;&#x62DF;&#x673A;&#x914D;&#x7F6E;&#x6B63;&#x786E;&#xFF0C;&#x70B9;&#x51FB;&#x63D0;&#x4EA4;&#xFF08;<strong>SUBMIT</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/VirtualMachinesAddConfirm.png" alt=""></p>
+<h3 id="&#x8BBF;&#x95EE;&#x865A;&#x62DF;&#x673A;">&#x8BBF;&#x95EE;&#x865A;&#x62DF;&#x673A;</h3>
+<p>1&#x3001;&#x8F6C;&#x81F3;&#x865A;&#x62DF;&#x673A;&#xFF08;<strong>Virtual Machines</strong>&#xFF09;&#x5E76;&#x5355;&#x51FB;&#x65B0;&#x521B;&#x5EFA;&#x7684; VM &#x65C1;&#x8FB9;&#x7684; &gt;&#x3002; &#x5355;&#x51FB;&#x5F00;&#x59CB;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/VirtualMachinesStart.png" alt=""></p>
+<p>2&#x3001;&#x5F53; <strong>VM State</strong> &#x53D8;&#x4E3A; <strong>up</strong> &#x65F6;&#xFF0C;&#x5355;&#x51FB; VNC &#x4EE5;&#x67E5;&#x770B;&#x865A;&#x62DF;&#x673A;&#x7684;&#x865A;&#x62DF;&#x663E;&#x793A;&#x5668;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/VirtualMachinesOptions.png" alt=""></p>
+<p>&#x7531;&#x4E8E;&#x6B64;&#x793A;&#x4F8B;&#x4F7F;&#x7528;&#x4E86; Ubuntu .iso&#xFF0C;&#x56E0;&#x6B64;&#x663E;&#x793A;&#x4E86; Ubuntu &#x5B89;&#x88C5;&#x754C;&#x9762;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/UbuntuInstall.png" alt=""></p>
+<p>&#x4ECE;&#x8FD9;&#x91CC;&#x5F00;&#x59CB;&#xFF0C;&#x50CF;&#x5728;&#x7269;&#x7406;&#x673A;&#x91CC;&#x5B89;&#x88C5;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E00;&#x6837;&#x7167;&#x5E38;&#x5B89;&#x88C5;&#x3002;</p>
+<p>3&#x3001;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x8FD4;&#x56DE;&#x5230;&#x865A;&#x62DF;&#x673A;&#xFF08;<strong>Virtual Machines</strong>&#xFF09;&#xFF0C;&#x5207;&#x6362;&#x72B6;&#x6001;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB;&#x8BBE;&#x5907;&#xFF08;<strong>DEVICES</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/VirtualMachinesDevices.png" alt=""></p>
+<p>&#x627E;&#x5230; <strong>CDROM</strong> &#x6761;&#x76EE;&#x5E76;&#x5355;&#x51FB;&#x53F3;&#x4FA7;&#x7684;&#x4E09;&#x4E2A;&#x70B9; &gt; &#x70B9;&#x51FB;&#x5220;&#x9664;&#xFF08;<strong><em>Delete</em></strong>&#xFF09;&#x4EE5;&#x5C06;&#x5176;&#x5220;&#x9664;&#x3002; &#x8FD9;&#x4F1A;&#x4ECE;&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x5220;&#x9664;&#x5B89;&#x88C5; .iso&#xFF0C;&#x5E76;&#x5141;&#x8BB8;&#x865A;&#x62DF;&#x673A;&#x4E0B;&#x6B21;&#x542F;&#x52A8;&#x5230;&#x5B8C;&#x6574;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Data_Backups.html" class="navigation navigation-prev " aria-label="Previous page: 1.1.7.数据备份">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Accounts/" class="navigation navigation-next " aria-label="Next page: 1.2.账户">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.1.8.应用","level":"1.2.1.8","depth":3,"next":{"title":"1.2.账户","level":"1.2.2","depth":2,"path":"TrueNAS_CORE_and_Enterprise/Accounts/README.md","ref":"TrueNAS_CORE_and_Enterprise/Accounts/README.md","articles":[{"title":"1.2.1.TrueNAS用户组","level":"1.2.2.1","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Accounts/Groups.md","ref":"TrueNAS_CORE_and_Enterprise/Accounts/Groups.md","articles":[]},{"title":"1.2.2.TrueNAS用户","level":"1.2.2.2","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Accounts/Users.md","ref":"TrueNAS_CORE_and_Enterprise/Accounts/Users.md","articles":[]}]},"previous":{"title":"1.1.7.数据备份","level":"1.2.1.7","depth":3,"path":"TrueNAS_CORE_and_Enterprise/gettingstarted/Data_Backups.md","ref":"TrueNAS_CORE_and_Enterprise/gettingstarted/Data_Backups.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/gettingstarted/Applications.md","mtime":"2021-11-14T14:53:38.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-16T14:00:39.578Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
