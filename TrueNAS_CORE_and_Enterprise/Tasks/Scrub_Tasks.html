@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>1.4.2.开/关机脚本 · TrueNAS中文文档</title>
+        <title>1.4.8.清理任务 · TrueNAS中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Rsync_Tasks.html" />
+    <link rel="next" href="Cloud_Sync_Tasks.html" />
     
     
-    <link rel="prev" href="Cron_Jobs.html" />
+    <link rel="prev" href="Resilver_Priority.html" />
     
 
     </head>
@@ -654,7 +654,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.4.2" data-path="Init_Shutdown_Scripts.html">
+        <li class="chapter " data-level="1.2.4.2" data-path="Init_Shutdown_Scripts.html">
             
                 <a href="Init_Shutdown_Scripts.html">
             
@@ -790,7 +790,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4.8" data-path="Scrub_Tasks.html">
+        <li class="chapter active" data-level="1.2.4.8" data-path="Scrub_Tasks.html">
             
                 <a href="Scrub_Tasks.html">
             
@@ -869,7 +869,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >1.4.2.开/关机脚本</a>
+        <a href="../.." >1.4.8.清理任务</a>
     </h1>
 </div>
 
@@ -884,9 +884,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5F00;&#x5173;&#x673A;&#x811A;&#x672C;">&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;</h1>
-<p>TrueNAS &#x53EF;&#x4EE5;&#x5B89;&#x6392;&#x547D;&#x4EE4;&#x6216;&#x811A;&#x672C;&#x5728;&#x7CFB;&#x7EDF;&#x542F;&#x52A8;&#x6216;&#x5173;&#x95ED;&#x65F6;&#x8FD0;&#x884C;&#x3002; &#x8981;&#x521B;&#x5EFA;&#x65B0;&#x811A;&#x672C;&#xFF0C;&#x8BF7;&#x8F6C;&#x5230;&#x201C;&#x4EFB;&#x52A1;&#x201D;&#xFF08;<strong>Tasks</strong>&#xFF09;&gt;&#x201C;&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;&#x201D;&#xFF08;<strong>Init/Shutdown Scripts</strong>&#xFF09;&#x5E76;&#x5355;&#x51FB;&#x201C;&#x6DFB;&#x52A0;&#x201D;&#xFF08;<strong>ADD</strong>&#xFF09;&#x3002;</p>
-<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksInitShutdownScriptsAdd.png" alt=""></p>
+                                <h1 id="&#x6E05;&#x7406;&#x4EFB;&#x52A1;">&#x6E05;&#x7406;&#x4EFB;&#x52A1;</h1>
+<p>&#x201C;&#x6E05;&#x7406;&#x201D;&#x662F;&#x6307; ZFS &#x626B;&#x63CF;&#x6C60;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002; Scrub &#x8BC6;&#x522B;&#x6570;&#x636E;&#x5B8C;&#x6574;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x68C0;&#x6D4B;&#x7531;&#x6682;&#x65F6;&#x6027;&#x786C;&#x4EF6;&#x95EE;&#x9898;&#x5F15;&#x8D77;&#x7684;&#x9759;&#x9ED8;&#x6570;&#x636E;&#x635F;&#x574F;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x65E9;&#x671F;&#x78C1;&#x76D8;&#x6545;&#x969C;&#x8B66;&#x62A5;&#x3002;</p>
+<h2 id="&#x9ED8;&#x8BA4;&#x6E05;&#x7406;&#x4EFB;&#x52A1;">&#x9ED8;&#x8BA4;&#x6E05;&#x7406;&#x4EFB;&#x52A1;</h2>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;TrueNAS &#x5728;&#x60A8;&#x521B;&#x5EFA;&#x65B0;&#x6C60;&#x65F6;&#x4F1A;&#x521B;&#x5EFA;&#x6E05;&#x7406;&#x4EFB;&#x52A1;&#x3002; &#x64E6;&#x6D17;&#x7684;&#x9ED8;&#x8BA4;&#x8BA1;&#x5212;&#x662F;&#x6BCF;&#x5468;&#x65E5;&#x51CC;&#x6668; 12:00 &#x8FD0;&#x884C;&#x3002; &#x8981;&#x7F16;&#x8F91;&#x9ED8;&#x8BA4;&#x6E05;&#x7406;&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x4EFB;&#x52A1;&#xFF08;<strong>Tasks</strong>&#xFF09; &gt; &#x6E05;&#x7406;&#x4EFB;&#x52A1;&#xFF08;<strong>Scrub Tasks</strong>&#xFF09;&#xFF0C;&#x5355;&#x51FB;&#x53F3;&#x4FA7;&#x7684;&#x4E09;&#x4E2A;&#x5C0F;&#x5E97; &#xFF0C;&#x7136;&#x540E;&#x7F16;&#x8F91;&#x3002;</p>
+<h2 id="&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6E05;&#x7406;&#x4EFB;&#x52A1;">&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6E05;&#x7406;&#x4EFB;&#x52A1;</h2>
+<p>&#x5728;&#x521B;&#x5EFA;&#x6E05;&#x7406;&#x4EFB;&#x52A1;&#x4E4B;&#x524D;&#xFF0C;&#x5FC5;&#x987B;&#x5B58;&#x5728;&#x6570;&#x636E;&#x6C60;&#x3002;</p>
+<p>&#x8981;&#x4E3A;&#x6C60;&#x521B;&#x5EFA;&#x6E05;&#x7406;&#x4EFB;&#x52A1;&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x4EFB;&#x52A1;&#xFF08;<strong>Tasks</strong>&#xFF09; &gt; &#x6E05;&#x7406;&#x4EFB;&#x52A1;&#xFF08;<strong>Scrub Tasks</strong>&#xFF09;&#x5E76;&#x5355;&#x51FB;&#x6DFB;&#x52A0;&#xFF08;<strong>ADD</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksScrubTasksAdd.png" alt=""></p>
+<p>&#x9009;&#x9879;</p>
 <table>
 <thead>
 <tr>
@@ -896,36 +902,94 @@
 </thead>
 <tbody>
 <tr>
+<td>&#x6570;&#x636E;&#x6C60;&#xFF08;<strong>Pool</strong>&#xFF09;</td>
+<td>&#x9009;&#x62E9;&#x8981;&#x7684;&#x6E38;&#x6CF3;&#x6C60;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x95E8;&#x69DB;&#x5929;&#x6570;(<strong>Threshold days</strong>)</td>
+<td>&#x95F4;&#x9694;&#x51E0;&#x5929;&#x518D;&#x6B21;&#x5141;&#x8BB8;&#x8FD0;&#x884C;&#x5B8C;&#x6210;&#x7684;&#x6E05;&#x7406;&#x3002; &#x8FD9;&#x63A7;&#x5236;&#x4E86;&#x4EFB;&#x52A1;&#x8BA1;&#x5212;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x5B89;&#x6392;&#x6E05;&#x7406;&#x6BCF;&#x5929;&#x8FD0;&#x884C;&#x5E76;&#x5C06;&#x9608;&#x503C;&#x5929;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A; 7 &#x610F;&#x5473;&#x7740;&#x6E05;&#x7406;&#x5C1D;&#x8BD5;&#x6BCF;&#x5929;&#x8FD0;&#x884C;&#x3002; &#x6E05;&#x7406;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x5B83;&#x4F1A;&#x7EE7;&#x7EED;&#x6BCF;&#x5929;&#x68C0;&#x67E5;&#x4E00;&#x6B21;&#xFF0C;&#x4F46;&#x76F4;&#x5230; 7 &#x5929;&#x540E;&#x624D;&#x4F1A;&#x518D;&#x6B21;&#x8FD0;&#x884C;&#x3002; &#x4F7F;&#x7528; 7 &#x7684;&#x500D;&#x6570;&#x53EF;&#x786E;&#x4FDD;&#x64E6;&#x6D17;&#x59CB;&#x7EC8;&#x5728;&#x540C;&#x4E00;&#x5DE5;&#x4F5C;&#x65E5;&#x8FDB;&#x884C;&#x3002;</td>
+</tr>
+<tr>
 <td>&#x63CF;&#x8FF0;&#xFF08;<strong>Description</strong>&#xFF09;</td>
-<td>&#x5173;&#x4E8E;&#x8FD9;&#x4E2A;&#x811A;&#x672C;&#x7684;&#x7B80;&#x8981;&#x4ECB;&#x7ECD;&#x3002;</td>
+<td>&#x63CF;&#x8FF0;&#x6E05;&#x7406;&#x4EFB;&#x52A1;&#x3002;</td>
 </tr>
 <tr>
-<td>&#x7C7B;&#x578B;&#xFF08;<strong>Type</strong>&#xFF09;</td>
-<td>&#x4E3A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x9009;&#x62E9;&#x547D;&#x4EE4;&#x6216;&#x4E3A;&#x53EF;&#x6267;&#x884C;&#x811A;&#x672C;&#x9009;&#x62E9;&#x811A;&#x672C;&#x3002;</td>
+<td>&#x65E5;&#x7A0B;&#xFF08;<strong>Schedule</strong>&#xFF09;</td>
+<td>&#x591A;&#x4E45;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x6E05;&#x7406;&#x4EFB;&#x52A1;&#x3002; &#x9009;&#x62E9;&#x9884;&#x8BBE;&#x4E4B;&#x4E00;&#x6216; &#x81EA;&#x5B9A;&#x4E49;&#xFF08;<strong>Custom</strong>&#xFF09; &#x4EE5;&#x4F7F;&#x7528;&#x9AD8;&#x7EA7;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#xFF08;<strong>Advanced Scheduler</strong>&#xFF09;&#x3002;</td>
 </tr>
 <tr>
-<td>&#x547D;&#x4EE4;&#xFF08;<strong>Command</strong>&#xFF09;</td>
-<td>&#x8F93;&#x5165;&#x5E26;&#x6709;&#x4EFB;&#x4F55;&#x9009;&#x9879;&#x7684;&#x547D;&#x4EE4;&#x3002; &#x9009;&#x62E9; <em>Script</em> &#x540E;&#xFF0C;&#x5355;&#x51FB; <em>folder</em> &#x4EE5;&#x5B9A;&#x4E49;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;</td>
-</tr>
-<tr>
-<td>&#x65F6;&#x95F4;&#x8BBE;&#x7F6E;&#xFF08;<strong>When</strong>&#xFF09;</td>
-<td><em>Pre Init</em> &#x5728;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x7684;&#x65E9;&#x671F;&#xFF0C;&#x5728;&#x6302;&#x8F7D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x548C;&#x5F00;&#x59CB;&#x7F51;&#x7EDC;&#x4E4B;&#x540E;&#x3002; <em>Post Init</em> &#x662F;&#x5728;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x7684;&#x6700;&#x540E;&#xFF0C;&#x5728; TrueNAS &#x670D;&#x52A1;&#x542F;&#x52A8;&#x4E4B;&#x524D;&#x3002; <em>Shutdown</em>&#x662F;&#x5728;&#x7CFB;&#x7EDF;&#x5173;&#x673A;&#x8FC7;&#x7A0B;&#x4E2D;&#x3002;</td>
-</tr>
-<tr>
-<td>&#x662F;&#x5426;&#x542F;&#x7528;&#xFF08;<strong>Enabled</strong>&#xFF09;</td>
-<td>&#x542F;&#x7528;&#x6B64;&#x4EFB;&#x52A1;&#x3002; &#x53D6;&#x6D88;&#x52FE;&#x9009;&#x4EE5;&#x7981;&#x7528;&#x4EFB;&#x52A1;&#x800C;&#x4E0D;&#x5220;&#x9664;&#x5B83;&#x3002;</td>
-</tr>
-<tr>
-<td>&#x8D85;&#x65F6;&#x8BBE;&#x7F6E;&#xFF08;<strong>Timeout</strong>&#xFF09;</td>
-<td>&#x5728;&#x6307;&#x5B9A;&#x7684;&#x79D2;&#x6570;&#x540E;&#x81EA;&#x52A8;&#x505C;&#x6B62;&#x811A;&#x672C;&#x6216;&#x547D;&#x4EE4;&#x3002;</td>
+<td>&#x542F;&#x7528;&#xFF08;<strong>Enabled</strong>&#xFF09;</td>
+<td>&#x53D6;&#x6D88;&#x52FE;&#x9009;&#x4EE5;&#x7981;&#x7528;&#x6B64;&#x6E05;&#x7406;&#x8BA1;&#x5212;&#x800C;&#x4E0D;&#x5220;&#x9664;&#x5B83;&#x3002;</td>
 </tr>
 </tbody>
 </table>
-<p>&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x6761;&#x76EE;&#x4E2D;&#x5305;&#x542B;&#x547D;&#x4EE4;&#x7684;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;&#x3002; &#x8BA1;&#x5212;&#x547D;&#x4EE4;&#x5FC5;&#x987B;&#x5728;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x4E2D;&#x3002; &#x53EF;&#x4EE5;&#x5728; Shell &#x4E2D;&#x4F7F;&#x7528; <code>which {COMMAND}</code> &#x6D4B;&#x8BD5;&#x8DEF;&#x5F84;&#x3002; &#x5982;&#x679C;&#x53EF;&#x7528;&#xFF0C;&#x5C06;&#x663E;&#x793A;&#x547D;&#x4EE4;&#x7684;&#x8DEF;&#x5F84;&#xFF1A;</p>
-<pre><code>[root@freenas ~]# which ls
-/bin/ls
-</code></pre><p>&#x52A1;&#x5FC5;&#x9996;&#x5148;&#x6D4B;&#x8BD5;&#x811A;&#x672C;&#x4EE5;&#x9A8C;&#x8BC1;&#x5B83;&#x662F;&#x53EF;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x5E76;&#x8FBE;&#x5230;&#x9884;&#x671F;&#x7684;&#x7ED3;&#x679C;&#x3002; &#x6240;&#x6709;&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;&#x90FD;&#x4F7F;&#x7528; <code>sh</code> &#x8FD0;&#x884C;&#x3002;</p>
-<p>&#x6240;&#x6709;&#x4FDD;&#x5B58;&#x7684;&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;&#x4EFB;&#x52A1;&#x90FD;&#x663E;&#x793A;&#x5728;&#x201C;&#x4EFB;&#x52A1;&#x201D;&#xFF08;<strong>Tasks</strong>&#xFF09;&gt;&#x201C;&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;&#x201D;&#xFF08;<strong>Init/Shutdown Scripts</strong>&#xFF09;&#x4E2D;&#x3002; &#x5355;&#x51FB;&#x4EFB;&#x52A1;&#x65C1;&#x8FB9;&#x7684;&#x4E09;&#x4E2A;&#x5C0F;&#x70B9;&#x4EE5;&#x7F16;&#x8F91;&#xFF08;<strong>EDIT</strong>&#xFF09;&#x6216;&#x5220;&#x9664;&#xFF08;<strong>DELETE</strong>&#xFF09;&#x8BE5;&#x4EFB;&#x52A1;&#x3002;</p>
+<h3 id="&#x9AD8;&#x7EA7;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;">&#x9AD8;&#x7EA7;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;</h3>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksAdvancedScheduler.png" alt=""></p>
+<p>&#x9009;&#x62E9;&#x9884;&#x8BBE;&#x4F1A;&#x586B;&#x5145;&#x5176;&#x4F59;&#x5B57;&#x6BB5;&#x3002;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x8BA1;&#x5212;&#xFF0C;&#x8BF7;&#x6309;&#x7167;<code>Minutes/Hours/Days</code>&#x8F93;&#x5165; <a href="https://www.freebsd.org/cgi/man.cgi?crontab%285%29" target="_blank">crontab</a> &#x503C;&#x3002;</p>
+<p>&#x8BF7;&#x586B;&#x5199;&#x6807;&#x51C6;&#x7684; cron &#x503C;&#x3002;&#x6700;&#x7B80;&#x5355;&#x7684;&#x9009;&#x62E9;&#x662F;&#x5728;&#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x3002;&#x5F53;&#x65F6;&#x95F4;&#x503C;&#x4E0E;&#x8BE5;&#x6570;&#x5B57;&#x5339;&#x914D;&#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x5C06;&#x8FD0;&#x884C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8F93;&#x5165; 10 &#x8868;&#x793A;&#x4EFB;&#x52A1;&#x5728;&#x65F6;&#x95F4;&#x8FC7;&#x5341;&#x5206;&#x949F;&#x65F6;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x661F;&#x53F7; (*) &#x8868;&#x793A;&#x201C;&#x5339;&#x914D;&#x6240;&#x6709;&#x503C;&#x201D;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x8F93;&#x5165;&#x5E26;&#x8FDE;&#x5B57;&#x7B26;&#x7684;&#x6570;&#x5B57;&#x503C;&#x6765;&#x8BBE;&#x7F6E;&#x7279;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x8303;&#x56F4;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x201C;&#x5206;&#x949F;&#x201D;&#xFF08;<strong>Minutes</strong>&#xFF09;&#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165; 30-35 &#x4F1A;&#x5C06;&#x4EFB;&#x52A1;&#x8BBE;&#x7F6E;&#x4E3A;&#x5728; 30&#x3001;31&#x3001;32&#x3001;33&#x3001;34 &#x548C; 35 &#x5206;&#x949F;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x503C;&#x5217;&#x8868;&#x3002;&#x8F93;&#x5165;&#x7531;&#x9017;&#x53F7; (,) &#x5206;&#x9694;&#x7684;&#x5404;&#x4E2A;&#x503C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x201C;&#x5C0F;&#x65F6;&#x201D;&#xFF08;<strong>Hours</strong>&#xFF09;&#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165; 1,14 &#x8868;&#x793A;&#x4EFB;&#x52A1;&#x5728;&#x51CC;&#x6668; 1:00 (0100) &#x548C;&#x4E0B;&#x5348; 2:00 (1400) &#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x659C;&#x7EBF; (/) &#x8868;&#x793A;&#x6B65;&#x957F;&#x503C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728; &quot;&#x65E5;&#x671F;&quot;&#xFF08;<strong>Days</strong>&#xFF09; &#x4E2D;&#x8F93;&#x5165; <em> &#x8868;&#x793A;&#x8BE5;&#x4EFB;&#x52A1;&#x5728;&#x6BCF;&#x6708;&#x7684;&#x6BCF;&#x4E00;&#x5929;&#x8FD0;&#x884C;&#xFF0C;</em>/2 &#x8868;&#x793A;&#x8BE5;&#x4EFB;&#x52A1;&#x6BCF;&#x9694;&#x4E00;&#x5929;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x3002;</p>
+<p>&#x5C06;&#x4E0A;&#x8FF0;&#x6240;&#x6709;&#x793A;&#x4F8B;&#x7ED3;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BA1;&#x5212;&#xFF0C;&#x5728;&#x6BCF;&#x5929;&#x51CC;&#x6668; 1:30-1:35 &#x548C;&#x4E0B;&#x5348; 2:30-2:35 &#x6BCF;&#x5206;&#x949F;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x6709;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4EFB;&#x52A1;&#x8FD0;&#x884C;&#x7684;&#x6708;&#x4EFD;&#x3002;&#x4E0D;&#x8BBE;&#x7F6E;&#x6BCF;&#x4E2A;&#x6708;&#x4E0E;&#x9009;&#x62E9;&#x6BCF;&#x4E2A;&#x6708;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x661F;&#x671F;&#x51E0;&#x5B89;&#x6392;&#x4EFB;&#x52A1;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x65E5;&#x5B50;&#x8FD0;&#x884C;&#x3002;&#x8FD9;&#x662F;&#x5BF9;&#x4EFB;&#x4F55;&#x5217;&#x51FA;&#x7684;&#x5929;&#x6570;&#x7684;&#x8865;&#x5145;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x65E5;&#x671F;&#x4E2D;&#x8F93;&#x5165; 1 &#x5E76;&#x5C06; <strong>Wed</strong> &#x8BBE;&#x7F6E;&#x4E3A; <strong>Days of Week</strong> &#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BA1;&#x5212;&#xFF0C;&#x8BE5;&#x8BA1;&#x5212;&#x5728;&#x6BCF;&#x6708;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#x548C;&#x6BCF;&#x6708;&#x7684;&#x6BCF;&#x4E2A;&#x661F;&#x671F;&#x4E09;&#x542F;&#x52A8;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x8BA1;&#x5212;&#x9884;&#x89C8;&#xFF08;<strong>Schedule Preview</strong>&#xFF09;&#x663E;&#x793A;&#x5F53;&#x524D;&#x8BBE;&#x7F6E;&#x7684;&#x4EFB;&#x52A1;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<h4 id="cron-&#x8BED;&#x6CD5;&#x793A;&#x4F8B;">CRON &#x8BED;&#x6CD5;&#x793A;&#x4F8B;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53E5;&#x6CD5;</th>
+<th>&#x542B;&#x4E49;</th>
+<th>&#x4F8B;&#x5B50;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>&#x6BCF;&#x4E00;&#x9879;&#x3002;</td>
+<td><em> (minutes) = &#x6BCF;&#x5C0F;&#x65F6;&#x7684;&#x6BCF;&#x4E2A;&#x7279;&#x5B9A;&#x5206;&#x949F;. </em> (days) = &#x6BCF;&#x5929;.</td>
+</tr>
+<tr>
+<td>*/N</td>
+<td>&#x6BCF; N &#x4E2A;&#x9879;&#x76EE;</td>
+<td><em>/15 (minutes) = &#x6BCF;&#x5C0F;&#x65F6;&#x7684;&#x7B2C; 15 &#x5206;&#x949F;&#xFF08;&#x6BCF;&#x523B;&#x949F;&#xFF09;&#x3002; </em>/3 (days) = &#x6BCF; 3 &#x5929;&#x3002; */3 (months) = &#x6BCF;&#x4E09;&#x4E2A;&#x6708;&#x4E00;&#x6B21;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x9017;&#x53F7;&#x548C;&#x8FDE;&#x5B57;&#x7B26;/&#x7834;&#x6298;&#x53F7;</td>
+<td>&#x6BCF;&#x4E2A;&#x9648;&#x8FF0;&#x7684;&#x9879;&#x76EE;&#xFF08;&#x9017;&#x53F7;&#xFF09; &#x8303;&#x56F4;&#x5185;&#x7684;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#xFF08;&#x8FDE;&#x5B57;&#x7B26;/&#x7834;&#x6298;&#x53F7;&#xFF09;&#x3002;</td>
+<td>1,31 (minutes) = &#x5728;&#x6BCF;&#x5C0F;&#x65F6;&#x7684;&#x7B2C; 1 &#x5206;&#x949F;&#x548C;&#x7B2C; 31 &#x5206;&#x949F;&#x3002; 1-3,31 (minutes) = &#x6BCF;&#x5C0F;&#x65F6;&#x7684;&#x7B2C; 1 &#x5206;&#x949F;&#x5230;&#x7B2C; 3 &#x5206;&#x949F;&#xFF0C;&#x4EE5;&#x53CA;&#x7B2C; 31 &#x5206;&#x949F;&#x3002; mon-fri (days) = &#x6BCF;&#x5468;&#x4E00;&#x81F3;&#x5468;&#x4E94;&#xFF08;&#x5305;&#x62EC;&#x6BCF;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;&#xFF09;&#x3002; mar,jun,sep,dec (months) = &#x6BCF;&#x5E74;&#x4E09;&#x6708;&#x3001;&#x516D;&#x6708;&#x3001;&#x4E5D;&#x6708;&#x3001;&#x5341;&#x4E8C;&#x6708;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5929;&#x6570;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E3A;&#x4E00;&#x4E2A;&#x6708;&#x7684;&#x5929;&#x6570;&#x6216;&#x4E00;&#x5468;&#x7684;&#x5929;&#x6570;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x7C7B;&#x4F3C;&#x4E8E;&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x7684;&#x7075;&#x6D3B;&#x8BA1;&#x5212;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x60F3;&#x8981;&#x7684;&#x65F6;&#x95F4;&#x8868;</th>
+<th>&#x8981;&#x8F93;&#x5165;&#x7684;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x6BCF;&#x5929; 3 &#x6B21;&#xFF08;&#x5348;&#x591C;&#x3001;08:00 &#x548C; 16:00&#xFF09;</td>
+<td>months=<em>; days=</em>; hours=0/8 or 0,8,16; minutes=0 (Meaning: every day of every month, when hours=0/8/16 and minutes=0)</td>
+</tr>
+<tr>
+<td>&#x6BCF;&#x5468;&#x4E00;&#x3001;&#x5468;&#x4E09;&#x548C;&#x5468;&#x4E94;&#xFF0C;&#x665A;&#x4E0A; 8.30</td>
+<td>months=*; days=mon,wed,fri; hours=20; minutes=30</td>
+</tr>
+<tr>
+<td>&#x6BCF;&#x6708;&#x7684;&#x7B2C; 1 &#x5929;&#x548C;&#x7B2C; 15 &#x5929;&#xFF0C;10 &#x6708;&#x81F3; 6 &#x6708;&#xFF0C;&#x4E0A;&#x5348; 00:01</td>
+<td>months=oct-dec,jan-jun; days=1,15; hours=0; minutes=1</td>
+</tr>
+<tr>
+<td>&#x5DE5;&#x4F5C;&#x65E5;&#x5185;&#x6BCF; 15 &#x5206;&#x949F;&#x4E00;&#x6B21;&#xFF0C;&#x5373;&#x5468;&#x4E00;&#x81F3;&#x5468;&#x4E94;&#x4E0A;&#x5348; 8 &#x70B9;&#x81F3;&#x665A;&#x4E0A; 7 &#x70B9;&#xFF08;08:00 - 19:00&#xFF09;</td>
+<td>Note that this requires two tasks to achieve: (1) months=<em>; days=mon-fri; hours=8-18; minutes=</em>/15 (2) months=*; days=mon-fri; hours=19; minutes=0 We need the second scheduled item, to execute at 19:00, otherwise we would stop at 18:45. Another workaround would be to stop at 18:45 or 19:45 rather than 19:00.</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -953,12 +1017,12 @@
 
             
                 
-                <a href="Cron_Jobs.html" class="navigation navigation-prev " aria-label="Previous page: 1.4.1.定时任务">
+                <a href="Resilver_Priority.html" class="navigation navigation-prev " aria-label="Previous page: 1.4.7.重新同步优先级">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Rsync_Tasks.html" class="navigation navigation-next " aria-label="Next page: 1.4.3.同步任务">
+                <a href="Cloud_Sync_Tasks.html" class="navigation navigation-next " aria-label="Next page: 1.4.9.云同步任务">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -969,7 +1033,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.4.2.开/关机脚本","level":"1.2.4.2","depth":3,"next":{"title":"1.4.3.同步任务","level":"1.2.4.3","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Tasks/Rsync_Tasks.md","ref":"TrueNAS_CORE_and_Enterprise/Tasks/Rsync_Tasks.md","articles":[]},"previous":{"title":"1.4.1.定时任务","level":"1.2.4.1","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Tasks/Cron_Jobs.md","ref":"TrueNAS_CORE_and_Enterprise/Tasks/Cron_Jobs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Tasks/Init_Shutdown_Scripts.md","mtime":"2021-11-16T08:57:27.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-17T09:15:35.249Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.4.8.清理任务","level":"1.2.4.8","depth":3,"next":{"title":"1.4.9.云同步任务","level":"1.2.4.9","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Tasks/Cloud_Sync_Tasks.md","ref":"TrueNAS_CORE_and_Enterprise/Tasks/Cloud_Sync_Tasks.md","articles":[]},"previous":{"title":"1.4.7.重新同步优先级","level":"1.2.4.7","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Tasks/Resilver_Priority.md","ref":"TrueNAS_CORE_and_Enterprise/Tasks/Resilver_Priority.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Tasks/Scrub_Tasks.md","mtime":"2021-11-17T07:37:53.931Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-17T09:15:35.249Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

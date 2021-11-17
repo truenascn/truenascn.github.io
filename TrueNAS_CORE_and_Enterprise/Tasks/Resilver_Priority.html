@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>1.4.2.开/关机脚本 · TrueNAS中文文档</title>
+        <title>1.4.7.重新同步优先级 · TrueNAS中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Rsync_Tasks.html" />
+    <link rel="next" href="Scrub_Tasks.html" />
     
     
-    <link rel="prev" href="Cron_Jobs.html" />
+    <link rel="prev" href="Replication_Tasks/Troubleshooting_Tips.html" />
     
 
     </head>
@@ -654,7 +654,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.4.2" data-path="Init_Shutdown_Scripts.html">
+        <li class="chapter " data-level="1.2.4.2" data-path="Init_Shutdown_Scripts.html">
             
                 <a href="Init_Shutdown_Scripts.html">
             
@@ -777,7 +777,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4.7" data-path="Resilver_Priority.html">
+        <li class="chapter active" data-level="1.2.4.7" data-path="Resilver_Priority.html">
             
                 <a href="Resilver_Priority.html">
             
@@ -869,7 +869,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >1.4.2.开/关机脚本</a>
+        <a href="../.." >1.4.7.重新同步优先级</a>
     </h1>
 </div>
 
@@ -884,9 +884,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5F00;&#x5173;&#x673A;&#x811A;&#x672C;">&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;</h1>
-<p>TrueNAS &#x53EF;&#x4EE5;&#x5B89;&#x6392;&#x547D;&#x4EE4;&#x6216;&#x811A;&#x672C;&#x5728;&#x7CFB;&#x7EDF;&#x542F;&#x52A8;&#x6216;&#x5173;&#x95ED;&#x65F6;&#x8FD0;&#x884C;&#x3002; &#x8981;&#x521B;&#x5EFA;&#x65B0;&#x811A;&#x672C;&#xFF0C;&#x8BF7;&#x8F6C;&#x5230;&#x201C;&#x4EFB;&#x52A1;&#x201D;&#xFF08;<strong>Tasks</strong>&#xFF09;&gt;&#x201C;&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;&#x201D;&#xFF08;<strong>Init/Shutdown Scripts</strong>&#xFF09;&#x5E76;&#x5355;&#x51FB;&#x201C;&#x6DFB;&#x52A0;&#x201D;&#xFF08;<strong>ADD</strong>&#xFF09;&#x3002;</p>
-<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksInitShutdownScriptsAdd.png" alt=""></p>
+                                <h1 id="&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x4F18;&#x5148;&#x7EA7;">&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x4F18;&#x5148;&#x7EA7;</h1>
+<p>&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x662F;&#x5C06;&#x6570;&#x636E;&#x590D;&#x5236;&#x5230;&#x66FF;&#x6362;&#x78C1;&#x76D8;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x6700;&#x597D;&#x5C3D;&#x5FEB;&#x5B8C;&#x6210;&#x3002; &#x63D0;&#x9AD8; resilvers &#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6709;&#x52A9;&#x4E8E;&#x4ED6;&#x4EEC;&#x66F4;&#x5FEB;&#x5730;&#x5B8C;&#x6210;&#x3002; <strong>Resilver Priority</strong> &#x83DC;&#x5355;&#x5141;&#x8BB8;&#x60A8;&#x5B89;&#x6392;&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x5668;&#x4F55;&#x65F6;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#x53EF;&#x4EE5;&#x5728;&#x4F4E;&#x8D1F;&#x8F7D;&#x65F6;&#x6216;&#x4E0D;&#x5F71;&#x54CD;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x6BB5;&#x8C03;&#x5EA6;&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x3002;</p>
+<p>&#x8F6C;&#x81F3;&#x4EFB;&#x52A1;&#xFF08;<strong>Tasks</strong>&#xFF09; &gt; &#x91CD;&#x65B0;&#x540C;&#x6B65;&#x4F18;&#x5148;&#x7EA7;&#xFF08;<strong>Resilver Priority</strong>&#xFF09;&#xFF0C;&#x5C06;&#x4F18;&#x5148;&#x7EA7;&#x914D;&#x7F6E;&#x4E3A;&#x5BF9;&#x60A8;&#x7684;&#x73AF;&#x5883;&#x6700;&#x6709;&#x6548;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksResilverPriority.png" alt=""></p>
+<h2 id="&#x9009;&#x9879;">&#x9009;&#x9879;</h2>
 <table>
 <thead>
 <tr>
@@ -896,36 +898,24 @@
 </thead>
 <tbody>
 <tr>
-<td>&#x63CF;&#x8FF0;&#xFF08;<strong>Description</strong>&#xFF09;</td>
-<td>&#x5173;&#x4E8E;&#x8FD9;&#x4E2A;&#x811A;&#x672C;&#x7684;&#x7B80;&#x8981;&#x4ECB;&#x7ECD;&#x3002;</td>
+<td>&#x542F;&#x7528;&#xFF08;<strong>Enabled</strong>&#xFF09;</td>
+<td>&#x8BBE;&#x7F6E;&#x4E3A;&#x5728;&#x914D;&#x7F6E;&#x7684;&#x65F6;&#x95F4;&#x4E4B;&#x95F4;&#x8FD0;&#x884C;&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x3002;</td>
 </tr>
 <tr>
-<td>&#x7C7B;&#x578B;&#xFF08;<strong>Type</strong>&#xFF09;</td>
-<td>&#x4E3A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x9009;&#x62E9;&#x547D;&#x4EE4;&#x6216;&#x4E3A;&#x53EF;&#x6267;&#x884C;&#x811A;&#x672C;&#x9009;&#x62E9;&#x811A;&#x672C;&#x3002;</td>
+<td>&#x5F00;&#x59CB;&#x65F6;&#x95F4;&#xFF08;<strong>Begin</strong>&#xFF09;</td>
+<td>&#x9009;&#x62E9;&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x4EE5;&#x66F4;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x8FD0;&#x884C;&#x7684;&#x5C0F;&#x65F6;&#x548C;&#x5206;&#x949F;&#x3002;</td>
 </tr>
 <tr>
-<td>&#x547D;&#x4EE4;&#xFF08;<strong>Command</strong>&#xFF09;</td>
-<td>&#x8F93;&#x5165;&#x5E26;&#x6709;&#x4EFB;&#x4F55;&#x9009;&#x9879;&#x7684;&#x547D;&#x4EE4;&#x3002; &#x9009;&#x62E9; <em>Script</em> &#x540E;&#xFF0C;&#x5355;&#x51FB; <em>folder</em> &#x4EE5;&#x5B9A;&#x4E49;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;</td>
+<td>&#x7ED3;&#x675F;&#x65F6;&#x95F4;&#xFF08;<strong>End</strong>&#xFF09;</td>
+<td>&#x9009;&#x62E9;&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x8FDB;&#x7A0B;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x5230;&#x4EE5;&#x8F83;&#x4F4E;&#x4F18;&#x5148;&#x7EA7;&#x8FD0;&#x884C;&#x7684;&#x5C0F;&#x65F6;&#x548C;&#x5206;&#x949F;&#x3002;</td>
 </tr>
 <tr>
-<td>&#x65F6;&#x95F4;&#x8BBE;&#x7F6E;&#xFF08;<strong>When</strong>&#xFF09;</td>
-<td><em>Pre Init</em> &#x5728;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x7684;&#x65E9;&#x671F;&#xFF0C;&#x5728;&#x6302;&#x8F7D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x548C;&#x5F00;&#x59CB;&#x7F51;&#x7EDC;&#x4E4B;&#x540E;&#x3002; <em>Post Init</em> &#x662F;&#x5728;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x7684;&#x6700;&#x540E;&#xFF0C;&#x5728; TrueNAS &#x670D;&#x52A1;&#x542F;&#x52A8;&#x4E4B;&#x524D;&#x3002; <em>Shutdown</em>&#x662F;&#x5728;&#x7CFB;&#x7EDF;&#x5173;&#x673A;&#x8FC7;&#x7A0B;&#x4E2D;&#x3002;</td>
-</tr>
-<tr>
-<td>&#x662F;&#x5426;&#x542F;&#x7528;&#xFF08;<strong>Enabled</strong>&#xFF09;</td>
-<td>&#x542F;&#x7528;&#x6B64;&#x4EFB;&#x52A1;&#x3002; &#x53D6;&#x6D88;&#x52FE;&#x9009;&#x4EE5;&#x7981;&#x7528;&#x4EFB;&#x52A1;&#x800C;&#x4E0D;&#x5220;&#x9664;&#x5B83;&#x3002;</td>
-</tr>
-<tr>
-<td>&#x8D85;&#x65F6;&#x8BBE;&#x7F6E;&#xFF08;<strong>Timeout</strong>&#xFF09;</td>
-<td>&#x5728;&#x6307;&#x5B9A;&#x7684;&#x79D2;&#x6570;&#x540E;&#x81EA;&#x52A8;&#x505C;&#x6B62;&#x811A;&#x672C;&#x6216;&#x547D;&#x4EE4;&#x3002;</td>
+<td>&#x8FD0;&#x884C;&#x65E5;&#x671F;&#xFF08;&#x4E00;&#x5468;&#x5185;&#xFF09;&#xFF08;<strong>Days of the Week</strong>&#xFF09;</td>
+<td>&#x9009;&#x62E9;&#x8FD0;&#x884C;&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x7684;&#x65E5;&#x671F;&#x3002;</td>
 </tr>
 </tbody>
 </table>
-<p>&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x6761;&#x76EE;&#x4E2D;&#x5305;&#x542B;&#x547D;&#x4EE4;&#x7684;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;&#x3002; &#x8BA1;&#x5212;&#x547D;&#x4EE4;&#x5FC5;&#x987B;&#x5728;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x4E2D;&#x3002; &#x53EF;&#x4EE5;&#x5728; Shell &#x4E2D;&#x4F7F;&#x7528; <code>which {COMMAND}</code> &#x6D4B;&#x8BD5;&#x8DEF;&#x5F84;&#x3002; &#x5982;&#x679C;&#x53EF;&#x7528;&#xFF0C;&#x5C06;&#x663E;&#x793A;&#x547D;&#x4EE4;&#x7684;&#x8DEF;&#x5F84;&#xFF1A;</p>
-<pre><code>[root@freenas ~]# which ls
-/bin/ls
-</code></pre><p>&#x52A1;&#x5FC5;&#x9996;&#x5148;&#x6D4B;&#x8BD5;&#x811A;&#x672C;&#x4EE5;&#x9A8C;&#x8BC1;&#x5B83;&#x662F;&#x53EF;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x5E76;&#x8FBE;&#x5230;&#x9884;&#x671F;&#x7684;&#x7ED3;&#x679C;&#x3002; &#x6240;&#x6709;&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;&#x90FD;&#x4F7F;&#x7528; <code>sh</code> &#x8FD0;&#x884C;&#x3002;</p>
-<p>&#x6240;&#x6709;&#x4FDD;&#x5B58;&#x7684;&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;&#x4EFB;&#x52A1;&#x90FD;&#x663E;&#x793A;&#x5728;&#x201C;&#x4EFB;&#x52A1;&#x201D;&#xFF08;<strong>Tasks</strong>&#xFF09;&gt;&#x201C;&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;&#x201D;&#xFF08;<strong>Init/Shutdown Scripts</strong>&#xFF09;&#x4E2D;&#x3002; &#x5355;&#x51FB;&#x4EFB;&#x52A1;&#x65C1;&#x8FB9;&#x7684;&#x4E09;&#x4E2A;&#x5C0F;&#x70B9;&#x4EE5;&#x7F16;&#x8F91;&#xFF08;<strong>EDIT</strong>&#xFF09;&#x6216;&#x5220;&#x9664;&#xFF08;<strong>DELETE</strong>&#xFF09;&#x8BE5;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x5728;&#x201C;&#x5F00;&#x59CB;&#x65F6;&#x95F4;&#x201D;&#x548C;&#x201C;&#x7ED3;&#x675F;&#x65F6;&#x95F4;&#x201D;&#x4E4B;&#x95F4;&#x5B9A;&#x4E49;&#x7684;&#x65F6;&#x95F4;&#x8303;&#x56F4;&#x5185;&#x8FD0;&#x884C;&#x7684;&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x8FDB;&#x7A0B;&#x53EF;&#x80FD;&#x4F1A;&#x8FD0;&#x884C;&#x5F97;&#x66F4;&#x5FEB;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4E0D;&#x4F1A;&#x88AB;&#x9650;&#x5236;&#x4E3A;&#x4EE5;&#x8F83;&#x4F4E;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x8FD0;&#x884C;&#x3002; &#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x5EFA;&#x8BAE;&#x5728;&#x91CD;&#x65B0;&#x540C;&#x6B65;&#x8FC7;&#x7A0B;&#x4E2D;&#x907F;&#x514D;&#x5C06;&#x7CFB;&#x7EDF;&#x7F6E;&#x4E8E;&#x4EFB;&#x4F55;&#x5BC6;&#x96C6;&#x6D3B;&#x52A8;&#x6216;&#x91CD;&#x8D1F;&#x8F7D;&#xFF08;&#x590D;&#x5236;&#x3001;SMB &#x4F20;&#x8F93;&#x3001;NFS &#x4F20;&#x8F93;&#x3001;Rsync &#x4F20;&#x8F93;&#x3001;S.M.A.R.T. &#x6D4B;&#x8BD5;&#x3001;&#x6C60;&#x6E05;&#x7406;&#x7B49;&#xFF09;&#x4E0B;&#x3002;</p>
 
                                 
                                 </section>
@@ -953,12 +943,12 @@
 
             
                 
-                <a href="Cron_Jobs.html" class="navigation navigation-prev " aria-label="Previous page: 1.4.1.定时任务">
+                <a href="Replication_Tasks/Troubleshooting_Tips.html" class="navigation navigation-prev " aria-label="Previous page: 1.4.6.4.故障排除提示">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Rsync_Tasks.html" class="navigation navigation-next " aria-label="Next page: 1.4.3.同步任务">
+                <a href="Scrub_Tasks.html" class="navigation navigation-next " aria-label="Next page: 1.4.8.清理任务">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -969,7 +959,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.4.2.开/关机脚本","level":"1.2.4.2","depth":3,"next":{"title":"1.4.3.同步任务","level":"1.2.4.3","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Tasks/Rsync_Tasks.md","ref":"TrueNAS_CORE_and_Enterprise/Tasks/Rsync_Tasks.md","articles":[]},"previous":{"title":"1.4.1.定时任务","level":"1.2.4.1","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Tasks/Cron_Jobs.md","ref":"TrueNAS_CORE_and_Enterprise/Tasks/Cron_Jobs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Tasks/Init_Shutdown_Scripts.md","mtime":"2021-11-16T08:57:27.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-17T09:15:35.249Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.4.7.重新同步优先级","level":"1.2.4.7","depth":3,"next":{"title":"1.4.8.清理任务","level":"1.2.4.8","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Tasks/Scrub_Tasks.md","ref":"TrueNAS_CORE_and_Enterprise/Tasks/Scrub_Tasks.md","articles":[]},"previous":{"title":"1.4.6.4.故障排除提示","level":"1.2.4.6.4","depth":4,"path":"TrueNAS_CORE_and_Enterprise/Tasks/Replication_Tasks/Troubleshooting_Tips.md","ref":"TrueNAS_CORE_and_Enterprise/Tasks/Replication_Tasks/Troubleshooting_Tips.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Tasks/Resilver_Priority.md","mtime":"2021-11-17T07:26:52.960Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-17T09:15:35.249Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
