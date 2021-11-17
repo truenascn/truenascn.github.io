@@ -1,0 +1,1187 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.5.5.启用WireGuard · TrueNAS中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="EASTMOE">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="IPMI.html" />
+    
+    
+    <link rel="prev" href="Static_Routes.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.TrueNAS Core和Enterprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../gettingstarted/">
+            
+                <a href="../gettingstarted/">
+            
+                    
+                    1.1.TrueNAS初探
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../gettingstarted/core_hardware_guide.html">
+            
+                <a href="../gettingstarted/core_hardware_guide.html">
+            
+                    
+                    1.1.1.TrueNAS Core 硬件指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../gettingstarted/INSTALL.html">
+            
+                <a href="../gettingstarted/INSTALL.html">
+            
+                    
+                    1.1.2.安装TrueNAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../gettingstarted/Console_Setup_Menu.html">
+            
+                <a href="../gettingstarted/Console_Setup_Menu.html">
+            
+                    
+                    1.1.3.控制台设置菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../gettingstarted/log_in.html">
+            
+                <a href="../gettingstarted/log_in.html">
+            
+                    
+                    1.1.4.登录到TrueNAS WebUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../gettingstarted/Storage_Configuration.html">
+            
+                <a href="../gettingstarted/Storage_Configuration.html">
+            
+                    
+                    1.1.5.存储配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../gettingstarted/Sharing_Storage.html">
+            
+                <a href="../gettingstarted/Sharing_Storage.html">
+            
+                    
+                    1.1.6.存储共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../gettingstarted/Data_Backups.html">
+            
+                <a href="../gettingstarted/Data_Backups.html">
+            
+                    
+                    1.1.7.数据备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../gettingstarted/Applications.html">
+            
+                <a href="../gettingstarted/Applications.html">
+            
+                    
+                    1.1.8.应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Accounts/">
+            
+                <a href="../Accounts/">
+            
+                    
+                    1.2.账户
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../Accounts/Groups.html">
+            
+                <a href="../Accounts/Groups.html">
+            
+                    
+                    1.2.1.TrueNAS用户组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../Accounts/Users.html">
+            
+                <a href="../Accounts/Users.html">
+            
+                    
+                    1.2.2.TrueNAS用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../System/">
+            
+                <a href="../System/">
+            
+                    
+                    1.3.系统设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../System/General/">
+            
+                <a href="../System/General/">
+            
+                    
+                    1.3.1.通用设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="../System/General/Setting.html">
+            
+                <a href="../System/General/Setting.html">
+            
+                    
+                    1.3.1.1.通用设置页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="../System/General/System_Config_Backups.html">
+            
+                <a href="../System/General/System_Config_Backups.html">
+            
+                    
+                    1.3.1.2.系统备份设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="../System/General/Managing_TLS_Ciphers.html">
+            
+                <a href="../System/General/Managing_TLS_Ciphers.html">
+            
+                    
+                    1.3.1.3.管理TLS加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../System/NTP_Servers.html">
+            
+                <a href="../System/NTP_Servers.html">
+            
+                    
+                    1.3.2.时间同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../System/Boot/">
+            
+                <a href="../System/Boot/">
+            
+                    
+                    1.3.3.启动与引导
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.3.1" data-path="../System/Boot/Boot_Screen.html">
+            
+                <a href="../System/Boot/Boot_Screen.html">
+            
+                    
+                    1.3.3.1.引导备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3.2" data-path="../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                <a href="../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                    
+                    1.3.3.2.启动池镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../System/Advanced.html">
+            
+                <a href="../System/Advanced.html">
+            
+                    
+                    1.3.4.高级设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../System/View_Enclosure.html">
+            
+                <a href="../System/View_Enclosure.html">
+            
+                    
+                    1.3.5.机箱监视
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="../System/Email.html">
+            
+                <a href="../System/Email.html">
+            
+                    
+                    1.3.6.电子邮件通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7" data-path="../System_Dataset.md">
+            
+                <span>
+            
+                    
+                    1.3.7.系统数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.8" data-path="../System/Reporting.html">
+            
+                <a href="../System/Reporting.html">
+            
+                    
+                    1.3.8.系统报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.9" data-path="../System/Alert.html">
+            
+                <a href="../System/Alert.html">
+            
+                    
+                    1.3.9.警告服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.10" data-path="../System/Cloud_Credentials.html">
+            
+                <a href="../System/Cloud_Credentials.html">
+            
+                    
+                    1.3.10.云服务凭据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.11" data-path="../System/SSH.html">
+            
+                <a href="../System/SSH.html">
+            
+                    
+                    1.3.11.SSH客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.12" data-path="../System/Tunables.html">
+            
+                <a href="../System/Tunables.html">
+            
+                    
+                    1.3.12.可调参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.13" data-path="../System/Update.html">
+            
+                <a href="../System/Update.html">
+            
+                    
+                    1.3.13.系统更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.14" data-path="../System/CAs.html">
+            
+                <a href="../System/CAs.html">
+            
+                    
+                    1.3.14.证书颁发机构（CA）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.15" data-path="../System/Certificates.html">
+            
+                <a href="../System/Certificates.html">
+            
+                    
+                    1.3.15.证书管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.16" data-path="../System/KMIP.html">
+            
+                <a href="../System/KMIP.html">
+            
+                    
+                    1.3.16.密钥管理互通协议（KMIP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.17" data-path="../System/Failover_HA.html">
+            
+                <a href="../System/Failover_HA.html">
+            
+                    
+                    1.3.17.故障转移与高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.18" data-path="../System/Support.html">
+            
+                <a href="../System/Support.html">
+            
+                    
+                    1.3.18.帮助与支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.19" data-path="../System/2FA.html">
+            
+                <a href="../System/2FA.html">
+            
+                    
+                    1.3.19.两步验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Tasks/">
+            
+                <a href="../Tasks/">
+            
+                    
+                    1.4.任务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Tasks/Cron_Jobs.html">
+            
+                <a href="../Tasks/Cron_Jobs.html">
+            
+                    
+                    1.4.1.定时任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Tasks/Init_Shutdown_Scripts.html">
+            
+                <a href="../Tasks/Init_Shutdown_Scripts.html">
+            
+                    
+                    1.4.2.开/关机脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../Tasks/Rsync_Tasks.html">
+            
+                <a href="../Tasks/Rsync_Tasks.html">
+            
+                    
+                    1.4.3.同步任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../Tasks/SMART_TEST.html">
+            
+                <a href="../Tasks/SMART_TEST.html">
+            
+                    
+                    1.4.4.硬盘检测任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../Tasks/Periodic_Snapshot_Tasks.html">
+            
+                <a href="../Tasks/Periodic_Snapshot_Tasks.html">
+            
+                    
+                    1.4.5.定期快照任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6" data-path="../Tasks/Replication_Tasks/">
+            
+                <a href="../Tasks/Replication_Tasks/">
+            
+                    
+                    1.4.6.复制任务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.6.1" data-path="../Tasks/Replication_Tasks/Local.html">
+            
+                <a href="../Tasks/Replication_Tasks/Local.html">
+            
+                    
+                    1.4.6.1.本地复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.2" data-path="../Tasks/Replication_Tasks/Remote.html">
+            
+                <a href="../Tasks/Replication_Tasks/Remote.html">
+            
+                    
+                    1.4.6.2.远程复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.3" data-path="../Tasks/Replication_Tasks/Advanced.html">
+            
+                <a href="../Tasks/Replication_Tasks/Advanced.html">
+            
+                    
+                    1.4.6.3.高级复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.4" data-path="../Tasks/Replication_Tasks/Troubleshooting_Tips.html">
+            
+                <a href="../Tasks/Replication_Tasks/Troubleshooting_Tips.html">
+            
+                    
+                    1.4.6.4.故障排除提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.7" data-path="../Tasks/Resilver_Priority.html">
+            
+                <a href="../Tasks/Resilver_Priority.html">
+            
+                    
+                    1.4.7.重新同步优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.8" data-path="../Tasks/Scrub_Tasks.html">
+            
+                <a href="../Tasks/Scrub_Tasks.html">
+            
+                    
+                    1.4.8.清理任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.9" data-path="../Tasks/Cloud_Sync_Tasks.html">
+            
+                <a href="../Tasks/Cloud_Sync_Tasks.html">
+            
+                    
+                    1.4.9.云同步任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.10" data-path="../Tasks/How_To_Back_Up_Google_Drive_to_TrueNAS_CORE.html">
+            
+                <a href="../Tasks/How_To_Back_Up_Google_Drive_to_TrueNAS_CORE.html">
+            
+                    
+                    1.4.10.将 Google 云端硬盘 备份到 TrueNAS CORE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.5.网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="Network_Summary.html">
+            
+                <a href="Network_Summary.html">
+            
+                    
+                    1.5.1.网络概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="Global_Configuration.html">
+            
+                <a href="Global_Configuration.html">
+            
+                    
+                    1.5.2.全局设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="Interface/">
+            
+                <a href="Interface/">
+            
+                    
+                    1.5.3.网络接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.3.1" data-path="Interface/Network_Bridge.html">
+            
+                <a href="Interface/Network_Bridge.html">
+            
+                    
+                    1.5.3.1.网桥
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.2" data-path="Interface/Link_Aggregations.html">
+            
+                <a href="Interface/Link_Aggregations.html">
+            
+                    
+                    1.5.3.2.链路聚合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.3" data-path="Interface/VLAN.html">
+            
+                <a href="Interface/VLAN.html">
+            
+                    
+                    1.5.3.3.虚拟局域网（VLAN）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.4" data-path="Interface/Setting_a_Static_IP_Address_for_the_TrueNAS_UI.html">
+            
+                <a href="Interface/Setting_a_Static_IP_Address_for_the_TrueNAS_UI.html">
+            
+                    
+                    1.5.3.4.在TrueNAS用户界面中设置静态IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.5" data-path="Interface/Editing_a_Physical_Interface.html">
+            
+                <a href="Interface/Editing_a_Physical_Interface.html">
+            
+                    
+                    1.5.3.5.编辑物理接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="Static_Routes.html">
+            
+                <a href="Static_Routes.html">
+            
+                    
+                    1.5.4.静态路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5.5" data-path="Enabling_WireGuard.html">
+            
+                <a href="Enabling_WireGuard.html">
+            
+                    
+                    1.5.5.启用WireGuard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.6" data-path="IPMI.html">
+            
+                <a href="IPMI.html">
+            
+                    
+                    1.5.6.IPMI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Storage/">
+            
+                <a href="../Storage/">
+            
+                    
+                    1.6.存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.5.5.启用WireGuard</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5F00;&#x542F;wireguard">&#x5F00;&#x542F;WireGuard</h1>
+<p>WireGuard &#x56E0;&#x5176;&#x901F;&#x5EA6;&#x3001;&#x7B80;&#x5355;&#x6027;&#x548C;&#x73B0;&#x4EE3;&#x52A0;&#x5BC6;&#x6807;&#x51C6;&#x800C;&#x6210;&#x4E3A; VPN &#x5E02;&#x573A;&#x4E2D;&#x7684;&#x6D41;&#x884C;&#x9009;&#x62E9;&#x3002; &#x4ECE; FreeNAS &#x7248;&#x672C; 11.3-RC1 &#x5F00;&#x59CB;&#xFF0C;&#x4E00;&#x76F4;&#x5230; TrueNAS 12.0&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6B65;&#x9AA4;&#x5C06;&#x60A8;&#x7684; NAS &#x76F4;&#x63A5;&#x8FDE;&#x63A5;&#x5230; WireGuard &#x7F51;&#x7EDC;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x53EF;&#x8C03;&#x53C2;&#x6570;&#x6765;&#x542F;&#x7528;&#x670D;&#x52A1;&#x5E76;&#x4E3A;&#x5176;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x63A5;&#x53E3;&#x3002; &#x767B;&#x5F55; TrueNAS Web &#x754C;&#x9762;&#x5E76;&#x8F6C;&#x5230;&#x7CFB;&#x7EDF;&#xFF08;<strong>System</strong>&#xFF09;&gt; &#x53EF;&#x8C03;&#x53C2;&#x6570;&#xFF08;<strong>Tunables</strong>&#xFF09; &gt; &#x6DFB;&#x52A0;&#xFF08;<strong>Add</strong>&#xFF09;&#x3002; &#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x8BBE;&#x7F6E;&#x6765;&#x542F;&#x7528;&#x670D;&#x52A1;&#xFF1A;</p>
+<ul>
+<li>&#x53D8;&#x91CF;&#x540D;&#xFF08;<strong>Variable</strong>&#xFF09; = <code>wireguard_enable</code></li>
+<li>&#x503C;&#xFF08;<strong>Value</strong>&#xFF09; = <code>YES</code></li>
+<li>&#x7C7B;&#x578B;&#xFF08;<strong>Type</strong>&#xFF09; = <code>rc.conf</code></li>
+</ul>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/wireguard_enable.png" alt=""></p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x521B;&#x5EFA;&#x53E6;&#x4E00;&#x4E2A;&#x53EF;&#x8C03;&#x53C2;&#x6570;&#x6765;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#xFF1A;</p>
+<ul>
+<li>&#x53D8;&#x91CF;&#x540D;&#xFF08;<strong>Variable</strong>&#xFF09; = <code>wireguard_interfaces</code></li>
+<li>&#x503C;&#xFF08;<strong>Value</strong>&#xFF09; = <code>wg0</code></li>
+<li>&#x7C7B;&#x578B;&#xFF08;<strong>Type</strong>&#xFF09; = <code>rc.conf</code></li>
+</ul>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/wireguard_interfaces.png" alt=""></p>
+<p>&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x60A8;&#x5C06;&#x8BBE;&#x7F6E;&#x5E76;&#x542F;&#x7528;&#x8FD9;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#xFF1A;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/wireguard_variables.png" alt=""></p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A; post-init &#x811A;&#x672C;&#xFF0C;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x5C06; WireGuard &#x914D;&#x7F6E;&#x653E;&#x7F6E;&#x5728;&#x6B63;&#x786E;&#x7684;&#x4F4D;&#x7F6E;&#x3002; &#x8F6C;&#x81F3;&#x201C;&#x4EFB;&#x52A1;&#x201D;&#xFF08;<strong>Tasks</strong>&#xFF09;&gt;&#x201C;&#x5F00;/&#x5173;&#x673A;&#x811A;&#x672C;&#x201D;&#xFF08;<strong>Init/Shutdown Scripts</strong>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB;&#x6DFB;&#x52A0;&#xFF08;<strong>Add</strong>&#xFF09;&#x3002; &#x914D;&#x7F6E;&#x811A;&#x672C;&#x4EE5;&#x5728;&#x6BCF;&#x6B21;&#x7CFB;&#x7EDF;&#x542F;&#x52A8;&#x65F6;&#x52A0;&#x8F7D; WireGuard .conf &#x6587;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li>&#x7C7B;&#x578B;&#xFF08;<strong>Type</strong>&#xFF09; = <code>Command</code></li>
+<li>&#x547D;&#x4EE4;&#xFF08;<strong>Command</strong>&#xFF09; = <code>mkdir -p /usr/local/etc/wireguard &amp;&amp; cp /root/wg0.conf /usr/local/etc/wireguard/wg0.conf &amp;&amp; /usr/local/etc/rc.d/wireguard start</code></li>
+<li>&#x4F55;&#x65F6;&#xFF08;<strong>When</strong>&#xFF09; = <code>Post Init</code></li>
+</ul>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x914D;&#x7F6E; /root/wg0.conf &#x6587;&#x4EF6;&#x5E76;&#x5E94;&#x7528; WireGuard &#x914D;&#x7F6E;&#x4EE5;&#x9644;&#x52A0;&#x5230;&#x60A8;&#x5B9A;&#x4E49;&#x7684;&#x4EFB;&#x4F55; WireGuard &#x7F51;&#x7EDC;&#x3002; &#x5B83;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x8FD0;&#x884C; WireGuard &#x7684;&#x5355;&#x70B9;&#x5BF9;&#x70B9;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B8C;&#x6574;&#x8DEF;&#x7531;&#x3002; &#x793A;&#x4F8B;&#x7528;&#x4F8B;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x4ECE;&#x8FDC;&#x7A0B;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;&#x8BBF;&#x95EE; NAS &#x4E0A;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x5C06; NAS &#x8FDE;&#x63A5;&#x5230; NAS &#x4EE5;&#x8FDB;&#x884C;&#x590D;&#x5236;</li>
+<li>&#x5C06;&#x6258;&#x7BA1; NAS &#x8FDE;&#x63A5;&#x5230;&#x8FDC;&#x7A0B;&#x7F51;&#x7EDC;</li>
+<li>&#x4ECE;&#x60A8;&#x7684;&#x667A;&#x80FD;&#x624B;&#x673A;&#x8BBF;&#x95EE;&#x60A8;&#x7684; NAS</li>
+</ul>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/WireguardInitScript.png" alt=""></p>
+<p>&#x73B0;&#x5728;&#x521B;&#x5EFA; /root/wg0.conf &#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x8981;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x5E94;&#x7528;&#x7684;&#x7279;&#x5B9A; WireGuard &#x914D;&#x7F6E;&#x3002; &#x6B64;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x53D6;&#x51B3;&#x4E8E;&#x60A8;&#x7684;&#x7279;&#x5B9A;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x548C;&#x8981;&#x6C42;&#xFF0C;&#x8FD9;&#x8D85;&#x51FA;&#x4E86;&#x672C;&#x6587;&#x7684;&#x8303;&#x56F4;&#x3002; &#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E86;<a href="https://www.wireguard.com/quickstart/" target="_blank">&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x6307;&#x5357;</a>&#x548C;<a href="https://www.linode.com/docs/networking/vpn/set-up-wireguard-vpn-on-ubuntu/" target="_blank">&#x6559;&#x7A0B;</a>&#x4EE5;&#x53CA;&#x5185;&#x7F6E;&#x7684; wg-quick &#x8054;&#x673A;&#x5E2E;&#x52A9;&#x9875;&#x3002;</p>
+<p>&#x4E00;&#x65E6;&#x4F60;&#x6709;&#x4E86;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684; /root/wg0.conf&#xFF0C;&#x91CD;&#x542F;&#x7CFB;&#x7EDF;&#x5C31;&#x4F1A;&#x6253;&#x5F00; WireGuard &#x754C;&#x9762;&#xFF0C;&#x4F60;&#x4F1A;&#x5728; ifconfig &#x7684;&#x8F93;&#x51FA;&#x4E2D;&#x770B;&#x5230;&#x4E00;&#x4E2A; wg0 &#x8BBE;&#x5907;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/wg0DeviceOutput.png" alt=""></p>
+<p>&#x606D;&#x559C;&#xFF0C;&#x60A8;&#x5DF2;&#x6210;&#x529F;&#x5C06; TrueNAS &#x7CFB;&#x7EDF;&#x94FE;&#x63A5;&#x5230;&#x5B89;&#x5168;&#x7684; WireGuard &#x96A7;&#x9053;&#xFF01;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Static_Routes.html" class="navigation navigation-prev " aria-label="Previous page: 1.5.4.静态路由">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="IPMI.html" class="navigation navigation-next " aria-label="Next page: 1.5.6.IPMI">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.5.5.启用WireGuard","level":"1.2.5.5","depth":3,"next":{"title":"1.5.6.IPMI","level":"1.2.5.6","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Network/IPMI.md","ref":"TrueNAS_CORE_and_Enterprise/Network/IPMI.md","articles":[]},"previous":{"title":"1.5.4.静态路由","level":"1.2.5.4","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Network/Static_Routes.md","ref":"TrueNAS_CORE_and_Enterprise/Network/Static_Routes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Network/Enabling_WireGuard.md","mtime":"2021-11-17T14:00:17.360Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-17T14:29:47.760Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
