@@ -1,0 +1,1060 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.4.6.3.高级复制任务 · TrueNAS中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="EASTMOE">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Troubleshooting_Tips.html" />
+    
+    
+    <link rel="prev" href="Remote.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    1.TrueNAS Core和Enterprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../gettingstarted/">
+            
+                <a href="../../gettingstarted/">
+            
+                    
+                    1.1.TrueNAS初探
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../gettingstarted/core_hardware_guide.html">
+            
+                <a href="../../gettingstarted/core_hardware_guide.html">
+            
+                    
+                    1.1.1.TrueNAS Core 硬件指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../gettingstarted/INSTALL.html">
+            
+                <a href="../../gettingstarted/INSTALL.html">
+            
+                    
+                    1.1.2.安装TrueNAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../gettingstarted/Console_Setup_Menu.html">
+            
+                <a href="../../gettingstarted/Console_Setup_Menu.html">
+            
+                    
+                    1.1.3.控制台设置菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../gettingstarted/log_in.html">
+            
+                <a href="../../gettingstarted/log_in.html">
+            
+                    
+                    1.1.4.登录到TrueNAS WebUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../gettingstarted/Storage_Configuration.html">
+            
+                <a href="../../gettingstarted/Storage_Configuration.html">
+            
+                    
+                    1.1.5.存储配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../../gettingstarted/Sharing_Storage.html">
+            
+                <a href="../../gettingstarted/Sharing_Storage.html">
+            
+                    
+                    1.1.6.存储共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../../gettingstarted/Data_Backups.html">
+            
+                <a href="../../gettingstarted/Data_Backups.html">
+            
+                    
+                    1.1.7.数据备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../../gettingstarted/Applications.html">
+            
+                <a href="../../gettingstarted/Applications.html">
+            
+                    
+                    1.1.8.应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Accounts/">
+            
+                <a href="../../Accounts/">
+            
+                    
+                    1.2.账户
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../Accounts/Groups.html">
+            
+                <a href="../../Accounts/Groups.html">
+            
+                    
+                    1.2.1.TrueNAS用户组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../Accounts/Users.html">
+            
+                <a href="../../Accounts/Users.html">
+            
+                    
+                    1.2.2.TrueNAS用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../System/">
+            
+                <a href="../../System/">
+            
+                    
+                    1.3.系统设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../System/General/">
+            
+                <a href="../../System/General/">
+            
+                    
+                    1.3.1.通用设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="../../System/General/Setting.html">
+            
+                <a href="../../System/General/Setting.html">
+            
+                    
+                    1.3.1.1.通用设置页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="../../System/General/System_Config_Backups.html">
+            
+                <a href="../../System/General/System_Config_Backups.html">
+            
+                    
+                    1.3.1.2.系统备份设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="../../System/General/Managing_TLS_Ciphers.html">
+            
+                <a href="../../System/General/Managing_TLS_Ciphers.html">
+            
+                    
+                    1.3.1.3.管理TLS加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../System/NTP_Servers.html">
+            
+                <a href="../../System/NTP_Servers.html">
+            
+                    
+                    1.3.2.时间同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../System/Boot/">
+            
+                <a href="../../System/Boot/">
+            
+                    
+                    1.3.3.启动与引导
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.3.1" data-path="../../System/Boot/Boot_Screen.html">
+            
+                <a href="../../System/Boot/Boot_Screen.html">
+            
+                    
+                    1.3.3.1.引导备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3.2" data-path="../../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                <a href="../../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                    
+                    1.3.3.2.启动池镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../../System/Advanced.html">
+            
+                <a href="../../System/Advanced.html">
+            
+                    
+                    1.3.4.高级设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../../System/View_Enclosure.html">
+            
+                <a href="../../System/View_Enclosure.html">
+            
+                    
+                    1.3.5.机箱监视
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="../../System/Email.html">
+            
+                <a href="../../System/Email.html">
+            
+                    
+                    1.3.6.电子邮件通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7" data-path="../../System_Dataset.md">
+            
+                <span>
+            
+                    
+                    1.3.7.系统数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.8" data-path="../../System/Reporting.html">
+            
+                <a href="../../System/Reporting.html">
+            
+                    
+                    1.3.8.系统报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.9" data-path="../../System/Alert.html">
+            
+                <a href="../../System/Alert.html">
+            
+                    
+                    1.3.9.警告服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.10" data-path="../../System/Cloud_Credentials.html">
+            
+                <a href="../../System/Cloud_Credentials.html">
+            
+                    
+                    1.3.10.云服务与云同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.11" data-path="../../System/SSH.html">
+            
+                <a href="../../System/SSH.html">
+            
+                    
+                    1.3.11.SSH客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.12" data-path="../../System/Tunables.html">
+            
+                <a href="../../System/Tunables.html">
+            
+                    
+                    1.3.12.可调参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.13" data-path="../../System/Update.html">
+            
+                <a href="../../System/Update.html">
+            
+                    
+                    1.3.13.系统更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.14" data-path="../../System/CAs.html">
+            
+                <a href="../../System/CAs.html">
+            
+                    
+                    1.3.14.证书颁发机构（CA）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.15" data-path="../../System/Certificates.html">
+            
+                <a href="../../System/Certificates.html">
+            
+                    
+                    1.3.15.证书管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.16" data-path="../../System/KMIP.html">
+            
+                <a href="../../System/KMIP.html">
+            
+                    
+                    1.3.16.密钥管理互通协议（KMIP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.17" data-path="../../System/Failover_HA.html">
+            
+                <a href="../../System/Failover_HA.html">
+            
+                    
+                    1.3.17.故障转移与高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.18" data-path="../../System/Support.html">
+            
+                <a href="../../System/Support.html">
+            
+                    
+                    1.3.18.帮助与支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.19" data-path="../../System/2FA.html">
+            
+                <a href="../../System/2FA.html">
+            
+                    
+                    1.3.19.两步验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.4.任务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Cron_Jobs.html">
+            
+                <a href="../Cron_Jobs.html">
+            
+                    
+                    1.4.1.定时任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Init_Shutdown_Scripts.html">
+            
+                <a href="../Init_Shutdown_Scripts.html">
+            
+                    
+                    1.4.2.开/关机脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../Rsync_Tasks.html">
+            
+                <a href="../Rsync_Tasks.html">
+            
+                    
+                    1.4.3.同步任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../SMART_TEST.html">
+            
+                <a href="../SMART_TEST.html">
+            
+                    
+                    1.4.4.硬盘检测任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../Periodic_Snapshot_Tasks.html">
+            
+                <a href="../Periodic_Snapshot_Tasks.html">
+            
+                    
+                    1.4.5.定期快照任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.4.6.复制任务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.6.1" data-path="Local.html">
+            
+                <a href="Local.html">
+            
+                    
+                    1.4.6.1.本地复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.2" data-path="Remote.html">
+            
+                <a href="Remote.html">
+            
+                    
+                    1.4.6.2.远程复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4.6.3" data-path="Advanced.html">
+            
+                <a href="Advanced.html">
+            
+                    
+                    1.4.6.3.高级复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.4" data-path="Troubleshooting_Tips.html">
+            
+                <a href="Troubleshooting_Tips.html">
+            
+                    
+                    1.4.6.4.故障排除提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >1.4.6.3.高级复制任务</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9AD8;&#x7EA7;&#x590D;&#x5236;&#x4EFB;&#x52A1;">&#x9AD8;&#x7EA7;&#x590D;&#x5236;&#x4EFB;&#x52A1;</h1>
+<p>&#x8981;&#x6C42;&#xFF1A;</p>
+<p>&#x5305;&#x542B;&#x8981;&#x521B;&#x5EFA;&#x5FEB;&#x7167;&#x7684;&#x6570;&#x636E;&#x96C6;&#x548C;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x6C60;&#x3002;
+&#x5DF2;&#x7ECF;&#x914D;&#x7F6E;&#x4E86;&#x5230;&#x8FDC;&#x7A0B;&#x7CFB;&#x7EDF;&#x7684;SSH&#x8FDE;&#x63A5;&#xFF0C;&#x4FDD;&#x5B58;&#x5728;&#x7CFB;&#x7EDF;&#xFF08;<strong>System</strong>&#xFF09; &gt; SSH &#x8FDE;&#x63A5;&#xFF08;<strong>SSH Connections</strong>&#xFF09;&#x4E2D;&#x3002;
+&#x5DF2;&#x7ECF;&#x914D;&#x7F6E;&#x4E86;&#x4FDD;&#x5B58;&#x5728;&#x4EFB;&#x52A1;&#xFF08;<strong>Tasks</strong> &#xFF09; &gt; &#x5B9A;&#x671F;&#x5FEB;&#x7167;&#x4EFB;&#x52A1;&#xFF08;<strong>Periodic Snapshot Tasks</strong>&#xFF09;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x96C6;&#x5FEB;&#x7167;&#x4EFB;&#x52A1;&#x3002;</p>
+<h2 id="&#x6D41;&#x7A0B;&#x603B;&#x7ED3;">&#x6D41;&#x7A0B;&#x603B;&#x7ED3;</h2>
+<p>&#x8F6C;&#x81F3;&#x4EFB;&#x52A1;&#xFF08;<strong>Tasks</strong>&#xFF09; &gt; &#x590D;&#x5236;&#x4EFB;&#x52A1;&#xFF08;<strong>Replication Tasks</strong>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB;&#x6DFB;&#x52A0;&#xFF08;<strong>ADD</strong>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x521B;&#x5EFA;&#x9AD8;&#x7EA7;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#xFF08;<strong>ADVANCED REPLICATION CREATION</strong>&#xFF09;&#x3002;</p>
+<ul>
+<li>&#x5E38;&#x89C4;&#x9009;&#x9879;:<ul>
+<li>&#x4EFB;&#x52A1;&#x540D;&#x79F0;.</li>
+<li>&#x4E3A;&#x672C;&#x5730;&#x7CFB;&#x7EDF;&#x9009;&#x62E9; Push &#x6216; Pull.</li>
+<li>&#x9009;&#x62E9;&#x590D;&#x5236;&#x4F20;&#x8F93;&#x65B9;&#x6CD5;.<ul>
+<li>&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; SSH&#x3002;</li>
+<li>&#x5728;&#x5B89;&#x5168;&#x7F51;&#x7EDC;&#x4E2D;&#x4F7F;&#x7528;SSH+Netcat&#x3002;</li>
+<li>&#x672C;&#x5730;&#x7528;&#x4E8E;&#x7CFB;&#x7EDF;&#x5185;&#x590D;&#x5236;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x914D;&#x7F6E;&#x590D;&#x5236;&#x4F20;&#x8F93;&#x65B9;&#x6CD5;&#xFF1A;<ul>
+<li>&#x8FDC;&#x7A0B;&#x9009;&#x9879;&#x9700;&#x8981; SSH &#x8FDE;&#x63A5;&#x3002;</li>
+<li>SSH+Netcat &#x9700;&#x8981;&#x5B9A;&#x4E49;netcat &#x7AEF;&#x53E3;&#x548C;&#x5730;&#x5740;&#x3002;</li>
+</ul>
+</li>
+<li>&#x6765;&#x6E90;&#xFF1A;<ul>
+<li>&#x9009;&#x62E9;&#x590D;&#x5236;&#x6E90;&#x3002;</li>
+<li>&#x9009;&#x62E9;&#x5B9A;&#x671F;&#x5FEB;&#x7167;&#x4EFB;&#x52A1;&#x4F5C;&#x4E3A;&#x8981;&#x590D;&#x5236;&#x7684;&#x5FEB;&#x7167;&#x6E90;&#x3002;</li>
+<li>&#x8FDC;&#x7A0B;&#x6E90;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x5FEB;&#x7167;&#x547D;&#x540D;&#x6A21;&#x5F0F;&#x3002;</li>
+</ul>
+</li>
+<li>&#x76EE;&#x6807;&#x5730;&#x5740;&#xFF1A;<ul>
+<li>&#x8FDC;&#x7A0B;&#x76EE;&#x6807;&#x9700;&#x8981; SSH &#x8FDE;&#x63A5;&#x3002;</li>
+<li>&#x9009;&#x62E9;&#x76EE;&#x7684;&#x5730;&#x6216;&#x5728;&#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165;&#x8DEF;&#x5F84;&#x3002;</li>
+<li>&#x5B9A;&#x4E49;&#x5728;&#x76EE;&#x6807;&#x4E2D;&#x4FDD;&#x7559;&#x5FEB;&#x7167;&#x7684;&#x65F6;&#x95F4;&#x3002;</li>
+</ul>
+</li>
+<li>&#x65E5;&#x7A0B;&#x8BA1;&#x5212;&#xFF1A;<ul>
+<li>&#x5728;&#x76F8;&#x5173;&#x7684;&#x5B9A;&#x671F;&#x5FEB;&#x7167;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#xFF0C;Run &#x4F1A;&#x81EA;&#x52A8;&#x542F;&#x52A8;&#x590D;&#x5236;&#x3002;</li>
+<li>&#x8981;&#x6839;&#x636E;&#x5176;&#x81EA;&#x5DF1;&#x7684;&#x8BA1;&#x5212;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x8BF7;&#x8BBE;&#x7F6E;&#x8BE5;&#x9009;&#x9879;&#x5E76;&#x5B9A;&#x4E49;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x7684;&#x8BA1;&#x5212;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x521B;&#x5EFA;&#x9AD8;&#x7EA7;&#x590D;&#x5236;&#x4EFB;&#x52A1;">&#x521B;&#x5EFA;&#x9AD8;&#x7EA7;&#x590D;&#x5236;&#x4EFB;&#x52A1;</h2>
+<p>&#x8981;&#x4F7F;&#x7528;&#x9AD8;&#x7EA7;&#x7F16;&#x8F91;&#x5668;&#x521B;&#x5EFA;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x4EFB;&#x52A1;&#xFF08;<strong>Tasks</strong>&#xFF09; &gt; &#x590D;&#x5236;&#x4EFB;&#x52A1;&#xFF08;<strong>Replication Tasks</strong>&#xFF09;&#xFF0C;&#x5355;&#x51FB;&#x6DFB;&#x52A0;&#xFF08;<strong>ADD</strong>&#xFF09;&#x4EE5;&#x6253;&#x5F00;&#x5411;&#x5BFC;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB;&#x521B;&#x5EFA;&#x9AD8;&#x7EA7;&#x590D;&#x5236;&#xFF08;<strong>ADVANCED REPLICATION CREATION</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksReplicationAddAdvanced.png" alt=""></p>
+<p>&#x9009;&#x9879;&#x6309;&#x7C7B;&#x522B;&#x5206;&#x7EC4;&#x5728;&#x4E00;&#x8D77;&#x3002; &#x6839;&#x636E;&#x60A8;&#x6240;&#x505A;&#x7684;&#x914D;&#x7F6E;&#x9009;&#x62E9;&#xFF0C;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x3001;&#x6D88;&#x5931;&#x6216;&#x88AB;&#x7981;&#x7528;&#x3002; &#x5728;&#x914D;&#x7F6E;&#x590D;&#x5236;&#x6E90;&#x548C;&#x76EE;&#x6807;&#x4E4B;&#x524D;&#xFF0C;&#x9996;&#x5148;&#x914D;&#x7F6E;&#x5E38;&#x89C4;&#x9009;&#x9879;&#xFF0C;&#x7136;&#x540E;&#x662F;&#x4F20;&#x8F93;&#x9009;&#x9879;&#x3002;</p>
+<p>&#x4E3A;&#x4EFB;&#x52A1;&#x547D;&#x540D;&#x3002; &#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x60A8;&#x4EE5;&#x6613;&#x4E8E;&#x8BB0;&#x4F4F;&#x4EFB;&#x52A1;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x7684;&#x65B9;&#x5F0F;&#x547D;&#x540D;&#x3002;</p>
+<p>&#x5728;&#x914D;&#x7F6E;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x4E4B;&#x524D;&#xFF0C;&#x9009;&#x62E9;&#x672C;&#x5730;&#x7CFB;&#x7EDF;&#x662F;&#x53D1;&#x9001; (Push) &#x8FD8;&#x662F;&#x63A5;&#x6536;&#x6570;&#x636E; (Pull) &#x5E76;&#x51B3;&#x5B9A;&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x4F20;&#x8F93;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x590D;&#x5236;&#x3002;</p>
+<h2 id="&#x521B;&#x5EFA;&#x5411;&#x5BFC;&#x9009;&#x9879;">&#x521B;&#x5EFA;&#x5411;&#x5BFC;&#x9009;&#x9879;</h2>
+<h3 id="&#x4F20;&#x8F93;&#x9009;&#x9879;">&#x4F20;&#x8F93;&#x9009;&#x9879;</h3>
+<p>&#x4F20;&#x8F93;&#xFF08;<strong>Transport</strong>&#xFF09;&#x9009;&#x62E9;&#x5668;&#x786E;&#x5B9A;&#x7528;&#x4E8E;&#x590D;&#x5236;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;SSH &#x662F;&#x4ECE;&#x8FDC;&#x7A0B;&#x7CFB;&#x7EDF;&#x53D1;&#x9001;&#x6216;&#x63A5;&#x6536;&#x6570;&#x636E;&#x7684;&#x6807;&#x51C6;&#x9009;&#x9879;&#xFF0C;&#x4F46; SSH+NETCAT &#x53EF;&#x4F5C;&#x4E3A;&#x5728;&#x5B8C;&#x5168;&#x5B89;&#x5168;&#x7684;&#x7F51;&#x7EDC;&#x4E2D;&#x8FDB;&#x884C;&#x7684;&#x590D;&#x5236;&#x7684;&#x66F4;&#x5FEB;&#x9009;&#x9879;&#x3002; &#x672C;&#x5730;&#x4EC5;&#x7528;&#x4E8E;&#x5C06;&#x6570;&#x636E;&#x590D;&#x5236;&#x5230;&#x540C;&#x4E00;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x57FA;&#x4E8E; SSH &#x7684;&#x590D;&#x5236;&#xFF0C;&#x901A;&#x8FC7;&#x9009;&#x62E9;&#x5230;&#x5C06;&#x53D1;&#x9001;&#x6216;&#x63A5;&#x6536;&#x5FEB;&#x7167;&#x7684;&#x8FDC;&#x7A0B;&#x7CFB;&#x7EDF;&#x7684; SSH &#x8FDE;&#x63A5;&#xFF08;<strong><em>SSH Connection</em></strong>&#xFF09;&#x6765;&#x914D;&#x7F6E;&#x4F20;&#x8F93;&#x65B9;&#x6CD5;&#x3002; &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x538B;&#x7F29;&#x6570;&#x636E;&#x3001;&#x6DFB;&#x52A0;&#x5E26;&#x5BBD;&#x9650;&#x5236;&#x6216;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x6D41;&#x81EA;&#x5B9A;&#x4E49;&#x9009;&#x9879;&#x3002; &#x6D41;&#x538B;&#x7F29;&#xFF08;<strong>Stream Compression</strong>&#xFF09;&#x9009;&#x9879;&#x4EC5;&#x5728;&#x4F7F;&#x7528; SSH &#x65F6;&#x53EF;&#x7528;&#x3002; &#x5728;&#x542F;&#x7528;&#x538B;&#x7F29;&#x5199;&#x5165;&#x8BB0;&#x5F55;&#x4E4B;&#x524D;&#xFF0C;&#x8BF7;&#x786E;&#x8BA4;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x4E5F;&#x652F;&#x6301;&#x538B;&#x7F29;&#x5199;&#x5165;&#x8BB0;&#x5F55;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksReplicationAddAdvancedTransportOptions.png" alt=""></p>
+<p>&#x5BF9;&#x4E8E; SSH+NETCAT &#x590D;&#x5236;&#xFF0C;&#x60A8;&#x8FD8;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x7528;&#x4E8E; Netcat &#x8FDE;&#x63A5;&#x7684;&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#x3002;</p>
+<p>&#x5141;&#x8BB8;&#x5757;&#x5927;&#x4E8E; 128KB &#x662F;&#x4E00;&#x79CD;&#x5355;&#x5411;&#x5207;&#x6362;&#x3002; &#x53EA;&#x8981;&#x6B64;&#x9009;&#x9879;&#x4FDD;&#x6301;&#x542F;&#x7528;&#x72B6;&#x6001;&#xFF0C;&#x4F7F;&#x7528;&#x5927;&#x5757;&#x590D;&#x5236;&#x7684;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x5C31;&#x4F1A;&#x7EE7;&#x7EED;&#x5DE5;&#x4F5C;&#x3002;</p>
+<h3 id="&#x6765;&#x6E90;">&#x6765;&#x6E90;</h3>
+<p>&#x590D;&#x5236;&#x6E90;&#x662F;&#x7528;&#x4E8E;&#x590D;&#x5236;&#x7684;&#x6570;&#x636E;&#x96C6;&#x6216; zvol&#x3002; &#x901A;&#x8FC7;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x6D4F;&#x89C8;&#x5668;&#x6216;&#x5728;&#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165;&#x6570;&#x636E;&#x96C6;&#x540D;&#x79F0;&#xFF0C;&#x9009;&#x62E9;&#x8981;&#x7528;&#x4E8E;&#x6B64;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x7684;&#x6E90;&#x3002; &#x4ECE;&#x8FDC;&#x7A0B;&#x6E90;&#x62C9;&#x53D6;&#x5FEB;&#x7167;&#x9700;&#x8981;&#x6709;&#x6548;&#x7684; SSH &#x8FDE;&#x63A5;&#xFF08;<strong>SSH Connection</strong>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x6587;&#x4EF6;&#x6D4F;&#x89C8;&#x5668;&#x624D;&#x80FD;&#x663E;&#x793A;&#x4EFB;&#x4F55;&#x76EE;&#x5F55;&#x3002; &#x5982;&#x679C;&#x6587;&#x4EF6;&#x6D4F;&#x89C8;&#x5668;&#x5728;&#x9009;&#x62E9;&#x6B63;&#x786E;&#x7684; SSH &#x8FDE;&#x63A5;&#xFF08;<strong>SSH Connection</strong>&#xFF09;&#x540E;&#x663E;&#x793A;&#x8FDE;&#x63A5;&#x9519;&#x8BEF;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x767B;&#x5F55;&#x8FDC;&#x7A0B;&#x7CFB;&#x7EDF;&#x5E76;&#x786E;&#x4FDD;&#x5C06;&#x5176;&#x914D;&#x7F6E;&#x4E3A;&#x5141;&#x8BB8; SSH &#x8FDE;&#x63A5;&#xFF08;<strong>SSH Connection</strong>&#xFF09;&#x3002; &#x5728; TrueNAS &#x4E2D;&#xFF0C;&#x8FD9;&#x9700;&#x8981;&#x8F6C;&#x5230;&#x201C;&#x670D;&#x52A1;&#x201D;&#xFF08; <strong>Services</strong>&#xFF09;&#x5C4F;&#x5E55;&#x3001;&#x68C0;&#x67E5; SSH &#x670D;&#x52A1;&#x914D;&#x7F6E;&#x5E76;&#x542F;&#x52A8;&#x670D;&#x52A1;&#x6765;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksReplicationAddAdvancedSource.png" alt=""></p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x5C06;&#x4F7F;&#x7528;&#x5FEB;&#x7167;&#x5C06;&#x6570;&#x636E;&#x5FEB;&#x901F;&#x4F20;&#x8F93;&#x5230;&#x63A5;&#x6536;&#x7CFB;&#x7EDF;&#x3002;&#x8BBE;&#x7F6E;&#x5B8C;&#x6574;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x590D;&#x5236;&#xFF08;<strong>Full Filesystem Replication</strong>&#xFF09;&#x540E;&#xFF0C;&#x5C06;&#x5B8C;&#x5168;&#x590D;&#x5236;&#x6240;&#x9009;&#x6E90;&#xFF0C;&#x5305;&#x62EC;&#x6240;&#x6709;&#x6570;&#x636E;&#x96C6;&#x5C5E;&#x6027;&#x3001;&#x5FEB;&#x7167;&#x3001;&#x5B50;&#x6570;&#x636E;&#x96C6;&#x548C;&#x514B;&#x9686;&#x3002;&#x9009;&#x62E9;&#x6B64;&#x9009;&#x9879;&#x65F6;&#xFF0C;&#x5EFA;&#x8BAE;&#x4E3A;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x7684;&#x8FD0;&#x884C;&#x5206;&#x914D;&#x989D;&#x5916;&#x7684;&#x65F6;&#x95F4;&#x3002;&#x4E0D;&#x8BBE;&#x7F6E;&#x5B8C;&#x6574;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x590D;&#x5236;&#xFF08;<strong>Full Filesystem Replication</strong>&#xFF09;&#x4F46;&#x8BBE;&#x7F6E;&#x5305;&#x62EC;&#x6570;&#x636E;&#x96C6;&#x5C5E;&#x6027;&#xFF08;<strong>Include Dataset Properties</strong>&#xFF09;&#x5C06;&#x4EC5;&#x5305;&#x62EC;&#x8981;&#x590D;&#x5236;&#x7684;&#x5FEB;&#x7167;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x96C6;&#x5C5E;&#x6027;&#x3002;&#x5176;&#x4ED6;&#x9009;&#x9879;&#x5141;&#x8BB8;&#x60A8;&#x9012;&#x5F52;&#x590D;&#x5236;&#x5B50;&#x6570;&#x636E;&#x96C6;&#x5FEB;&#x7167;&#x6216;&#x4ECE;&#x590D;&#x5236;&#x4E2D;&#x6392;&#x9664;&#x7279;&#x5B9A;&#x5B50;&#x6570;&#x636E;&#x96C6;&#x6216;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x672C;&#x5730;&#x6E90;&#x7531;&#x4ECE;&#x5B9A;&#x671F;&#x5FEB;&#x7167;&#x4EFB;&#x52A1;&#x548C;/&#x6216;&#x4ECE;&#x4E0E;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x7684;&#x5FEB;&#x7167;&#x5339;&#x914D;&#x7684;&#x5B9A;&#x4E49;&#x547D;&#x540D;&#x6A21;&#x5F0F;&#x751F;&#x6210;&#x7684;&#x5FEB;&#x7167;&#x8FDB;&#x884C;&#x590D;&#x5236;&#x3002;&#x8FDC;&#x7A0B;&#x6E90;&#x9700;&#x8981;&#x8F93;&#x5165;&#x5FEB;&#x7167;&#x547D;&#x540D;&#x6A21;&#x5F0F;&#x6765;&#x6807;&#x8BC6;&#x8981;&#x590D;&#x5236;&#x7684;&#x5FEB;&#x7167;&#x3002;&#x547D;&#x540D;&#x6A21;&#x5F0F;&#x662F; <a href="https://www.freebsd.org/cgi/man.cgi?query=strftime" target="_blank">strftime</a> &#x65F6;&#x95F4;&#x548C;&#x65E5;&#x671F;&#x5B57;&#x7B26;&#x4E32;&#x4EE5;&#x53CA;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x5DF2;&#x6DFB;&#x52A0;&#x5230;&#x5FEB;&#x7167;&#x540D;&#x79F0;&#x7684;&#x4EFB;&#x4F55;&#x6807;&#x8BC6;&#x7B26;&#x7684;&#x96C6;&#x5408;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8F93;&#x5165;&#x547D;&#x540D;&#x67B6;&#x6784; <a href="https://www.freebsd.org/cgi/man.cgi?query=strftime" target="_blank">custom-%Y-%m-%d_%H-%M</a> &#x4F1A;&#x67E5;&#x627E;&#x5E76;&#x590D;&#x5236;&#x50CF; custom-2020-03-25_09-15 &#x8FD9;&#x6837;&#x7684;&#x5FEB;&#x7167;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6309; Enter &#x952E;&#x5206;&#x9694;&#x6BCF;&#x4E2A;&#x6A21;&#x5F0F;&#x6765;&#x8F93;&#x5165;&#x591A;&#x4E2A;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>&#x8981;&#x4ECE;&#x5468;&#x671F;&#x6027;&#x4EFB;&#x52A1;&#x5B9A;&#x4E49;&#x7279;&#x5B9A;&#x5FEB;&#x7167;&#x4EE5;&#x7528;&#x4E8E;&#x590D;&#x5236;&#xFF0C;&#x8BF7;&#x8BBE;&#x7F6E;&#x590D;&#x5236;&#x7279;&#x5B9A;&#x5FEB;&#x7167;&#x5E76;&#x8F93;&#x5165;&#x8BA1;&#x5212;&#x3002;&#x5C06;&#x5305;&#x542B;&#x5728;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x4E2D;&#x7684;&#x552F;&#x4E00;&#x5B9A;&#x671F;&#x751F;&#x6210;&#x7684;&#x5FEB;&#x7167;&#x662F;&#x90A3;&#x4E9B;&#x4E0E;&#x60A8;&#x5B9A;&#x4E49;&#x7684;&#x8BA1;&#x5212;&#x76F8;&#x5339;&#x914D;&#x7684;&#x5FEB;&#x7167;&#x3002;&#x6216;&#x8005;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x590D;&#x5236;&#x8BA1;&#x5212;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x81EA;&#x52A8;&#x8FD0;&#x884C;&#x3001;&#x4EC5;&#x590D;&#x5236;&#x5FEB;&#x7167;&#x5339;&#x914D;&#x8BA1;&#x5212;&#x548C;&#x5B9A;&#x4E49;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x6765;&#x786E;&#x5B9A;&#x590D;&#x5236;&#x54EA;&#x4E9B;&#x5FEB;&#x7167;&#x3002;</p>
+<p>&#x5F53;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x96BE;&#x4EE5;&#x5B8C;&#x6210;&#x65F6;&#xFF0C;&#x6700;&#x597D;&#x8BBE;&#x7F6E; Save Pending Snapshots&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x6E90; TrueNAS &#x81EA;&#x52A8;&#x5220;&#x9664;&#x65E0;&#x6CD5;&#x590D;&#x5236;&#x5230;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x7684;&#x4EFB;&#x4F55;&#x5FEB;&#x7167;&#x3002;</p>
+<h3 id="&#x76EE;&#x6807;&#x5730;&#x5740;">&#x76EE;&#x6807;&#x5730;&#x5740;</h3>
+<p>&#x76EE;&#x7684;&#x5730;&#x662F;&#x5B58;&#x50A8;&#x590D;&#x5236;&#x6570;&#x636E;&#x7684;&#x5730;&#x65B9;&#x3002; &#x9009;&#x62E9;&#x8FDC;&#x7A0B;&#x76EE;&#x6807;&#x9700;&#x8981;&#x5230;&#x8BE5;&#x7CFB;&#x7EDF;&#x7684; SSH &#x8FDE;&#x63A5;&#x3002; &#x5C55;&#x5F00;&#x6587;&#x4EF6;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x663E;&#x793A;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x4E0A;&#x53EF;&#x7528;&#x7684;&#x5F53;&#x524D;&#x6570;&#x636E;&#x96C6;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x5355;&#x51FB;&#x76EE;&#x7684;&#x5730;&#x6216;&#x5728;&#x5B57;&#x6BB5;&#x4E2D;&#x624B;&#x52A8;&#x952E;&#x5165;&#x8DEF;&#x5F84;&#x3002; &#x5728;&#x8DEF;&#x5F84;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x540D;&#x79F0;&#x4F1A;&#x5728;&#x8BE5;&#x4F4D;&#x7F6E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x6570;&#x636E;&#x96C6;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x8981;&#x5C06;&#x8FDC;&#x7A0B;&#x76EE;&#x6807;&#x8BBE;&#x7F6E;&#x4E3A; zvols &#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksReplicationAddAdvancedDestination.png" alt=""></p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x76EE;&#x6807;&#x6570;&#x636E;&#x96C6;&#x5728;&#x590D;&#x5236;&#x5B8C;&#x6210;&#x540E;&#x4F1A;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x53EA;&#x8BFB;&#xFF08;<strong>read-only</strong>&#xFF09;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x76EE;&#x6807;&#x6570;&#x636E;&#x96C6;&#x53EA;&#x8BFB;&#x7B56;&#x7565;&#xFF08;<strong>Destination Dataset Read-only Policy</strong>&#xFF09;&#x66F4;&#x6539;&#x4E3A;&#x4EC5;&#x5728;&#x76EE;&#x6807;&#x4E3A;&#x53EA;&#x8BFB; (REQUIRE) &#x65F6;&#x542F;&#x52A8;&#x590D;&#x5236;&#x6216;&#x7981;&#x7528;&#x68C0;&#x67E5;&#x6570;&#x636E;&#x96C6;&#x7684;&#x53EA;&#x8BFB;&#x72B6;&#x6001; (IGNORE)&#x3002;</p>
+<p>&#x52A0;&#x5BC6;&#x901A;&#x8FC7;&#x5728;&#x4F20;&#x8F93;&#x4E4B;&#x524D;&#x52A0;&#x5BC6;&#x6570;&#x636E;&#x5E76;&#x5728;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x4E0A;&#x89E3;&#x5BC6;&#x6570;&#x636E;&#xFF0C;&#x4E3A;&#x590D;&#x5236;&#x7684;&#x6570;&#x636E;&#x589E;&#x52A0;&#x4E86;&#x53E6;&#x4E00;&#x5C42;&#x5B89;&#x5168;&#x6027;&#x3002; &#x8BBE;&#x7F6E;&#x590D;&#x9009;&#x6846;&#x4F1A;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x9009;&#x9879;&#x4EE5;&#x5728;&#x4F7F;&#x7528;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x5BC6;&#x94A5;&#x6216;&#x5B9A;&#x4E49;&#x60A8;&#x81EA;&#x5DF1;&#x7684;&#x52A0;&#x5BC6;&#x5BC6;&#x7801;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x9009;&#x62E9;&#x3002; &#x52A0;&#x5BC6;&#x5BC6;&#x94A5;&#x65E2;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x5728; TrueNAS &#x7CFB;&#x7EDF;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x5C06;&#x76EE;&#x6807;&#x5FEB;&#x7167;&#x4E0E;&#x6E90;&#x540C;&#x6B65;&#x4F1A;&#x7834;&#x574F;&#x76EE;&#x6807;&#x4E2D;&#x4E0E;&#x6E90;&#x5FEB;&#x7167;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x4EFB;&#x4F55;&#x5FEB;&#x7167;&#x3002; TrueNAS &#x8FD8;&#x4F1A;&#x5BF9;&#x6E90;&#x5FEB;&#x7167;&#x8FDB;&#x884C;&#x5B8C;&#x6574;&#x590D;&#x5236;&#xFF0C;&#x5C31;&#x597D;&#x50CF;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x4EE5;&#x524D;&#x4ECE;&#x672A;&#x8FD0;&#x884C;&#x8FC7;&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x5E26;&#x5BBD;&#x6D88;&#x8017;&#x8FC7;&#x591A;&#x3002; &#x8FD9;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5177;&#x6709;&#x7834;&#x574F;&#x6027;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x56E0;&#x6B64;&#x8BF7;&#x786E;&#x4FDD;&#x5C06;&#x4ECE;&#x76EE;&#x6807;&#x4E2D;&#x5220;&#x9664;&#x7684;&#x4EFB;&#x4F55;&#x5FEB;&#x7167;&#x90FD;&#x5DF2;&#x8FC7;&#x65F6;&#x6216;&#x4EE5;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x5907;&#x4EFD;&#x5230;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x5EFA;&#x8BAE;&#x5B9A;&#x4E49;&#x5FEB;&#x7167;&#x4FDD;&#x7559;&#x7B56;&#x7565;&#xFF08;<strong>Snapshot Retention Policy</strong>&#xFF09;&#xFF0C;&#x4EE5;&#x9632;&#x6B62;&#x7CFB;&#x7EDF;&#x88AB;&#x8FC7;&#x65F6;&#x7684;&#x5FEB;&#x7167;&#x5F04;&#x4E71;&#x3002; &#x9009;&#x62E9;&#x4E0E;&#x6E90;&#x76F8;&#x540C;&#x5C06;&#x5728;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x4E0A;&#x4FDD;&#x7559;&#x5FEB;&#x7167;&#x7684;&#x65F6;&#x95F4;&#x4E0E;&#x6E90;&#x7CFB;&#x7EDF;&#x5B9A;&#x671F;&#x5FEB;&#x7167;&#x4EFB;&#x52A1;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5FEB;&#x7167;&#x4FDD;&#x5B58;&#x76F8;&#x540C;&#x3002; &#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x4E3A;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x5FEB;&#x7167;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x81EA;&#x5B9A;&#x4FDD;&#x5B58;&#x65F6;&#x95F4;&#x3002;</p>
+<h3 id="&#x65E5;&#x7A0B;&#x5B89;&#x6392;">&#x65E5;&#x7A0B;&#x5B89;&#x6392;</h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06;&#x4EFB;&#x52A1;&#x8BBE;&#x7F6E;&#x4E3A;&#x201C;&#x81EA;&#x52A8;&#x8FD0;&#x884C;&#x201D;&#xFF08;<strong>Run Automatically</strong>&#xFF09;&#x4F1A;&#x5728;&#x76F8;&#x5173;&#x5468;&#x671F;&#x6027;&#x5FEB;&#x7167;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x7ACB;&#x5373;&#x542F;&#x52A8;&#x590D;&#x5236;&#x3002;</p>
+<p>&#x8BBE;&#x7F6E; Schedule &#x590D;&#x9009;&#x6846;&#x5141;&#x8BB8;&#x5C06;&#x590D;&#x5236;&#x5B89;&#x6392;&#x5728;&#x5355;&#x72EC;&#x7684;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x3002; &#x5FC5;&#x987B;&#x4E3A;&#x8981;&#x8FD0;&#x884C;&#x7684;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x5B9A;&#x4E49;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x3002; &#x5EFA;&#x8BAE;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x8303;&#x56F4;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x4E3A;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x63D0;&#x4F9B;&#x8DB3;&#x591F;&#x7684;&#x65F6;&#x95F4;&#x6765;&#x5B8C;&#x6210;&#xFF0C;&#x53C8;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x5929;&#x4E2D;&#x6E90;&#x548C;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x7684;&#x7F51;&#x7EDC;&#x6D41;&#x91CF;&#x6700;&#x5C0F;&#x7684;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#x8FDB;&#x884C;&#x3002; &#x5F53;&#x60A8;&#x9700;&#x8981;&#x5FAE;&#x8C03;&#x590D;&#x5236;&#x7684;&#x786E;&#x5207;&#x65F6;&#x95F4;&#x6216;&#x65E5;&#x671F;&#x65F6;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x3002;</p>
+<h3 id="&#x9AD8;&#x7EA7;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;">&#x9AD8;&#x7EA7;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;</h3>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksAdvancedScheduler.png" alt=""></p>
+<p>&#x9009;&#x62E9;&#x9884;&#x8BBE;&#x4F1A;&#x586B;&#x5145;&#x5176;&#x4F59;&#x5B57;&#x6BB5;&#x3002;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x8BA1;&#x5212;&#xFF0C;&#x8BF7;&#x6309;&#x7167;<code>Minutes/Hours/Days</code>&#x8F93;&#x5165; <a href="https://www.freebsd.org/cgi/man.cgi?crontab%285%29" target="_blank">crontab</a> &#x503C;&#x3002;</p>
+<p>&#x8BF7;&#x586B;&#x5199;&#x6807;&#x51C6;&#x7684; cron &#x503C;&#x3002;&#x6700;&#x7B80;&#x5355;&#x7684;&#x9009;&#x62E9;&#x662F;&#x5728;&#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x3002;&#x5F53;&#x65F6;&#x95F4;&#x503C;&#x4E0E;&#x8BE5;&#x6570;&#x5B57;&#x5339;&#x914D;&#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x5C06;&#x8FD0;&#x884C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8F93;&#x5165; 10 &#x8868;&#x793A;&#x4EFB;&#x52A1;&#x5728;&#x65F6;&#x95F4;&#x8FC7;&#x5341;&#x5206;&#x949F;&#x65F6;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x661F;&#x53F7; (*) &#x8868;&#x793A;&#x201C;&#x5339;&#x914D;&#x6240;&#x6709;&#x503C;&#x201D;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x8F93;&#x5165;&#x5E26;&#x8FDE;&#x5B57;&#x7B26;&#x7684;&#x6570;&#x5B57;&#x503C;&#x6765;&#x8BBE;&#x7F6E;&#x7279;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x8303;&#x56F4;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x201C;&#x5206;&#x949F;&#x201D;&#xFF08;<strong>Minutes</strong>&#xFF09;&#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165; 30-35 &#x4F1A;&#x5C06;&#x4EFB;&#x52A1;&#x8BBE;&#x7F6E;&#x4E3A;&#x5728; 30&#x3001;31&#x3001;32&#x3001;33&#x3001;34 &#x548C; 35 &#x5206;&#x949F;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x503C;&#x5217;&#x8868;&#x3002;&#x8F93;&#x5165;&#x7531;&#x9017;&#x53F7; (,) &#x5206;&#x9694;&#x7684;&#x5404;&#x4E2A;&#x503C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x201C;&#x5C0F;&#x65F6;&#x201D;&#xFF08;<strong>Hours</strong>&#xFF09;&#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165; 1,14 &#x8868;&#x793A;&#x4EFB;&#x52A1;&#x5728;&#x51CC;&#x6668; 1:00 (0100) &#x548C;&#x4E0B;&#x5348; 2:00 (1400) &#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x659C;&#x7EBF; (/) &#x8868;&#x793A;&#x6B65;&#x957F;&#x503C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728; &quot;&#x65E5;&#x671F;&quot;&#xFF08;<strong>Days</strong>&#xFF09; &#x4E2D;&#x8F93;&#x5165; <em> &#x8868;&#x793A;&#x8BE5;&#x4EFB;&#x52A1;&#x5728;&#x6BCF;&#x6708;&#x7684;&#x6BCF;&#x4E00;&#x5929;&#x8FD0;&#x884C;&#xFF0C;</em>/2 &#x8868;&#x793A;&#x8BE5;&#x4EFB;&#x52A1;&#x6BCF;&#x9694;&#x4E00;&#x5929;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x3002;</p>
+<p>&#x5C06;&#x4E0A;&#x8FF0;&#x6240;&#x6709;&#x793A;&#x4F8B;&#x7ED3;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BA1;&#x5212;&#xFF0C;&#x5728;&#x6BCF;&#x5929;&#x51CC;&#x6668; 1:30-1:35 &#x548C;&#x4E0B;&#x5348; 2:30-2:35 &#x6BCF;&#x5206;&#x949F;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x6709;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4EFB;&#x52A1;&#x8FD0;&#x884C;&#x7684;&#x6708;&#x4EFD;&#x3002;&#x4E0D;&#x8BBE;&#x7F6E;&#x6BCF;&#x4E2A;&#x6708;&#x4E0E;&#x9009;&#x62E9;&#x6BCF;&#x4E2A;&#x6708;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x661F;&#x671F;&#x51E0;&#x5B89;&#x6392;&#x4EFB;&#x52A1;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x65E5;&#x5B50;&#x8FD0;&#x884C;&#x3002;&#x8FD9;&#x662F;&#x5BF9;&#x4EFB;&#x4F55;&#x5217;&#x51FA;&#x7684;&#x5929;&#x6570;&#x7684;&#x8865;&#x5145;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x65E5;&#x671F;&#x4E2D;&#x8F93;&#x5165; 1 &#x5E76;&#x5C06; <strong>Wed</strong> &#x8BBE;&#x7F6E;&#x4E3A; <strong>Days of Week</strong> &#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BA1;&#x5212;&#xFF0C;&#x8BE5;&#x8BA1;&#x5212;&#x5728;&#x6BCF;&#x6708;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#x548C;&#x6BCF;&#x6708;&#x7684;&#x6BCF;&#x4E2A;&#x661F;&#x671F;&#x4E09;&#x542F;&#x52A8;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x8BA1;&#x5212;&#x9884;&#x89C8;&#xFF08;<strong>Schedule Preview</strong>&#xFF09;&#x663E;&#x793A;&#x5F53;&#x524D;&#x8BBE;&#x7F6E;&#x7684;&#x4EFB;&#x52A1;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<h4 id="cron-&#x8BED;&#x6CD5;&#x793A;&#x4F8B;">CRON &#x8BED;&#x6CD5;&#x793A;&#x4F8B;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53E5;&#x6CD5;</th>
+<th>&#x542B;&#x4E49;</th>
+<th>&#x4F8B;&#x5B50;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>&#x6BCF;&#x4E00;&#x9879;&#x3002;</td>
+<td><em> (minutes) = &#x6BCF;&#x5C0F;&#x65F6;&#x7684;&#x6BCF;&#x4E2A;&#x7279;&#x5B9A;&#x5206;&#x949F;. </em> (days) = &#x6BCF;&#x5929;.</td>
+</tr>
+<tr>
+<td>*/N</td>
+<td>&#x6BCF; N &#x4E2A;&#x9879;&#x76EE;</td>
+<td><em>/15 (minutes) = &#x6BCF;&#x5C0F;&#x65F6;&#x7684;&#x7B2C; 15 &#x5206;&#x949F;&#xFF08;&#x6BCF;&#x523B;&#x949F;&#xFF09;&#x3002; </em>/3 (days) = &#x6BCF; 3 &#x5929;&#x3002; */3 (months) = &#x6BCF;&#x4E09;&#x4E2A;&#x6708;&#x4E00;&#x6B21;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x9017;&#x53F7;&#x548C;&#x8FDE;&#x5B57;&#x7B26;/&#x7834;&#x6298;&#x53F7;</td>
+<td>&#x6BCF;&#x4E2A;&#x9648;&#x8FF0;&#x7684;&#x9879;&#x76EE;&#xFF08;&#x9017;&#x53F7;&#xFF09; &#x8303;&#x56F4;&#x5185;&#x7684;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#xFF08;&#x8FDE;&#x5B57;&#x7B26;/&#x7834;&#x6298;&#x53F7;&#xFF09;&#x3002;</td>
+<td>1,31 (minutes) = &#x5728;&#x6BCF;&#x5C0F;&#x65F6;&#x7684;&#x7B2C; 1 &#x5206;&#x949F;&#x548C;&#x7B2C; 31 &#x5206;&#x949F;&#x3002; 1-3,31 (minutes) = &#x6BCF;&#x5C0F;&#x65F6;&#x7684;&#x7B2C; 1 &#x5206;&#x949F;&#x5230;&#x7B2C; 3 &#x5206;&#x949F;&#xFF0C;&#x4EE5;&#x53CA;&#x7B2C; 31 &#x5206;&#x949F;&#x3002; mon-fri (days) = &#x6BCF;&#x5468;&#x4E00;&#x81F3;&#x5468;&#x4E94;&#xFF08;&#x5305;&#x62EC;&#x6BCF;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;&#xFF09;&#x3002; mar,jun,sep,dec (months) = &#x6BCF;&#x5E74;&#x4E09;&#x6708;&#x3001;&#x516D;&#x6708;&#x3001;&#x4E5D;&#x6708;&#x3001;&#x5341;&#x4E8C;&#x6708;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5929;&#x6570;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E3A;&#x4E00;&#x4E2A;&#x6708;&#x7684;&#x5929;&#x6570;&#x6216;&#x4E00;&#x5468;&#x7684;&#x5929;&#x6570;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x7C7B;&#x4F3C;&#x4E8E;&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x7684;&#x7075;&#x6D3B;&#x8BA1;&#x5212;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x60F3;&#x8981;&#x7684;&#x65F6;&#x95F4;&#x8868;</th>
+<th>&#x8981;&#x8F93;&#x5165;&#x7684;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x6BCF;&#x5929; 3 &#x6B21;&#xFF08;&#x5348;&#x591C;&#x3001;08:00 &#x548C; 16:00&#xFF09;</td>
+<td>months=<em>; days=</em>; hours=0/8 or 0,8,16; minutes=0 (Meaning: every day of every month, when hours=0/8/16 and minutes=0)</td>
+</tr>
+<tr>
+<td>&#x6BCF;&#x5468;&#x4E00;&#x3001;&#x5468;&#x4E09;&#x548C;&#x5468;&#x4E94;&#xFF0C;&#x665A;&#x4E0A; 8.30</td>
+<td>months=*; days=mon,wed,fri; hours=20; minutes=30</td>
+</tr>
+<tr>
+<td>&#x6BCF;&#x6708;&#x7684;&#x7B2C; 1 &#x5929;&#x548C;&#x7B2C; 15 &#x5929;&#xFF0C;10 &#x6708;&#x81F3; 6 &#x6708;&#xFF0C;&#x4E0A;&#x5348; 00:01</td>
+<td>months=oct-dec,jan-jun; days=1,15; hours=0; minutes=1</td>
+</tr>
+<tr>
+<td>&#x5DE5;&#x4F5C;&#x65E5;&#x5185;&#x6BCF; 15 &#x5206;&#x949F;&#x4E00;&#x6B21;&#xFF0C;&#x5373;&#x5468;&#x4E00;&#x81F3;&#x5468;&#x4E94;&#x4E0A;&#x5348; 8 &#x70B9;&#x81F3;&#x665A;&#x4E0A; 7 &#x70B9;&#xFF08;08:00 - 19:00&#xFF09;</td>
+<td>Note that this requires two tasks to achieve: (1) months=<em>; days=mon-fri; hours=8-18; minutes=</em>/15 (2) months=*; days=mon-fri; hours=19; minutes=0 We need the second scheduled item, to execute at 19:00, otherwise we would stop at 18:45. Another workaround would be to stop at 18:45 or 19:45 rather than 19:00.</td>
+</tr>
+</tbody>
+</table>
+<p>&#x52FE;&#x9009;&#x4EC5;&#x590D;&#x5236;&#x5FEB;&#x7167;&#x5339;&#x914D;&#x8BA1;&#x5212;&#xFF08;<strong>Only Replicate Snapshots Matching Schedule</strong>&#xFF09;&#x5C06;&#x590D;&#x5236;&#x9650;&#x5236;&#x4E3A;&#x4EC5;&#x590D;&#x5236;&#x4E0E;&#x590D;&#x5236;&#x8BA1;&#x5212;&#x540C;&#x65F6;&#x521B;&#x5EFA;&#x7684;&#x90A3;&#x4E9B;&#x5FEB;&#x7167;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/TasksReplicationAddAdvancedSchedule.png" alt=""></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Remote.html" class="navigation navigation-prev " aria-label="Previous page: 1.4.6.2.远程复制任务">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Troubleshooting_Tips.html" class="navigation navigation-next " aria-label="Next page: 1.4.6.4.故障排除提示">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.4.6.3.高级复制任务","level":"1.2.4.6.3","depth":4,"next":{"title":"1.4.6.4.故障排除提示","level":"1.2.4.6.4","depth":4,"path":"TrueNAS_CORE_and_Enterprise/Tasks/Replication_Tasks/Troubleshooting_Tips.md","ref":"TrueNAS_CORE_and_Enterprise/Tasks/Replication_Tasks/Troubleshooting_Tips.md","articles":[]},"previous":{"title":"1.4.6.2.远程复制任务","level":"1.2.4.6.2","depth":4,"path":"TrueNAS_CORE_and_Enterprise/Tasks/Replication_Tasks/Remote.md","ref":"TrueNAS_CORE_and_Enterprise/Tasks/Replication_Tasks/Remote.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Tasks/Replication_Tasks/Advanced.md","mtime":"2021-11-17T06:46:15.796Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-17T07:09:33.678Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

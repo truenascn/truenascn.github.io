@@ -20,7 +20,7 @@ TrueNAS 允许用户使用 [cron(8)](https://man.openbsd.org/cron.8) 定期运�
 
 接下来，定义命令调度。TrueNAS 提供各种预设时间表，此外还有一个高级调度程序可以满足非常特定的调度要求。
 
-### 高级调度程序
+### 高级计划程序
 
 ![](https://www.truenas.com/docs/images/CORE/12.0/TasksAdvancedScheduler.png)
 
