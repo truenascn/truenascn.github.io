@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="VMware-Snapshots.html" />
+    
     
     <link rel="prev" href="Pools/SLOG_Overprovisioning.html" />
     
@@ -1163,8 +1165,105 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.6.3" data-path="VMware-Snapshots.html">
+            
+                <a href="VMware-Snapshots.html">
+            
+                    
+                    1.6.3.VMware虚拟机快照
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="Disks/">
+            
+                <a href="Disks/">
+            
+                    
+                    1.6.4.磁盘
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.4.1" data-path="Disks/Wipe.html">
+            
+                <a href="Disks/Wipe.html">
+            
+                    
+                    1.6.4.1.擦除磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4.2" data-path="Disks/Replacement.html">
+            
+                <a href="Disks/Replacement.html">
+            
+                    
+                    1.6.4.2.替换磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="Self-Encrypting_Drives.html">
+            
+                <a href="Self-Encrypting_Drives.html">
+            
+                    
+                    1.6.5.自加密驱动器（SEDs）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="Import_Disk.html">
+            
+                <a href="Import_Disk.html">
+            
+                    
+                    1.6.6.导入磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Directory_Services/">
+            
+                <a href="../Directory_Services/">
+            
+                    
+                    1.7.目录服务
+            
+                </a>
+            
+
             
         </li>
     
@@ -1219,6 +1318,63 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5FEB;&#x7167;">&#x5FEB;&#x7167;</h1>
+<p>&#x5FEB;&#x7167;&#x662F; ZFS &#x6700;&#x5F3A;&#x5927;&#x7684;&#x529F;&#x80FD;&#x4E4B;&#x4E00;&#x3002; &#x5FEB;&#x7167;&#x63D0;&#x4F9B;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6216;&#x5377;&#x7684;&#x53EA;&#x8BFB;&#x65F6;&#x95F4;&#x70B9;&#x526F;&#x672C;&#x3002; &#x6B64;&#x526F;&#x672C;&#x4E0D;&#x4F1A;&#x5360;&#x7528; ZFS &#x6C60;&#x4E2D;&#x7684;&#x989D;&#x5916;&#x7A7A;&#x95F4;&#x3002; &#x6BCF;&#x5F53;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5FEB;&#x7167;&#x4EC5;&#x8BB0;&#x5F55;&#x5B58;&#x50A8;&#x5757;&#x5F15;&#x7528;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x3002;</p>
+<p>&#x5FEB;&#x7167;&#x4FDD;&#x7559;&#x6587;&#x4EF6;&#x7684;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x6062;&#x590D;&#x8F83;&#x65E7;&#x751A;&#x81F3;&#x5DF2;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x3002; &#x51FA;&#x4E8E;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#xFF0C;&#x8BB8;&#x591A;&#x7BA1;&#x7406;&#x5458;&#x5B9A;&#x671F;&#x62CD;&#x6444;&#x5FEB;&#x7167;&#xFF0C;&#x5C06;&#x5B83;&#x4EEC;&#x5B58;&#x50A8;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5B83;&#x4EEC;&#x590D;&#x5236;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x7CFB;&#x7EDF;&#x3002; &#x6B64;&#x7B56;&#x7565;&#x5141;&#x8BB8;&#x7BA1;&#x7406;&#x5458;&#x5C06;&#x7CFB;&#x7EDF;&#x6570;&#x636E;&#x56DE;&#x6EDA;&#x5230;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x70B9;&#x3002; &#x5982;&#x679C;&#x53D1;&#x751F;&#x707E;&#x96BE;&#x6027;&#x7684;&#x7CFB;&#x7EDF;&#x6216;&#x78C1;&#x76D8;&#x6545;&#x969C;&#xFF0C;&#x5F02;&#x5730;&#x5FEB;&#x7167;&#x53EF;&#x4EE5;&#x5C06;&#x6570;&#x636E;&#x6062;&#x590D;&#x5230;&#x6700;&#x8FD1;&#x7684;&#x5FEB;&#x7167;&#x3002;</p>
+<p>&#x62CD;&#x6444;&#x5FEB;&#x7167;&#x524D;&#x8981;&#x6C42;&#x7CFB;&#x7EDF;&#x5DF2;&#x914D;&#x7F6E;&#x597D;&#x6240;&#x6709;<a href="https://www.truenas.com/docs/core/storage/pools/" target="_blank">&#x6C60;</a>&#x3001;<a href="https://www.truenas.com/docs/core/storage/snapshots/" target="_blank">&#x6570;&#x636E;&#x96C6;</a>&#x548C; <a href="https://www.truenas.com/docs/core/storage/snapshots/" target="_blank">zvol</a>&#x3002;</p>
+<h2 id="&#x521B;&#x5EFA;&#x5355;&#x4E2A;&#x5FEB;&#x7167;">&#x521B;&#x5EFA;&#x5355;&#x4E2A;&#x5FEB;&#x7167;</h2>
+<p>&#x5EFA;&#x8BAE;&#x8BBE;&#x7F6E;&#x5B9A;&#x671F;&#x5FEB;&#x7167;&#x4EFB;&#x52A1;&#x4EE5;&#x8282;&#x7701;&#x65F6;&#x95F4;&#x5E76;&#x521B;&#x5EFA;&#x5B9A;&#x671F;&#x3001;&#x65B0;&#x9C9C;&#x7684;&#x5FEB;&#x7167;&#x3002;</p>
+<p>&#x8981;&#x5FEB;&#x901F;&#x521B;&#x5EFA;&#x73B0;&#x6709;&#x5B58;&#x50A8;&#x7684;&#x5FEB;&#x7167;&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x5B58;&#x50A8;&#xFF08; <strong>Storage</strong>&#xFF09; &gt; &#x5FEB;&#x7167;&#xFF08;<strong>Snapshots</strong>&#xFF09;&#x5E76;&#x5355;&#x51FB;&#x6DFB;&#x52A0;&#xFF08;<strong>ADD</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/StorageSnapshotsAdd.png" alt=""></p>
+<p>&#x4F7F;&#x7528;&#x6570;&#x636E;&#x96C6;&#xFF08;<strong>Dataset</strong>&#xFF09;&#x4E0B;&#x62C9;&#x5217;&#x8868;&#x9009;&#x62E9;&#x8981;&#x521B;&#x5EFA;&#x5FEB;&#x7167;&#x7684;&#x73B0;&#x6709; ZFS &#x6C60;&#x3001;&#x6570;&#x636E;&#x96C6;&#x6216; zvol&#x3002;</p>
+<p>TrueNAS &#x8F6F;&#x4EF6;&#x4F1A;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x5EFA;&#x8BAE;&#x540D;&#x79F0;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x7B26;&#x4E32;&#x8986;&#x76D6;&#x8BE5;&#x540D;&#x79F0;&#x3002; &#x8981;&#x5C06;&#x5FEB;&#x7167;&#x5305;&#x542B;&#x5728;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x4E2D;&#xFF0C;&#x8BF7;&#x9009;&#x62E9;&#x9002;&#x5F53;&#x7684;&#x547D;&#x540D;&#x6A21;&#x5F0F;&#x3002; <strong>Naming Schema</strong> &#x4E0B;&#x62C9;&#x5217;&#x8868;&#x4E2D;&#x586B;&#x5145;&#x4E86;&#x5DF2;&#x4ECE;&#x5B9A;&#x671F;&#x5FEB;&#x7167;&#x4EFB;&#x52A1;&#x521B;&#x5EFA;&#x7684;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>&#x8981;&#x5728;&#x5FEB;&#x7167;&#x4E2D;&#x5305;&#x542B;&#x5B50;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x8BF7;&#x8BBE;&#x7F6E; &#x9012;&#x5F52;&#xFF08;<strong>Recursive</strong>&#xFF09;&#x3002;</p>
+<h2 id="&#x7BA1;&#x7406;&#x5FEB;&#x7167;">&#x7BA1;&#x7406;&#x5FEB;&#x7167;</h2>
+<p>&#x8FDB;&#x5165;&#x5B58;&#x50A8;&#xFF08; <strong>Storage</strong>&#xFF09; &gt; &#x5FEB;&#x7167;&#xFF08;<strong>Snapshots</strong>&#xFF09;&#x7BA1;&#x7406;&#x521B;&#x5EFA;&#x7684;&#x5FEB;&#x7167;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/StorageSnapshots.png" alt=""></p>
+<p>&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6761;&#x76EE;&#x90FD;&#x5305;&#x542B;&#x6570;&#x636E;&#x96C6;&#x548C;&#x5FEB;&#x7167;&#x540D;&#x79F0;&#x3002; &#x5355;&#x51FB; &gt; &#x67E5;&#x770B;&#x5FEB;&#x7167;&#x7684;&#x9009;&#x9879;&#x3002;</p>
+<h3 id="&#x5FEB;&#x7167;&#x9009;&#x9879;">&#x5FEB;&#x7167;&#x9009;&#x9879;</h3>
+<h4 id="&#x521B;&#x5EFA;&#x65E5;&#x671F;&#xFF08;date-created&#xFF09;">&#x521B;&#x5EFA;&#x65E5;&#x671F;&#xFF08;DATE CREATED&#xFF09;</h4>
+<p>&#x521B;&#x5EFA;&#x5FEB;&#x7167;&#x7684;&#x786E;&#x5207;&#x65F6;&#x95F4;&#x548C;&#x65E5;&#x671F;&#x3002;</p>
+<h4 id="&#x4F7F;&#x7528;&#x7A7A;&#x95F4;&#xFF08;used&#xFF09;">&#x4F7F;&#x7528;&#x7A7A;&#x95F4;&#xFF08;USED&#xFF09;</h4>
+<p>&#x6B64;&#x6570;&#x636E;&#x96C6;&#x53CA;&#x5176;&#x6240;&#x6709;&#x540E;&#x4EE3;&#x6570;&#x636E;&#x96C6;&#x5360;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x91CF;&#x3002;&#x6B64;&#x503C;&#x6839;&#x636E;&#x6570;&#x636E;&#x96C6;&#x914D;&#x989D;&#x548C;&#x9884;&#x7559;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#xFF0C;&#x663E;&#x793A;&#x5DF2;&#x4F7F;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x4F46;&#x4E0D;&#x5305;&#x62EC;&#x6570;&#x636E;&#x96C6;&#x9884;&#x7559;&#x3002;&#x5B83;&#x8003;&#x8651;&#x4E86;&#x4EFB;&#x4F55;&#x540E;&#x4EE3;&#x6570;&#x636E;&#x96C6;&#x7684;&#x4FDD;&#x7559;&#x3002;&#x6570;&#x636E;&#x96C6;&#x4ECE;&#x5176;&#x7236;&#x7EA7;&#x6D88;&#x8017;&#x7684;&#x7A7A;&#x95F4;&#x91CF;&#x4EE5;&#x53CA;&#x9012;&#x5F52;&#x5220;&#x9664;&#x8BE5;&#x6570;&#x636E;&#x96C6;&#x65F6;&#x91CA;&#x653E;&#x7684;&#x7A7A;&#x95F4;&#x91CF;&#x662F;&#x5176;&#x5DF2;&#x7528;&#x7A7A;&#x95F4;&#x548C;&#x9884;&#x7559;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x8F83;&#x5927;&#x8005;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x5FEB;&#x7167;&#x5728;&#x5FEB;&#x7167;&#x3001;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x751A;&#x81F3;&#x4EE5;&#x524D;&#x7684;&#x5FEB;&#x7167;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x7A7A;&#x95F4;&#x3002;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x66F4;&#x6539;&#x4F1A;&#x51CF;&#x5C11;&#x5171;&#x4EAB;&#x7A7A;&#x95F4;&#x5E76;&#x8BA1;&#x5165;&#x5FEB;&#x7167;&#x7684;&#x5DF2;&#x7528;&#x7A7A;&#x95F4;&#x3002;&#x5220;&#x9664;&#x5FEB;&#x7167;&#x901A;&#x5E38;&#x4F1A;&#x589E;&#x52A0;&#x5728;&#x5176;&#x4ED6;&#x5FEB;&#x7167;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x552F;&#x4E00;&#x7A7A;&#x95F4;&#x3002;</p>
+<p>&#x67E5;&#x770B;&#x5355;&#x4E2A;&#x5FEB;&#x7167;&#x4F7F;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x8FDB;&#x5165;<strong>Shell</strong>&#x5E76;&#x8F93;&#x5165;<code>zfs list -t snapshot</code>&#x3002;</p>
+<p>&#x5DF2;&#x4F7F;&#x7528;&#x3001;&#x53EF;&#x7528;&#x6216;&#x5F15;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x4E0D;&#x8003;&#x8651;&#x6302;&#x8D77;&#x7684;&#x66F4;&#x6539;&#x3002;&#x6302;&#x8D77;&#x7684;&#x66F4;&#x6539;&#x901A;&#x5E38;&#x4F1A;&#x5728;&#x51E0;&#x79D2;&#x949F;&#x5185;&#x66F4;&#x65B0;&#xFF0C;&#x4F46;&#x8F83;&#x5927;&#x7684;&#x78C1;&#x76D8;&#x66F4;&#x6539;&#x4F1A;&#x51CF;&#x6162;&#x4F7F;&#x7528;&#x66F4;&#x65B0;&#x3002;</p>
+<h4 id="&#x53C2;&#x7167;&#x7A7A;&#x95F4;&#xFF08;referenced&#xFF09;">&#x53C2;&#x7167;&#x7A7A;&#x95F4;&#xFF08;REFERENCED&#xFF09;</h4>
+<p>&#x6B64;&#x6570;&#x636E;&#x96C6;&#x53EF;&#x8BBF;&#x95EE;&#x7684;&#x6570;&#x636E;&#x91CF;&#x3002; &#x8FD9;&#x53EF;&#x4EE5;&#x4E0E;&#x6C60;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x96C6;&#x5171;&#x4EAB;&#x3002; &#x65B0;&#x5FEB;&#x7167;&#x6216;&#x514B;&#x9686;&#x5F15;&#x7528;&#x4E0E;&#x521B;&#x5EFA;&#x5B83;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6216;&#x5FEB;&#x7167;&#x76F8;&#x540C;&#x7684;&#x7A7A;&#x95F4;&#x91CF;&#xFF0C;&#x56E0;&#x4E3A;&#x5185;&#x5BB9;&#x76F8;&#x540C;&#x3002;</p>
+<h4 id="&#x5220;&#x9664;&#xFF08;delete&#xFF09;">&#x5220;&#x9664;&#xFF08;DELETE&#xFF09;</h4>
+<p>&#x5220;&#x9664;&#x9009;&#x9879;&#x4F1A;&#x7834;&#x574F;&#x5FEB;&#x7167;&#x3002; &#x60A8;&#x5FC5;&#x987B;&#x5148;&#x5220;&#x9664;&#x5B50;&#x514B;&#x9686;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x80FD;&#x5220;&#x9664;&#x5176;&#x7236;&#x5FEB;&#x7167;&#x3002; &#x867D;&#x7136;&#x521B;&#x5EFA;&#x5FEB;&#x7167;&#x662F;&#x5373;&#x65F6;&#x7684;&#xFF0C;&#x4F46;&#x5220;&#x9664;&#x5FEB;&#x7167;&#x662F; I/O &#x5BC6;&#x96C6;&#x578B;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5728;&#x542F;&#x7528;&#x91CD;&#x590D;&#x6570;&#x636E;&#x5220;&#x9664;&#x65F6;&#x3002;&#x56E0;&#x4E3A;ZFS &#x5FC5;&#x987B;&#x5728;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x68C0;&#x67E5;&#x6240;&#x6709;&#x5DF2;&#x5206;&#x914D;&#x7684;&#x5757;&#xFF0C;&#x4EE5;&#x67E5;&#x770B;&#x662F;&#x5426;&#x6709;&#x53E6;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x8BE5;&#x5757;&#x3002; &#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;&#xFF0C;ZFS &#x53EF;&#x4EE5;&#x91CA;&#x653E;&#x8BE5;&#x5757;&#x3002;</p>
+<h4 id="&#x5C06;&#x5FEB;&#x7167;&#x514B;&#x9686;&#x5230;&#x65B0;&#x6570;&#x636E;&#x96C6;&#xFF08;clone-to-new-dataset&#xFF09;">&#x5C06;&#x5FEB;&#x7167;&#x514B;&#x9686;&#x5230;&#x65B0;&#x6570;&#x636E;&#x96C6;&#xFF08;CLONE TO NEW DATASET&#xFF09;</h4>
+<p>&#x4ECE;&#x5FEB;&#x7167;&#x5185;&#x5BB9;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5FEB;&#x7167;&#x514B;&#x9686;&#xFF08;&#x6570;&#x636E;&#x96C6;&#xFF09;&#x3002;&#x514B;&#x9686;&#x662F;&#x5FEB;&#x7167;&#x7684;&#x53EF;&#x5199;&#x526F;&#x672C;&#x3002; &#x56E0;&#x4E3A;&#x514B;&#x9686;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x6302;&#x8F7D;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x5B83;&#x51FA;&#x73B0;&#x5728;&#x6C60;&#x5C4F;&#x5E55;&#x800C;&#x4E0D;&#x662F;&#x5FEB;&#x7167;&#x5C4F;&#x5E55;&#x4E2D;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x521B;&#x5EFA;&#x65B0;&#x5FEB;&#x7167;&#x540D;&#x79F0;&#x4E2D;&#x4F1A;&#x542B;&#x6709; -clone &#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x5BF9;&#x8BDD;&#x6846;&#x63D0;&#x793A;&#x8F93;&#x5165;&#x65B0;&#x7684;&#x6570;&#x636E;&#x96C6;&#x540D;&#x79F0;&#x3002; &#x5EFA;&#x8BAE;&#x7684;&#x540D;&#x79F0;&#x6E90;&#x81EA;&#x5FEB;&#x7167;&#x540D;&#x79F0;&#x3002;</p>
+<h4 id="&#x56DE;&#x6EDA;&#x5FEB;&#x7167;&#xFF08;rollback&#xFF09;">&#x56DE;&#x6EDA;&#x5FEB;&#x7167;&#xFF08;ROLLBACK&#xFF09;</h4>
+<p>&#x5C06;&#x6570;&#x636E;&#x96C6;&#x6062;&#x590D;&#x5230;&#x5FEB;&#x7167;&#x4FDD;&#x5B58;&#x7684;&#x65F6;&#x95F4;&#x70B9;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+<p>TrueNAS &#x5728;&#x56DE;&#x6EDA;&#x5230;&#x6240;&#x9009;&#x5FEB;&#x7167;&#x72B6;&#x6001;&#x4E4B;&#x524D;&#x8981;&#x6C42;&#x786E;&#x8BA4;&#x3002; &#x5355;&#x51FB;&#x662F;&#xFF08;<strong>Yes</strong>&#xFF09; &#x4F1A;&#x5C06;&#x6240;&#x6709;&#x6570;&#x636E;&#x96C6;&#x6587;&#x4EF6;&#x6062;&#x590D;&#x5230;&#x5B83;&#x4EEC;&#x5728;&#x521B;&#x5EFA;&#x5FEB;&#x7167;&#x65F6;&#x6240;&#x5904;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x56DE;&#x6EDA;&#x662F;&#x4E00;&#x4E2A;&#x5371;&#x9669;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5B83;&#x4F1A;&#x5BFC;&#x81F4;&#x4EFB;&#x4F55;&#x914D;&#x7F6E;&#x7684;&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x5931;&#x8D25;&#x3002; &#x6267;&#x884C;&#x589E;&#x91CF;&#x5907;&#x4EFD;&#x65F6;&#xFF0C;&#x590D;&#x5236;&#x4F7F;&#x7528;&#x73B0;&#x6709;&#x5FEB;&#x7167;&#xFF0C;&#x56DE;&#x6EDA;&#x53EF;&#x80FD;&#x4F1A;&#x4F7F;&#x5FEB;&#x7167;&#x201C;&#x65E0;&#x5E8F;&#x201D;&#x3002; &#x8981;&#x6062;&#x590D;&#x5FEB;&#x7167;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5EFA;&#x8BAE;&#x7684;&#x6B65;&#x9AA4;&#x662F;&#xFF1A;</p>
+<ol>
+<li>&#x514B;&#x9686;&#x6240;&#x9700;&#x7684;&#x5FEB;&#x7167;&#x3002;</li>
+<li>&#x4E0E;&#x5728; TrueNAS &#x7CFB;&#x7EDF;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x5171;&#x4EAB;&#x7C7B;&#x578B;&#x6216;&#x670D;&#x52A1;&#x5171;&#x4EAB;&#x514B;&#x9686;&#x3002;</li>
+<li>&#x5141;&#x8BB8;&#x7528;&#x6237;&#x6062;&#x590D;&#x4ED6;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x4ECE;&#x5B58;&#x50A8;&#xFF08; <strong>Storage</strong>&#xFF09; &gt; &#x5B58;&#x50A8;&#x6C60;&#xFF08;<strong>Pools</strong>&#xFF09;&#x4E2D;&#x5220;&#x9664;&#x514B;&#x9686;&#x3002;</li>
+</ol>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x7834;&#x574F;&#x4EFB;&#x4F55;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x590D;&#x5236;&#x3002;</p>
+<h3 id="&#x6279;&#x91CF;&#x64CD;&#x4F5C;">&#x6279;&#x91CF;&#x64CD;&#x4F5C;</h3>
+<p>&#x8981;&#x5220;&#x9664;&#x591A;&#x4E2A;&#x5FEB;&#x7167;&#xFF0C;&#x8BF7;&#x5206;&#x522B;&#x9009;&#x62E9;&#x8981;&#x5305;&#x542B;&#x7684;&#x6BCF;&#x4E2A;&#x5FEB;&#x7167;&#x7684;&#x5DE6;&#x5217;&#x6846;&#x3002; &#x5355;&#x51FB;&#x663E;&#x793A;&#x7684;&#x5220;&#x9664;&#xFF08;<strong>Delete</strong>&#xFF09;&#x6309;&#x94AE;&#x3002;</p>
+<p>&#x8981;&#x6309;&#x540D;&#x79F0;&#x641C;&#x7D22;&#x5FEB;&#x7167;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x5728;&#x641C;&#x7D22;&#x8FC7;&#x6EE4;&#x5FEB;&#x7167;&#xFF08;<strong>Filter Snapshots</strong>&#xFF09;&#x6587;&#x672C;&#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165;&#x5339;&#x914D;&#x6761;&#x4EF6;&#x3002; &#x8BE5;&#x5217;&#x8868;&#x73B0;&#x5728;&#x4EC5;&#x663E;&#x793A;&#x4E0E;&#x8FC7;&#x6EE4;&#x5668;&#x6587;&#x672C;&#x5339;&#x914D;&#x7684;&#x5FEB;&#x7167;&#x540D;&#x79F0;&#x3002;</p>
+<h2 id="&#x6D4F;&#x89C8;&#x5FEB;&#x7167;&#x96C6;&#x5408;">&#x6D4F;&#x89C8;&#x5FEB;&#x7167;&#x96C6;&#x5408;</h2>
+<p>&#x6D4F;&#x89C8;&#x5FEB;&#x7167;&#x96C6;&#x5408;&#x662F;&#x4E00;&#x9879;&#x9AD8;&#x7EA7;&#x529F;&#x80FD;&#xFF0C;&#x9700;&#x8981; ZFS &#x548C;&#x547D;&#x4EE4;&#x884C;&#x7ECF;&#x9A8C;&#x3002;
+&#x6240;&#x6709;&#x6570;&#x636E;&#x96C6;&#x5FEB;&#x7167;&#x90FD;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x666E;&#x901A;&#x5206;&#x5C42;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x8BBF;&#x95EE;&#xFF0C;&#x4ECE;&#x4F4D;&#x4E8E;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x6839;&#x76EE;&#x5F55;&#x7684;&#x9690;&#x85CF; .zfs &#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5FEB;&#x7167;&#x5B58;&#x653E;&#x8DEF;&#x5F84;&#x8D85;&#x8FC7; 88 &#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x5219;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x6216;&#x641C;&#x7D22;&#x5FEB;&#x7167;&#x53CA;&#x5176;&#x5305;&#x542B;&#x7684;&#x4EFB;&#x4F55;&#x6587;&#x4EF6;&#x3002; &#x5FEB;&#x7167;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x662F;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x4F46;&#x8981;&#x4F7F;&#x5FEB;&#x7167;&#x518D;&#x6B21;&#x53EF;&#x8BBF;&#x95EE;&#x4F1A;&#x8981;&#x6C42;&#x7F29;&#x77ED;&#x5B58;&#x653E;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>&#x6709;&#x6743;&#x8BBF;&#x95EE;&#x9690;&#x85CF;&#x6587;&#x4EF6;&#x7684;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>SMB</strong>&#x3001;<strong>NFS</strong> &#x548C; <strong>SFTP</strong> &#x7B49;&#x670D;&#x52A1;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x7BA1;&#x7406;&#x7A0B;&#x5E8F;&#x6216;&#x5171;&#x4EAB;&#x5C4F;&#x5E55;&#x67E5;&#x770B;&#x548C;&#x6D4F;&#x89C8;&#x6570;&#x636E;&#x96C6;&#x7684;&#x6240;&#x6709;&#x5FEB;&#x7167;&#x3002;</p>
+<p>&#x603B;&#x4E4B;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x8BBE;&#x7F6E;&#x8FDB;&#x884C;&#x7684;&#x4E3B;&#x8981;&#x66F4;&#x6539;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x6570;&#x636E;&#x96C6;&#x5C5E;&#x6027;&#x4E2D;&#xFF0C;&#x66F4;&#x6539; ZFS &#x5C5E;&#x6027;&#x4EE5;&#x542F;&#x7528;&#x5FEB;&#x7167;&#x53EF;&#x89C1;&#x6027;&#x3002;</li>
+<li>&#x5728; Samba &#x8F85;&#x52A9;&#x8BBE;&#x7F6E;&#x4E2D;&#xFF0C;&#x5C06; <code>veto files</code> &#x547D;&#x4EE4;&#x66F4;&#x6539;&#x4E3A;&#x4E0D;&#x9690;&#x85CF; .zfs&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x8BBE;&#x7F6E; <code>zfsacl:expose_snapdir=true</code>&#x3002;</li>
+</ul>
+<p>&#x6548;&#x679C;&#x662F;&#x4EFB;&#x4F55;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x96C6;&#x5185;&#x5BB9;&#x7684;&#x7528;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8F6C;&#x5230;&#x6570;&#x636E;&#x96C6; .zfs &#x76EE;&#x5F55;&#x6765;&#x67E5;&#x770B;&#x5FEB;&#x7167;&#x5217;&#x8868;&#x3002; &#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x5FEB;&#x7167;&#x96C6;&#x5408;&#x4E2D;&#x6D4F;&#x89C8;&#x548C;&#x641C;&#x7D22;&#x4ED6;&#x4EEC;&#x6709;&#x6743;&#x8BBF;&#x95EE;&#x7684;&#x4EFB;&#x4F55;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x5FEB;&#x7167;&#x65F6;&#xFF0C;&#x5BF9;&#x8BE5;&#x5FEB;&#x7167;&#x5185;&#x7684;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x7684;&#x6743;&#x9650;&#x6216; ACL &#x53EF;&#x80FD;&#x4F1A;&#x9650;&#x5236;&#x5BF9;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x5FEB;&#x7167;&#x662F;&#x53EA;&#x8BFB;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x7528;&#x6237;&#x65E0;&#x6743;&#x4FEE;&#x6539;&#x5FEB;&#x7167;&#x6216;&#x5176;&#x6587;&#x4EF6;&#xFF0C;&#x5373;&#x4F7F;&#x4ED6;&#x4EEC;&#x5728;&#x521B;&#x5EFA;&#x5FEB;&#x7167;&#x65F6;&#x5177;&#x6709;&#x5199;&#x5165;&#x6743;&#x9650;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x5728; <strong>Shell</strong> &#x4E2D;&#x8FD0;&#x884C;<code>zfs diff</code> &#x547D;&#x4EE4;&#xFF0C;&#x5B83;&#x4F1A;&#x5217;&#x51FA;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x4EFB;&#x610F;&#x4E24;&#x4E2A;&#x5FEB;&#x7167;&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x6216;&#x4EFB;&#x610F;&#x5FEB;&#x7167;&#x4E0E;&#x5F53;&#x524D;&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x7684;&#x6240;&#x6709;&#x66F4;&#x6539;&#x6587;&#x4EF6;&#x3002;</p>
 
                                 
                                 </section>
@@ -1246,10 +1402,14 @@
 
             
                 
-                <a href="Pools/SLOG_Overprovisioning.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 1.6.1.9.SLOG 超配置">
+                <a href="Pools/SLOG_Overprovisioning.html" class="navigation navigation-prev " aria-label="Previous page: 1.6.1.9.SLOG 超配置">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="VMware-Snapshots.html" class="navigation navigation-next " aria-label="Next page: 1.6.3.VMware虚拟机快照">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1258,7 +1418,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.6.2.快照","level":"1.2.6.2","depth":3,"previous":{"title":"1.6.1.9.SLOG 超配置","level":"1.2.6.1.9","depth":4,"path":"TrueNAS_CORE_and_Enterprise/Storage/Pools/SLOG_Overprovisioning.md","ref":"TrueNAS_CORE_and_Enterprise/Storage/Pools/SLOG_Overprovisioning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Storage/Snapshots.md","mtime":"2021-11-19T03:56:19.464Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T04:01:53.771Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.6.2.快照","level":"1.2.6.2","depth":3,"next":{"title":"1.6.3.VMware虚拟机快照","level":"1.2.6.3","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Storage/VMware-Snapshots.md","ref":"TrueNAS_CORE_and_Enterprise/Storage/VMware-Snapshots.md","articles":[]},"previous":{"title":"1.6.1.9.SLOG 超配置","level":"1.2.6.1.9","depth":4,"path":"TrueNAS_CORE_and_Enterprise/Storage/Pools/SLOG_Overprovisioning.md","ref":"TrueNAS_CORE_and_Enterprise/Storage/Pools/SLOG_Overprovisioning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Storage/Snapshots.md","mtime":"2021-11-19T14:51:37.708Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-20T01:57:38.311Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
