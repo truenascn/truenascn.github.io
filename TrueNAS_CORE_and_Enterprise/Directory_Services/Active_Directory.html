@@ -1,0 +1,1705 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.7.1.活动目录（Active Directory） · TrueNAS中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="EASTMOE">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="LDAP.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.TrueNAS Core和Enterprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../gettingstarted/">
+            
+                <a href="../gettingstarted/">
+            
+                    
+                    1.1.TrueNAS初探
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../gettingstarted/core_hardware_guide.html">
+            
+                <a href="../gettingstarted/core_hardware_guide.html">
+            
+                    
+                    1.1.1.TrueNAS Core 硬件指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../gettingstarted/INSTALL.html">
+            
+                <a href="../gettingstarted/INSTALL.html">
+            
+                    
+                    1.1.2.安装TrueNAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../gettingstarted/Console_Setup_Menu.html">
+            
+                <a href="../gettingstarted/Console_Setup_Menu.html">
+            
+                    
+                    1.1.3.控制台设置菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../gettingstarted/log_in.html">
+            
+                <a href="../gettingstarted/log_in.html">
+            
+                    
+                    1.1.4.登录到TrueNAS WebUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../gettingstarted/Storage_Configuration.html">
+            
+                <a href="../gettingstarted/Storage_Configuration.html">
+            
+                    
+                    1.1.5.存储配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../gettingstarted/Sharing_Storage.html">
+            
+                <a href="../gettingstarted/Sharing_Storage.html">
+            
+                    
+                    1.1.6.存储共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../gettingstarted/Data_Backups.html">
+            
+                <a href="../gettingstarted/Data_Backups.html">
+            
+                    
+                    1.1.7.数据备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../gettingstarted/Applications.html">
+            
+                <a href="../gettingstarted/Applications.html">
+            
+                    
+                    1.1.8.应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Accounts/">
+            
+                <a href="../Accounts/">
+            
+                    
+                    1.2.账户
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../Accounts/Groups.html">
+            
+                <a href="../Accounts/Groups.html">
+            
+                    
+                    1.2.1.TrueNAS用户组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../Accounts/Users.html">
+            
+                <a href="../Accounts/Users.html">
+            
+                    
+                    1.2.2.TrueNAS用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../System/">
+            
+                <a href="../System/">
+            
+                    
+                    1.3.系统设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../System/General/">
+            
+                <a href="../System/General/">
+            
+                    
+                    1.3.1.通用设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="../System/General/Setting.html">
+            
+                <a href="../System/General/Setting.html">
+            
+                    
+                    1.3.1.1.通用设置页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="../System/General/System_Config_Backups.html">
+            
+                <a href="../System/General/System_Config_Backups.html">
+            
+                    
+                    1.3.1.2.系统备份设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="../System/General/Managing_TLS_Ciphers.html">
+            
+                <a href="../System/General/Managing_TLS_Ciphers.html">
+            
+                    
+                    1.3.1.3.管理TLS加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../System/NTP_Servers.html">
+            
+                <a href="../System/NTP_Servers.html">
+            
+                    
+                    1.3.2.时间同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../System/Boot/">
+            
+                <a href="../System/Boot/">
+            
+                    
+                    1.3.3.启动与引导
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.3.1" data-path="../System/Boot/Boot_Screen.html">
+            
+                <a href="../System/Boot/Boot_Screen.html">
+            
+                    
+                    1.3.3.1.引导备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3.2" data-path="../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                <a href="../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                    
+                    1.3.3.2.启动池镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../System/Advanced.html">
+            
+                <a href="../System/Advanced.html">
+            
+                    
+                    1.3.4.高级设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../System/View_Enclosure.html">
+            
+                <a href="../System/View_Enclosure.html">
+            
+                    
+                    1.3.5.机箱监视
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="../System/Email.html">
+            
+                <a href="../System/Email.html">
+            
+                    
+                    1.3.6.电子邮件通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7" data-path="../System_Dataset.md">
+            
+                <span>
+            
+                    
+                    1.3.7.系统数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.8" data-path="../System/Reporting.html">
+            
+                <a href="../System/Reporting.html">
+            
+                    
+                    1.3.8.系统报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.9" data-path="../System/Alert.html">
+            
+                <a href="../System/Alert.html">
+            
+                    
+                    1.3.9.警告服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.10" data-path="../System/Cloud_Credentials.html">
+            
+                <a href="../System/Cloud_Credentials.html">
+            
+                    
+                    1.3.10.云服务凭据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.11" data-path="../System/SSH.html">
+            
+                <a href="../System/SSH.html">
+            
+                    
+                    1.3.11.SSH客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.12" data-path="../System/Tunables.html">
+            
+                <a href="../System/Tunables.html">
+            
+                    
+                    1.3.12.可调参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.13" data-path="../System/Update.html">
+            
+                <a href="../System/Update.html">
+            
+                    
+                    1.3.13.系统更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.14" data-path="../System/CAs.html">
+            
+                <a href="../System/CAs.html">
+            
+                    
+                    1.3.14.证书颁发机构（CA）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.15" data-path="../System/Certificates.html">
+            
+                <a href="../System/Certificates.html">
+            
+                    
+                    1.3.15.证书管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.16" data-path="../System/KMIP.html">
+            
+                <a href="../System/KMIP.html">
+            
+                    
+                    1.3.16.密钥管理互通协议（KMIP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.17" data-path="../System/Failover_HA.html">
+            
+                <a href="../System/Failover_HA.html">
+            
+                    
+                    1.3.17.故障转移与高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.18" data-path="../System/Support.html">
+            
+                <a href="../System/Support.html">
+            
+                    
+                    1.3.18.帮助与支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.19" data-path="../System/2FA.html">
+            
+                <a href="../System/2FA.html">
+            
+                    
+                    1.3.19.两步验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Tasks/">
+            
+                <a href="../Tasks/">
+            
+                    
+                    1.4.任务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Tasks/Cron_Jobs.html">
+            
+                <a href="../Tasks/Cron_Jobs.html">
+            
+                    
+                    1.4.1.定时任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Tasks/Init_Shutdown_Scripts.html">
+            
+                <a href="../Tasks/Init_Shutdown_Scripts.html">
+            
+                    
+                    1.4.2.开/关机脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../Tasks/Rsync_Tasks.html">
+            
+                <a href="../Tasks/Rsync_Tasks.html">
+            
+                    
+                    1.4.3.同步任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../Tasks/SMART_TEST.html">
+            
+                <a href="../Tasks/SMART_TEST.html">
+            
+                    
+                    1.4.4.硬盘检测任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../Tasks/Periodic_Snapshot_Tasks.html">
+            
+                <a href="../Tasks/Periodic_Snapshot_Tasks.html">
+            
+                    
+                    1.4.5.定期快照任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6" data-path="../Tasks/Replication_Tasks/">
+            
+                <a href="../Tasks/Replication_Tasks/">
+            
+                    
+                    1.4.6.复制任务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.6.1" data-path="../Tasks/Replication_Tasks/Local.html">
+            
+                <a href="../Tasks/Replication_Tasks/Local.html">
+            
+                    
+                    1.4.6.1.本地复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.2" data-path="../Tasks/Replication_Tasks/Remote.html">
+            
+                <a href="../Tasks/Replication_Tasks/Remote.html">
+            
+                    
+                    1.4.6.2.远程复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.3" data-path="../Tasks/Replication_Tasks/Advanced.html">
+            
+                <a href="../Tasks/Replication_Tasks/Advanced.html">
+            
+                    
+                    1.4.6.3.高级复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.4" data-path="../Tasks/Replication_Tasks/Troubleshooting_Tips.html">
+            
+                <a href="../Tasks/Replication_Tasks/Troubleshooting_Tips.html">
+            
+                    
+                    1.4.6.4.故障排除提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.7" data-path="../Tasks/Resilver_Priority.html">
+            
+                <a href="../Tasks/Resilver_Priority.html">
+            
+                    
+                    1.4.7.重新同步优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.8" data-path="../Tasks/Scrub_Tasks.html">
+            
+                <a href="../Tasks/Scrub_Tasks.html">
+            
+                    
+                    1.4.8.清理任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.9" data-path="../Tasks/Cloud_Sync_Tasks.html">
+            
+                <a href="../Tasks/Cloud_Sync_Tasks.html">
+            
+                    
+                    1.4.9.云同步任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.10" data-path="../Tasks/How_To_Back_Up_Google_Drive_to_TrueNAS_CORE.html">
+            
+                <a href="../Tasks/How_To_Back_Up_Google_Drive_to_TrueNAS_CORE.html">
+            
+                    
+                    1.4.10.将 Google 云端硬盘 备份到 TrueNAS CORE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Network/">
+            
+                <a href="../Network/">
+            
+                    
+                    1.5.网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../Network/Network_Summary.html">
+            
+                <a href="../Network/Network_Summary.html">
+            
+                    
+                    1.5.1.网络概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../Network/Global_Configuration.html">
+            
+                <a href="../Network/Global_Configuration.html">
+            
+                    
+                    1.5.2.全局设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../Network/Interface/">
+            
+                <a href="../Network/Interface/">
+            
+                    
+                    1.5.3.网络接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.3.1" data-path="../Network/Interface/Network_Bridge.html">
+            
+                <a href="../Network/Interface/Network_Bridge.html">
+            
+                    
+                    1.5.3.1.网桥
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.2" data-path="../Network/Interface/Link_Aggregations.html">
+            
+                <a href="../Network/Interface/Link_Aggregations.html">
+            
+                    
+                    1.5.3.2.链路聚合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.3" data-path="../Network/Interface/VLAN.html">
+            
+                <a href="../Network/Interface/VLAN.html">
+            
+                    
+                    1.5.3.3.虚拟局域网（VLAN）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.4" data-path="../Network/Interface/Setting_a_Static_IP_Address_for_the_TrueNAS_UI.html">
+            
+                <a href="../Network/Interface/Setting_a_Static_IP_Address_for_the_TrueNAS_UI.html">
+            
+                    
+                    1.5.3.4.在TrueNAS用户界面中设置静态IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.5" data-path="../Network/Interface/Editing_a_Physical_Interface.html">
+            
+                <a href="../Network/Interface/Editing_a_Physical_Interface.html">
+            
+                    
+                    1.5.3.5.编辑物理接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../Network/Static_Routes.html">
+            
+                <a href="../Network/Static_Routes.html">
+            
+                    
+                    1.5.4.静态路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="../Network/Enabling_WireGuard.html">
+            
+                <a href="../Network/Enabling_WireGuard.html">
+            
+                    
+                    1.5.5.启用WireGuard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.6" data-path="../Network/IPMI.html">
+            
+                <a href="../Network/IPMI.html">
+            
+                    
+                    1.5.6.IPMI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Storage/">
+            
+                <a href="../Storage/">
+            
+                    
+                    1.6.存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../Storage/Pools/">
+            
+                <a href="../Storage/Pools/">
+            
+                    
+                    1.6.1.存储池
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1.1" data-path="../Storage/Pools/Pool_Creation.html">
+            
+                <a href="../Storage/Pools/Pool_Creation.html">
+            
+                    
+                    1.6.1.1.创建存储池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.2" data-path="../Storage/Pools/Pool_Import.html">
+            
+                <a href="../Storage/Pools/Pool_Import.html">
+            
+                    
+                    1.6.1.2.导入存储池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.3" data-path="../Storage/Pools/Managing_Pools.html">
+            
+                <a href="../Storage/Pools/Managing_Pools.html">
+            
+                    
+                    1.6.1.3.存储池管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.4" data-path="../Storage/Pools/Datasets.html">
+            
+                <a href="../Storage/Pools/Datasets.html">
+            
+                    
+                    1.6.1.4.数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.5" data-path="../Storage/Pools/Zvols.html">
+            
+                <a href="../Storage/Pools/Zvols.html">
+            
+                    
+                    1.6.1.5.ZFS 卷 (Zvols)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.6" data-path="../Storage/Pools/Permissions.html">
+            
+                <a href="../Storage/Pools/Permissions.html">
+            
+                    
+                    1.6.1.6.权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.7" data-path="../Storage/Pools/Storage_Encryption.html">
+            
+                <a href="../Storage/Pools/Storage_Encryption.html">
+            
+                    
+                    1.6.1.7.存储加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.8" data-path="../Storage/Pools/Fusion_Pools.html">
+            
+                <a href="../Storage/Pools/Fusion_Pools.html">
+            
+                    
+                    1.6.1.8.融合池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.9" data-path="../Storage/Pools/SLOG_Overprovisioning.html">
+            
+                <a href="../Storage/Pools/SLOG_Overprovisioning.html">
+            
+                    
+                    1.6.1.9.SLOG 超配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../Storage/Snapshots.html">
+            
+                <a href="../Storage/Snapshots.html">
+            
+                    
+                    1.6.2.快照
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../Storage/VMware-Snapshots.html">
+            
+                <a href="../Storage/VMware-Snapshots.html">
+            
+                    
+                    1.6.3.VMware虚拟机快照
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../Storage/Disks/">
+            
+                <a href="../Storage/Disks/">
+            
+                    
+                    1.6.4.磁盘
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.4.1" data-path="../Storage/Disks/Wipe.html">
+            
+                <a href="../Storage/Disks/Wipe.html">
+            
+                    
+                    1.6.4.1.擦除磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4.2" data-path="../Storage/Disks/Replacement.html">
+            
+                <a href="../Storage/Disks/Replacement.html">
+            
+                    
+                    1.6.4.2.替换磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="../Storage/Self-Encrypting_Drives.html">
+            
+                <a href="../Storage/Self-Encrypting_Drives.html">
+            
+                    
+                    1.6.5.自加密驱动器（SEDs）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="../Storage/Import_Disk.html">
+            
+                <a href="../Storage/Import_Disk.html">
+            
+                    
+                    1.6.6.导入磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.7.目录服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.7.1" data-path="Active_Directory.html">
+            
+                <a href="Active_Directory.html">
+            
+                    
+                    1.7.1.活动目录（Active Directory）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="LDAP.html">
+            
+                <a href="LDAP.html">
+            
+                    
+                    1.7.2.轻型目录访问协议（LDAP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="NIS.html">
+            
+                <a href="NIS.html">
+            
+                    
+                    1.7.3.网络信息服务（NIS）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.4" data-path="Kerberos.html">
+            
+                <a href="Kerberos.html">
+            
+                    
+                    1.7.4.Kerberos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Sharing/">
+            
+                <a href="../Sharing/">
+            
+                    
+                    1.8.数据共享
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="../Sharing/Apple_Shares_AFP.html">
+            
+                <a href="../Sharing/Apple_Shares_AFP.html">
+            
+                    
+                    1.8.1.Apple 共享协议（AFP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2" data-path="../Sharing/Block_Shares_iSCSI/">
+            
+                <a href="../Sharing/Block_Shares_iSCSI/">
+            
+                    
+                    1.8.2.块共享 (iSCSI)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.2.1" data-path="../Sharing/Block_Shares_iSCSI/iSCSI_Shares.html">
+            
+                <a href="../Sharing/Block_Shares_iSCSI/iSCSI_Shares.html">
+            
+                    
+                    1.8.2.1.SCSI 共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2.2" data-path="../Sharing/Block_Shares_iSCSI/Fibre_Channel.html">
+            
+                <a href="../Sharing/Block_Shares_iSCSI/Fibre_Channel.html">
+            
+                    
+                    1.8.2.2.基于光纤通道的iSCSI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.7.1.活动目录（Active Directory）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;active-directory&#xFF09;"><b></b>&#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;Active Directory&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#&#x51C6;&#x5907;"><b></b>&#x51C6;&#x5907;</a></li><ul><li><span class="title-icon "></span><a href="#&#x9A8C;&#x8BC1;&#x540D;&#x79F0;&#x89E3;&#x6790;"><b></b>&#x9A8C;&#x8BC1;&#x540D;&#x79F0;&#x89E3;&#x6790;</a></li><li><span class="title-icon "></span><a href="#&#x65F6;&#x95F4;&#x540C;&#x6B65;"><b></b>&#x65F6;&#x95F4;&#x540C;&#x6B65;</a></li></ul><li><span class="title-icon "></span><a href="#&#x8FDE;&#x63A5;&#x5230;-active-directory-&#x57DF;"><b></b>&#x8FDE;&#x63A5;&#x5230; Active Directory &#x57DF;</a></li><li><span class="title-icon "></span><a href="#ftp&#x8BBF;&#x95EE;"><b></b>FTP&#x8BBF;&#x95EE;</a></li><li><span class="title-icon "></span><a href="#&#x6545;&#x969C;&#x6392;&#x9664;"><b></b>&#x6545;&#x969C;&#x6392;&#x9664;</a></li><ul><li><span class="title-icon "></span><a href="#shell&#x547D;&#x4EE4;"><b></b>Shell&#x547D;&#x4EE4;</a></li></ul></ul></ul></div><a href="#&#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;active-directory&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;active-directory&#xFF09;"><a name="&#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;active-directory&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;active-directory&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;Active Directory&#xFF09;</h1>
+<p>Active Directory (AD) &#x670D;&#x52A1;&#x5171;&#x4EAB; Windows &#x7F51;&#x7EDC;&#x4E2D;&#x7684;&#x8D44;&#x6E90;&#x3002; AD &#x4E3A;&#x7F51;&#x7EDC;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x548C;&#x6388;&#x6743;&#x670D;&#x52A1;&#xFF0C;&#x65E0;&#x9700;&#x5728; TrueNAS &#x4E0A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x7528;&#x6237;&#x5E10;&#x6237;&#x3002;</p>
+<p>&#x52A0;&#x5165; AD &#x57DF;&#x540E;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x7684;&#x672C;&#x5730; ACL &#x4E2D;&#x4F7F;&#x7528;&#x57DF;&#x7528;&#x6237;&#x548C;&#x7EC4;&#x3002; &#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x5C06;&#x5171;&#x4EAB;&#x8BBE;&#x7F6E;&#x4E3A;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<p>&#x52A0;&#x5165; AD &#x57DF;&#x8FD8;&#x4F1A;&#x914D;&#x7F6E; Privileged Access Manager (PAM) &#x4EE5;&#x8BA9;&#x57DF;&#x7528;&#x6237;&#x901A;&#x8FC7; SSH &#x767B;&#x5F55;&#x6216;&#x5BF9;&#x672C;&#x5730;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x3002;</p>
+<p>&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C; Samba &#x7248;&#x672C; 4 &#x7684; Windows &#x6216;&#x7C7B; Unix &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#x914D;&#x7F6E; AD &#x670D;&#x52A1;&#x3002;</p>
+<p>&#x8981;&#x914D;&#x7F6E;&#x8FDE;&#x63A5;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x77E5;&#x9053; Active Directory &#x57DF;&#x63A7;&#x5236;&#x5668;&#x7684;&#x57DF;&#x540D;&#x548C;&#x8BE5;&#x57DF;&#x7BA1;&#x7406;&#x5458;&#x7684;&#x5E10;&#x6237;&#x51ED;&#x636E;&#x3002;</p>
+<h2 id="&#x51C6;&#x5907;"><a name="&#x51C6;&#x5907;" class="anchor-navigation-ex-anchor" href="#&#x51C6;&#x5907;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x51C6;&#x5907;</h2>
+<p>&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x914D;&#x7F6E; Active Directory &#x4E4B;&#x524D;&#x91C7;&#x53D6;&#x4E00;&#x4E9B;&#x6B65;&#x9AA4;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x8FDE;&#x63A5;&#x8FC7;&#x7A0B;&#x987A;&#x5229;&#x8FDB;&#x884C;&#x3002;</p>
+<h3 id="&#x9A8C;&#x8BC1;&#x540D;&#x79F0;&#x89E3;&#x6790;"><a name="&#x9A8C;&#x8BC1;&#x540D;&#x79F0;&#x89E3;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x9A8C;&#x8BC1;&#x540D;&#x79F0;&#x89E3;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9A8C;&#x8BC1;&#x540D;&#x79F0;&#x89E3;&#x6790;</h3>
+<p>&#x8981;&#x786E;&#x8BA4;&#x540D;&#x79F0;&#x89E3;&#x6790;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x8BF7;&#x8F6C;&#x5230;<strong>Shell</strong>&#x5E76;&#x4F7F;&#x7528; ping &#x68C0;&#x67E5;&#x4E0E; AD &#x57DF;&#x63A7;&#x5236;&#x5668;&#x7684;&#x8FDE;&#x63A5;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/ShellDomainControllerPing.png" alt=""></p>
+<p>&#x5F53;&#x6570;&#x636E;&#x5305;&#x88AB;&#x65E0;&#x4E22;&#x5931;&#x5730;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x65F6;&#xFF0C;&#x8FDE;&#x63A5;&#x88AB;&#x9A8C;&#x8BC1;&#x3002; &#x6309; Ctrl + C &#x53D6;&#x6D88; ping&#x3002;</p>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x9009;&#x62E9;&#x662F;&#x4F7F;&#x7528; <code>host -t srv _ldap._tcp.domainname.com</code> &#x6765;&#x68C0;&#x67E5;&#x7F51;&#x7EDC;&#x7684; SRV &#x8BB0;&#x5F55;&#x5E76;&#x9A8C;&#x8BC1; DNS &#x89E3;&#x6790;&#x3002;</p>
+<p><strong>Q</strong>&#xFF1B;ping&#x4E0D;&#x901A;&#xFF01;&#x600E;&#x4E48;&#x529E;&#xFF1F;</p>
+<p><strong>A</strong>&#xFF1A;&#x5982;&#x679C; ping &#x5931;&#x8D25;&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x7F51;&#x7EDC;&#xFF08;<strong>Network</strong>&#xFF09; &gt; &#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF08;<strong>Global Configuration</strong>&#xFF09;&#x5E76;&#x66F4;&#x65B0; DNS &#x670D;&#x52A1;&#x5668;&#xFF08;<strong>DNS Servers</strong>&#xFF09;&#x548C;&#x9ED8;&#x8BA4;&#x7F51;&#x5173;&#xFF08;<strong>Default Gateway</strong>&#xFF09;&#x8BBE;&#x7F6E;&#xFF0C;&#x4EE5;&#x4FBF;&#x53EF;&#x4EE5;&#x542F;&#x52A8;&#x4E0E; Active Directory &#x57DF;&#x63A7;&#x5236;&#x5668;&#x7684;&#x8FDE;&#x63A5;&#x3002; &#x4E3A; AD &#x57DF;&#x63A7;&#x5236;&#x5668;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x540D;&#x79F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4EE5;&#x4FBF;&#x5BF9;&#x5FC5;&#x9700;&#x7684; SRV &#x8BB0;&#x5F55;&#x7684; DNS &#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x6210;&#x529F;&#x3002; &#x6BCF;&#x5F53;&#x57DF;&#x63A7;&#x5236;&#x5668;&#x4E0D;&#x53EF;&#x7528;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x540D;&#x79F0;&#x670D;&#x52A1;&#x5668;&#x6709;&#x52A9;&#x4E8E;&#x7EF4;&#x6301; AD &#x8FDE;&#x63A5;&#x3002;</p>
+<h3 id="&#x65F6;&#x95F4;&#x540C;&#x6B65;"><a name="&#x65F6;&#x95F4;&#x540C;&#x6B65;" class="anchor-navigation-ex-anchor" href="#&#x65F6;&#x95F4;&#x540C;&#x6B65;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65F6;&#x95F4;&#x540C;&#x6B65;</h3>
+<p>Active Directory &#x4F9D;&#x8D56;&#x4E8E; <a href="https://tools.ietf.org/html/rfc1510" target="_blank">Kerberos</a>&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x65F6;&#x95F4;&#x654F;&#x611F;&#x7684;&#x534F;&#x8BAE;&#x3002; &#x5728;&#x57DF;&#x52A0;&#x5165;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5177;&#x6709; <a href="https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows" target="_blank">PDC Emulator FSMO &#x89D2;&#x8272;</a>&#x7684; AD &#x57DF;&#x63A7;&#x5236;&#x5668;&#x88AB;&#x6DFB;&#x52A0;&#x4E3A;&#x9996;&#x9009; NTP &#x670D;&#x52A1;&#x5668;&#x3002; &#x5982;&#x679C;&#x60A8;&#x7684;&#x73AF;&#x5883;&#x9700;&#x8981;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x7CFB;&#x7EDF;&#xFF08;<strong>System</strong>&#xFF09; &gt; NTP &#x670D;&#x52A1;&#x5668;&#xFF08;<strong>NTP Servers</strong>&#xFF09;&#x4E2D;&#x66F4;&#x6539; NTP &#x670D;&#x52A1;&#x5668;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x5728;&#x9ED8;&#x8BA4; AD &#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x672C;&#x5730;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4;&#x4E0E; AD &#x57DF;&#x63A7;&#x5236;&#x5668;&#x65F6;&#x95F4;&#x65F6;&#x5DEE;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;&#x4E94;&#x5206;&#x949F;&#x3002; &#x914D;&#x7F6E;&#x865A;&#x62DF;&#x5316;&#x57DF;&#x63A7;&#x5236;&#x5668;&#x65F6;&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x65F6;&#x95F4;&#x6E90;&#x3002; &#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4;&#x4E0E; AD &#x57DF;&#x63A7;&#x5236;&#x5668;&#x65F6;&#x95F4;&#x4E0D;&#x540C;&#x6B65;&#xFF0C;TrueNAS &#x4F1A;&#x521B;&#x5EFA;&#x8B66;&#x62A5;&#x3002;</p>
+<p>TrueNAS &#x4E2D;&#x6709;&#x51E0;&#x4E2A;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x4E24;&#x4E2A;&#x7CFB;&#x7EDF;&#x540C;&#x6B65;&#xFF1A;</p>
+<ul>
+<li>&#x8F6C;&#x5230;&#x7CFB;&#x7EDF;&#xFF08;<strong>System</strong>&#xFF09; &gt;&#x901A;&#x7528;&#xFF08;<strong>General</strong>&#xFF09; &#x5E76;&#x786E;&#x4FDD; &#x65F6;&#x533A;&#xFF08;<strong>Timezone</strong>&#xFF09; &#x4E0E; AD &#x57DF;&#x63A7;&#x5236;&#x5668;&#x5339;&#x914D;&#x3002;</li>
+</ul>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/SystemGeneralTimezoneOptions.png" alt=""></p>
+<ul>
+<li>&#x5728;&#x7CFB;&#x7EDF; BIOS &#x4E2D;&#x8BBE;&#x7F6E;&#x672C;&#x5730;&#x65F6;&#x95F4;&#x6216;&#x4E16;&#x754C;&#x65F6;&#x95F4;&#x3002;</li>
+</ul>
+<h2 id="&#x8FDE;&#x63A5;&#x5230;-active-directory-&#x57DF;"><a name="&#x8FDE;&#x63A5;&#x5230;-active-directory-&#x57DF;" class="anchor-navigation-ex-anchor" href="#&#x8FDE;&#x63A5;&#x5230;-active-directory-&#x57DF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDE;&#x63A5;&#x5230; Active Directory &#x57DF;</h2>
+<p>&#x8981;&#x8FDE;&#x63A5;&#x5230; Active Directory&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x76EE;&#x5F55;&#x670D;&#x52A1;&#xFF08;<strong>Directory Services</strong>&#xFF09; &gt;&#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;<strong>Active Directory</strong>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x5165; AD &#x57DF;&#x540D;&#xFF08;<strong>Domain Name</strong>&#xFF09;&#x548C;&#x5E10;&#x6237;&#x51ED;&#x636E;&#x3002; &#x52FE;&#x9009;&#x201C;&#x542F;&#x7528;&#x201D;&#xFF08;<strong>Enable</strong>&#xFF09;&#x53EF;&#x4EE5;&#x5728;&#x4FDD;&#x5B58;&#x914D;&#x7F6E;&#x540E;&#x7ACB;&#x5373;&#x5C1D;&#x8BD5;&#x52A0;&#x5165; AD &#x57DF;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/DirectoryServicesActiveDirectoryExample.png" alt=""></p>
+<p>&#x9AD8;&#x7EA7;&#x9009;&#x9879;&#x53EF;&#x7528;&#x4E8E;&#x5FAE;&#x8C03; AD &#x914D;&#x7F6E;&#xFF0C;&#x4F46;&#x9884;&#x914D;&#x7F6E;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x901A;&#x5E38;&#x9002;&#x7528;&#x3002;</p>
+<p><strong>Q</strong>&#xFF1A;&#x6211;&#x6CA1;&#x6709;&#x770B;&#x5230;&#x4EFB;&#x4F55;&#x57DF;&#x4FE1;&#x606F;&#xFF01;</p>
+<p><strong>A</strong>&#xFF1A;&#x914D;&#x7F6E; Active Directory &#x670D;&#x52A1;&#x540E;&#xFF0C;TrueNAS &#x53EF;&#x80FD;&#x9700;&#x8981;&#x51E0;&#x5206;&#x949F;&#x6765;&#x586B;&#x5145; AD &#x4FE1;&#x606F;&#x3002; &#x8981;&#x67E5;&#x770B; AD &#x52A0;&#x5165;&#x8FDB;&#x5EA6;&#xFF0C;&#x8BF7;&#x6253;&#x5F00;&#x53F3;&#x4E0A;&#x89D2;&#x7684;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x5668;&#xFF08;<strong>Task Manager</strong> &#xFF09;&#x3002; TrueNAS &#x4F1A;&#x5728;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x5668;&#x4E2D;&#x663E;&#x793A;&#x52A0;&#x5165;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5BFC;&#x5165;&#x5B8C;&#x6210;&#x540E;&#xFF0C;AD &#x7528;&#x6237;&#x548C;&#x7EC4;&#x5728;&#x914D;&#x7F6E;&#x57FA;&#x672C;&#x6570;&#x636E;&#x96C6;&#x6743;&#x9650;&#x6216;&#x542F;&#x7528; TrueNAS &#x7F13;&#x5B58;&#xFF08;&#x9ED8;&#x8BA4;&#x542F;&#x7528;&#xFF09;&#x7684;<a href="https://www.truenas.com/docs/core/storage/pools/permissions/" target="_blank">&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868; (ACL)</a> &#x65F6;&#x53EF;&#x7528;&#x3002;</p>
+<p>&#x52A0;&#x5165; AD &#x8FD8;&#x4F1A;&#x6DFB;&#x52A0;&#x9ED8;&#x8BA4; Kerberos &#x9886;&#x57DF;&#x5E76;&#x751F;&#x6210;&#x9ED8;&#x8BA4; <code>AD_MACHINE_ACCOUNT</code> &#x5BC6;&#x94A5;&#x8868;&#x3002; TrueNAS &#x4F1A;&#x81EA;&#x52A8;&#x5F00;&#x59CB;&#x4F7F;&#x7528;&#x6B64;&#x9ED8;&#x8BA4;&#x5BC6;&#x94A5;&#x8868;&#x5E76;&#x5220;&#x9664;&#x5B58;&#x50A8;&#x5728; TrueNAS &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7BA1;&#x7406;&#x5458;&#x51ED;&#x636E;&#x3002;</p>
+<p>&#x9AD8;&#x7EA7;&#x9009;&#x9879;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/ActiveDirectoryAdvancedOptions.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>&#x8BBE;&#x7F6E;&#x9009;&#x9879;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BE6;&#x7EC6;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#xFF08;<strong>Verbose logging</strong>&#xFF09;</td>
+<td>&#x8BBE;&#x7F6E;&#x4E3A;&#x5C06;&#x52A0;&#x5165;&#x57DF;&#x7684;&#x5C1D;&#x8BD5;&#x8BB0;&#x5F55;&#x5230; /var/log/messages&#x3002;</td>
+</tr>
+<tr>
+<td>&#x5141;&#x8BB8;&#x53D7;&#x4FE1;&#x4EFB;&#x7684;&#x57DF;&#xFF08;<strong>Allow Trusted Domains</strong>&#xFF09;</td>
+<td>&#x8BBE;&#x7F6E;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x540D;&#x4E0D;&#x5305;&#x542B;&#x57DF;&#x540D;&#x3002; &#x53D6;&#x6D88;&#x8BBE;&#x7F6E;&#x4EE5;&#x5F3A;&#x5236;&#x5C06;&#x57DF;&#x540D;&#x6DFB;&#x52A0;&#x5230;&#x7528;&#x6237;&#x540D;&#x4E4B;&#x524D;&#x3002; &#x53D6;&#x6D88;&#x8BBE;&#x7F6E;&#x6B64;&#x503C;&#x7684;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x539F;&#x56E0;&#x662F;&#x5728;&#x8BBE;&#x7F6E;&#x4E86;&#x5141;&#x8BB8;&#x53D7;&#x4FE1;&#x4EFB;&#x7684;&#x57DF;&#xFF08;<strong>Allow Trusted Domains</strong>&#xFF09; &#x5E76;&#x4E14;&#x5728;&#x591A;&#x4E2A;&#x57DF;&#x4E2D;&#x6709;&#x76F8;&#x540C;&#x7684;&#x7528;&#x6237;&#x540D;&#x65F6;&#x9632;&#x6B62;&#x7528;&#x6237;&#x540D;&#x51B2;&#x7A81;</td>
+</tr>
+<tr>
+<td>&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x57DF;&#xFF08;<strong>Use Default Domain</strong>&#xFF09;</td>
+<td>&#x53D6;&#x6D88;&#x8BBE;&#x7F6E;&#x4EE5;&#x5728;&#x7528;&#x6237;&#x540D;&#x524D;&#x6DFB;&#x52A0;&#x57DF;&#x540D;&#x3002; &#x53D6;&#x6D88;&#x8BBE;&#x7F6E;&#x4EE5;&#x9632;&#x6B62;&#x5728;&#x8BBE;&#x7F6E;&#x4E86;&#x5141;&#x8BB8;&#x53D7;&#x4FE1;&#x4EFB;&#x7684;&#x57DF;&#xFF08;<strong>Allow Trusted Domains</strong>&#xFF09;&#x4E14;&#x591A;&#x4E2A;&#x57DF;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7528;&#x6237;&#x540D;&#x65F6;&#x53D1;&#x751F;&#x540D;&#x79F0;&#x51B2;&#x7A81;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x5141;&#x8BB8; DNS &#x66F4;&#x65B0;&#xFF08;<strong>Allow DNS Updates</strong>&#xFF09;</td>
+<td>&#x8BBE;&#x7F6E;&#x4E3A;&#x5728;&#x52A0;&#x5165;&#x57DF;&#x65F6;&#x542F;&#x7528; Samba &#x8FDB;&#x884C; DNS &#x66F4;&#x65B0;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x7981;&#x7528; FreeNAS &#x7F13;&#x5B58;&#xFF08;<strong>Disable FreeNAS Cache</strong>&#xFF09;</td>
+<td>&#x8BBE;&#x7F6E;&#x4E3A;&#x7981;&#x7528;&#x7F13;&#x5B58; AD &#x7528;&#x6237;&#x548C;&#x7EC4;&#x3002; &#x5F53;&#x65E0;&#x6CD5;&#x7ED1;&#x5B9A;&#x5230;&#x5177;&#x6709;&#x5927;&#x91CF;&#x7528;&#x6237;&#x6216;&#x7EC4;&#x7684;&#x57DF;&#x65F6;&#xFF0C;&#x8FD9;&#x4F1A;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x9650;&#x5236; SSH &#x8FDE;&#x63A5;&#xFF08;<strong>Restrict PAM</strong>&#xFF09;</td>
+<td>&#x8BBE;&#x7F6E;&#x4E3A;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x5C06; SSH &#x8BBF;&#x95EE;&#x9650;&#x5236;&#x4E3A;&#x4EC5;&#x9650; BUILTIN\Administrators &#x7684;&#x6210;&#x5458;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x7AD9;&#x70B9;&#x540D;&#x79F0;&#xFF08;<strong>Site Name</strong>&#xFF09;</td>
+<td>&#x5728; Active Directory &#x4E2D;&#x8F93;&#x5165;&#x7AD9;&#x70B9;&#x5BF9;&#x8C61;&#x7684;&#x76F8;&#x5BF9;&#x4E13;&#x6709;&#x540D;&#x79F0;&#x3002;</td>
+</tr>
+<tr>
+<td>Kerberos &#x9886;&#x57DF;&#xFF08;<strong>Kerberos Realm</strong>&#xFF09;</td>
+<td>&#x9009;&#x62E9;&#x5728;&#x76EE;&#x5F55;&#x670D;&#x52A1;&#xFF08;<strong>Directory Services</strong>&#xFF09; &gt; Kerberos &#x9886;&#x57DF;&#xFF08;<strong>Kerberos Realms</strong>&#xFF09;&#x4E2D;&#x6DFB;&#x52A0;&#x7684;&#x73B0;&#x6709;&#x9886;&#x57DF;&#x3002;</td>
+</tr>
+<tr>
+<td>Kerberos &#x4E3B;&#x4F53;&#xFF08;<strong>Kerberos Principal</strong>&#xFF09;</td>
+<td>&#x5728;&#x76EE;&#x5F55;&#x670D;&#x52A1;&#xFF08;<strong>Directory Services</strong>&#xFF09;  &gt; Kerberos &#x5BC6;&#x94A5;&#x8868;&#xFF08;<strong>Kerberos Keytabs</strong>&#xFF09;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x5BC6;&#x94A5;&#x8868;&#x4E2D;&#x9009;&#x62E9;&#x4E3B;&#x4F53;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x8BA1;&#x7B97;&#x673A;&#x5E10;&#x6237; OU&#xFF08;<strong>Computer Account OU</strong>&#xFF09;</td>
+<td>&#x5728;&#x5176;&#x4E2D;&#x521B;&#x5EFA;&#x65B0;&#x8BA1;&#x7B97;&#x673A;&#x5E10;&#x6237;&#x7684; OU&#x3002; OU &#x5B57;&#x7B26;&#x4E32;&#x662F;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x8BFB;&#x53D6;&#x7684;&#xFF0C;&#x6CA1;&#x6709; RDN&#x3002; &#x659C;&#x7EBF;&#xFF08;&#x201C;/&#x201D;&#xFF09;&#x7528;&#x4F5C;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x5982;&#x8BA1;&#x7B97;&#x673A;/&#x670D;&#x52A1;&#x5668;/NAS&#x3002; &#x53CD;&#x659C;&#x6760; (&quot;\&quot;) &#x7528;&#x4E8E;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#xFF0C;&#x4F46;&#x4E0D;&#x7528;&#x4F5C;&#x5206;&#x9694;&#x7B26;&#x3002; &#x53CD;&#x659C;&#x6760;&#x5728;&#x591A;&#x4E2A;&#x7EA7;&#x522B;&#x8FDB;&#x884C;&#x89E3;&#x91CA;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x52A0;&#x500D;&#x751A;&#x81F3;&#x56DB;&#x500D;&#x624D;&#x80FD;&#x751F;&#x6548;&#x3002; &#x5F53;&#x6B64;&#x5B57;&#x6BB5;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x5C06;&#x5728; Active Directory &#x9ED8;&#x8BA4; OU &#x4E2D;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x5E10;&#x6237;&#x3002;</td>
+</tr>
+<tr>
+<td>AD&#x8D85;&#x65F6;&#xFF08;<strong>AD Timeout</strong>&#xFF09;</td>
+<td>&#x8FDE;&#x63A5;AD&#x57DF;&#x63A7;&#x5236;&#x5668;&#x8D85;&#x65F6;&#x524D;&#x7684;&#x79D2;&#x6570;&#x3002; &#x67E5;&#x770B;AD&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#xFF0C;&#x6253;&#x5F00;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x5668;&#x754C;&#x9762;&#x3002;</td>
+</tr>
+<tr>
+<td>DNS&#x8D85;&#x65F6;(<strong>DNS Timeout</strong>)</td>
+<td>&#x67E5;&#x8BE2;DNS&#x8D85;&#x65F6;&#x524D;&#x7684;&#x79D2;&#x6570;&#x3002; &#x5982;&#x679C; AD DNS &#x67E5;&#x8BE2;&#x8D85;&#x65F6;&#xFF0C;&#x8BF7;&#x589E;&#x52A0;&#x6B64;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td>Winbind NSS &#x4FE1;&#x606F;(<strong>Winbind NSS Info</strong>)</td>
+<td>&#x9009;&#x62E9;&#x5728;&#x67E5;&#x8BE2; AD &#x4EE5;&#x83B7;&#x53D6;&#x7528;&#x6237;/&#x7EC4;&#x4FE1;&#x606F;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x67B6;&#x6784;&#x3002; <em>rfc2307</em> &#x4F7F;&#x7528; Windows 2003 R2 &#x4E2D;&#x5305;&#x542B;&#x7684;&#x6A21;&#x5F0F;&#x652F;&#x6301;&#xFF0C;<em>sfu</em> &#x7528;&#x4E8E; Service For Unix 3.0 &#x6216; 3.5&#xFF0C;<em>sfu20</em> &#x7528;&#x4E8E; Service For Unix 2.0&#x3002;</td>
+</tr>
+<tr>
+<td>Netbios &#x540D;&#x79F0;(<strong>Netbios Name</strong>)</td>
+<td>&#x5728;Netbios&#x4E2D;&#x6B64;NAS &#x7684;&#x540D;&#x79F0;&#x3002; &#x6B64;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x4E0E;&#x5DE5;&#x4F5C;&#x7EC4;&#x540D;&#x79F0;&#x4E0D;&#x540C;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x5F97;&#x8D85;&#x8FC7; 15 &#x4E2A;&#x5B57;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td>NetBIOS &#x522B;&#x540D;(<strong>NetBIOS alias</strong>)</td>
+<td>SMB &#x5BA2;&#x6237;&#x7AEF;&#x5728;&#x8FDE;&#x63A5;&#x5230;&#x6B64; NAS &#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x66FF;&#x4EE3;&#x540D;&#x79F0;&#x3002; &#x4E0D;&#x80FD;&#x8D85;&#x8FC7; 15 &#x4E2A;&#x5B57;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x7F16;&#x8F91; IDMAP(<strong>EDIT IDMAP</strong>)</td>
+<td>&#x5BFC;&#x822A;&#x5230;&#x76EE;&#x5F55;&#x670D;&#x52A1;&#xFF08; <strong>Directory Services</strong>&#xFF09;&gt; <strong>Idmap </strong>&#xFF0C;&#x4EE5;&#x4FBF;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x7F16;&#x8F91; Active Directory &#x7684; Idmap</td>
+</tr>
+<tr>
+<td>&#x9000;&#x51FA;&#x57DF;(<strong>LEAVE DOMAIN</strong>)</td>
+<td>&#x65AD;&#x5F00; TrueNAS &#x7CFB;&#x7EDF;&#x4E0E; Active Directory &#x7684;&#x8FDE;&#x63A5;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ftp&#x8BBF;&#x95EE;"><a name="ftp&#x8BBF;&#x95EE;" class="anchor-navigation-ex-anchor" href="#ftp&#x8BBF;&#x95EE;"><i class="fa fa-link" aria-hidden="true"></i></a>FTP&#x8BBF;&#x95EE;</h2>
+<p>&#x867D;&#x7136;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; SFTP &#x800C;&#x975E; FTP&#xFF0C;&#x4F46;&#x52A0;&#x5165;&#x7684;&#x7CFB;&#x7EDF;&#x786E;&#x5B9E;&#x5141;&#x8BB8; FTP &#x8BBF;&#x95EE;&#x3002; &#x8BF7;&#x7262;&#x8BB0;&#x4EE5;&#x4E0B;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</p>
+<ul>
+<li>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528; <strong>DOMAIN\username</strong> &#x4F5C;&#x4E3A;&#x7528;&#x6237;&#x540D;&#x3002;</li>
+<li>&#x52A0;&#x5165;&#x524D;&#x9700;&#x8981;&#x5B58;&#x5728;&#x7528;&#x6237;&#x4E3B;&#x76EE;&#x5F55;&#x3002;</li>
+<li>&#x65E0;&#x6CD5;&#x5C06; AD &#x7528;&#x6237;&#x6DFB;&#x52A0;&#x5230; FTP &#x7EC4;&#x3002; &#x4E3A; FTP &#x542F;&#x7528;&#x672C;&#x5730;&#x7528;&#x6237;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x3002;</li>
+<li>&#x5728; GUI &#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x73B0;&#x6709; samba <strong>homes</strong> &#x5171;&#x4EAB;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; AD &#x7528;&#x6237;&#x7684; <em>template homedir</em>&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740; AD &#x7528;&#x6237;&#x4E3B;&#x76EE;&#x5F55;&#x8BBE;&#x7F6E;&#x5728;&#x8BE5;&#x8DEF;&#x5F84;&#x4E2D;&#x3002; &#x9002;&#x5F53;&#x7684;&#x6743;&#x9650;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x3002;</li>
+<li>&#x6CA1;&#x6709;&#x5173;&#x4E8E; <code>proftpd</code> &#x5982;&#x4F55;&#x5904;&#x7406; ACL &#x7684;&#x4FDD;&#x8BC1;&#x3002;</li>
+<li>&#x5F53; AD &#x7528;&#x6237;&#x5728;&#x4ED6;&#x4EEC;&#x7684; LDAP &#x67B6;&#x6784;&#x4E2D;&#x586B;&#x5145; homedir &#x4FE1;&#x606F;&#x65F6;&#xFF0C;&#x7BA1;&#x7406;&#x5458;&#xFF08;&#x6216; <code>pam_mkhomedir</code>&#xFF09;&#x5FC5;&#x987B;&#x786E;&#x4FDD;&#x8DEF;&#x5F84;&#x5B58;&#x5728;&#x3002;</li>
+<li>&#x5F53;&#x7BA1;&#x7406;&#x5458;&#x4ECE;&#x4ED6;&#x4EEC;&#x7684; LDAP &#x67B6;&#x6784;&#x4E2D;&#x63D0;&#x53D6;&#x4E3B;&#x76EE;&#x5F55;&#x65F6;&#xFF0C;&#x8981;&#x683C;&#x5916;&#x5C0F;&#x5FC3;&#x4EE5;&#x786E;&#x4FDD;&#x7528;&#x6237;&#x4E0D;&#x4F1A;&#x5C06;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x5F15;&#x5BFC;&#x8BBE;&#x5907;&#x3002;</li>
+</ul>
+<h2 id="&#x6545;&#x969C;&#x6392;&#x9664;"><a name="&#x6545;&#x969C;&#x6392;&#x9664;" class="anchor-navigation-ex-anchor" href="#&#x6545;&#x969C;&#x6392;&#x9664;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6545;&#x969C;&#x6392;&#x9664;</h2>
+<p>&#x5982;&#x679C;&#x7F13;&#x5B58;&#x53D8;&#x5F97;&#x4E0D;&#x540C;&#x6B65;&#x6216;&#x6743;&#x9650;&#x7F16;&#x8F91;&#x5668;&#x4E2D;&#x53EF;&#x7528;&#x7684;&#x7528;&#x6237;&#x5C11;&#x4E8E;&#x9884;&#x671F;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x76EE;&#x5F55;&#x670D;&#x52A1;&#xFF08;<strong>Directory Services</strong>&#xFF09;&gt; &#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;<strong>Active Directory</strong>&#xFF09; &gt; &#x91CD;&#x5EFA;&#x76EE;&#x5F55;&#x670D;&#x52A1;&#x7F13;&#x5B58;&#xFF08;<strong>REBUILD DIRECTORY SERVICE CACHE</strong>&#xFF09; &#x91CD;&#x65B0;&#x540C;&#x6B65;&#x5B83;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F; 2008 R2 &#x6216;&#x66F4;&#x65E9;&#x7248;&#x672C;&#x7684; Windows Server&#xFF0C;&#x8BF7;&#x5C1D;&#x8BD5;&#x5728; Windows &#x670D;&#x52A1;&#x5668;&#x7EC4;&#x7EC7;&#x5355;&#x4F4D; (OU) &#x4E0A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x673A;&#x6761;&#x76EE;&#x3002; &#x521B;&#x5EFA;&#x6B64;&#x6761;&#x76EE;&#x65F6;&#xFF0C;&#x8BF7;&#x5728;&#x540D;&#x79F0;&#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165; TrueNAS &#x4E3B;&#x673A;&#x540D;&#x3002; &#x786E;&#x4FDD;&#x5B83;&#x4E0E;&#x7F51;&#x7EDC;&#xFF08;<strong>Network</strong>&#xFF09; &gt; &#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF08;<strong>Global Configuration</strong>&#xFF09;&#x4E2D;&#x7684;&#x4E3B;&#x673A;&#x540D;&#x5B57;&#x6BB5;&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x540D;&#x79F0;&#x76F8;&#x540C;&#xFF0C;&#x4EE5;&#x53CA;&#x76EE;&#x5F55;&#x670D;&#x52A1;&#xFF08;<strong>Directory Services</strong>&#xFF09;&gt; &#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;<strong>Active Directory</strong>&#xFF09; &gt; &#x9AD8;&#x7EA7;&#x9009;&#x9879;&#xFF08;<strong>Advanced Options</strong>&#xFF09;&#x4E2D;&#x7684; NetBIOS &#x522B;&#x540D;&#x3002;</p>
+<h3 id="shell&#x547D;&#x4EE4;"><a name="shell&#x547D;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#shell&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>Shell&#x547D;&#x4EE4;</h3>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x8F6C;&#x5230; Shell &#x5E76;&#x8F93;&#x5165;&#x5404;&#x79CD;&#x547D;&#x4EE4;&#x4EE5;&#x83B7;&#x53D6;&#x6709;&#x5173; AD &#x8FDE;&#x63A5;&#x548C;&#x7528;&#x6237;&#x7684;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF1A;</p>
+<ul>
+<li>AD &#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A; <code>midclt call activedirectory.get_state</code>.</li>
+<li>&#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x76EE;&#x5F55;&#x8BBF;&#x95EE;&#x534F;&#x8BAE; (LDAP) &#x670D;&#x52A1;&#x5668;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF1A;<code>midclt call activedirectory.domain_info | jq</code>&#x3002;</li>
+</ul>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>truenas# midclt call activedirectory.domain_info | jq
+{
+  &quot;LDAP server&quot;: &quot;192.168.1.125&quot;,
+  &quot;LDAP server name&quot;: &quot;DC01.HOMEDOM.FUN&quot;,
+  &quot;Realm&quot;: &quot;HOMEDOM.FUN&quot;,
+  &quot;Bind Path&quot;: &quot;dc=HOMEDOM,dc=FUN&quot;,
+  &quot;LDAP port&quot;: 389,
+  &quot;Server time&quot;: 1593026080,
+  &quot;KDC server&quot;: &quot;192.168.1.125&quot;,
+  &quot;Server time offset&quot;: 5,
+  &quot;Last machine account password change&quot;: 1592423446
+}
+</code></pre><ul>
+<li>&#x67E5;&#x770B; AD &#x7528;&#x6237;&#xFF1A; <code>wbinfo -u</code>&#x3002; &#x8981;&#x67E5;&#x770B;&#x6709;&#x5173;&#x7528;&#x6237;&#x7684;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x8F93;&#x5165; <code>getent passwd DOMAIN\\&lt;user&gt;</code>&#xFF0C;&#x5C06; <user> &#x66FF;&#x6362;&#x4E3A;&#x6240;&#x9700;&#x7684;&#x7528;&#x6237;&#x540D;&#x3002;&#x5982;&#x679C; <code>wbinfo -u</code> &#x663E;&#x793A;&#x7684;&#x7528;&#x6237;&#x591A;&#x4E8E;&#x914D;&#x7F6E;&#x6743;&#x9650;&#x65F6;&#x53EF;&#x7528;&#x7684;&#x7528;&#x6237;&#x6570;&#x5E76;&#x4E14;&#x542F;&#x7528;&#x4E86; TrueNAS &#x7F13;&#x5B58;&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x76EE;&#x5F55;&#x670D;&#x52A1;&#xFF08;<strong>Directory Services</strong>&#xFF09;&gt; &#x6D3B;&#x52A8;&#x76EE;&#x5F55;&#xFF08;<strong>Active Directory</strong>&#xFF09; &#x5E76;&#x589E;&#x52A0;AD&#x8D85;&#x65F6;&#xFF08;<strong>AD Timeout</strong>&#xFF09;&#x503C;&#x3002;</user></li>
+<li>&#x67E5;&#x770B; AD &#x7EC4;&#xFF1A; <code>wbinfo -g</code>&#x3002; &#x8981;&#x67E5;&#x770B;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x8F93;&#x5165; <code>getent group DOMAIN\\domain\ users</code>&#x3002;</li>
+<li>&#x67E5;&#x770B;&#x57DF;&#xFF1A;<code>wbinfo -m</code>&#x3002;</li>
+<li>&#x6D4B;&#x8BD5; AD &#x8FDE;&#x63A5;&#xFF1A; <code>wbinfo -t</code>.&#x6210;&#x529F;&#x7684;&#x6D4B;&#x8BD5;&#x663E;&#x793A;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; <code>checking the trust secret for domain YOURDOMAIN via RPC calls succeeded</code>&#x3002;</li>
+<li>SMB &#x5171;&#x4EAB;&#x7684;&#x7528;&#x6237;&#x8FDE;&#x63A5;&#x6D4B;&#x8BD5;&#xFF1A; <code>smbclient &apos;//127.0.0.1/smbshare -U AD01.LAB.IXSYSTEMS.COM\ixuser</code>&#xFF0C;&#x5C06; <code>127.0.0.1</code> &#x66FF;&#x6362;&#x4E3A;&#x60A8;&#x7684;&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#xFF0C;&#x5C06; <code>smbshare</code> &#x66FF;&#x6362;&#x4E3A; SMB &#x5171;&#x4EAB;&#x540D;&#x79F0; <code>AD01.LAB.IXSYSTEMS .COM</code> &#x4E0E;&#x60A8;&#x7684;&#x53D7;&#x4FE1;&#x4EFB;&#x57DF;&#xFF0C;&#x5C06; <code>ixuser</code> &#x66FF;&#x6362;&#x4E3A;&#x7528;&#x4E8E;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x6D4B;&#x8BD5;&#x7684;&#x7528;&#x6237;&#x5E10;&#x6237;&#x540D;&#x3002;</li>
+</ul>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 1.7.目录服务">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="LDAP.html" class="navigation navigation-next " aria-label="Next page: 1.7.2.轻型目录访问协议（LDAP）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.7.1.活动目录（Active Directory）","level":"1.2.7.1","depth":3,"next":{"title":"1.7.2.轻型目录访问协议（LDAP）","level":"1.2.7.2","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Directory_Services/LDAP.md","ref":"TrueNAS_CORE_and_Enterprise/Directory_Services/LDAP.md","articles":[]},"previous":{"title":"1.7.目录服务","level":"1.2.7","depth":2,"path":"TrueNAS_CORE_and_Enterprise/Directory_Services/README.md","ref":"TrueNAS_CORE_and_Enterprise/Directory_Services/README.md","articles":[{"title":"1.7.1.活动目录（Active Directory）","level":"1.2.7.1","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Directory_Services/Active_Directory.md","ref":"TrueNAS_CORE_and_Enterprise/Directory_Services/Active_Directory.md","articles":[]},{"title":"1.7.2.轻型目录访问协议（LDAP）","level":"1.2.7.2","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Directory_Services/LDAP.md","ref":"TrueNAS_CORE_and_Enterprise/Directory_Services/LDAP.md","articles":[]},{"title":"1.7.3.网络信息服务（NIS）","level":"1.2.7.3","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Directory_Services/NIS.md","ref":"TrueNAS_CORE_and_Enterprise/Directory_Services/NIS.md","articles":[]},{"title":"1.7.4.Kerberos","level":"1.2.7.4","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Directory_Services/Kerberos.md","ref":"TrueNAS_CORE_and_Enterprise/Directory_Services/Kerberos.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","ancre-navigation","popup","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Directory_Services/Active_Directory.md","mtime":"2021-11-20T08:15:41.355Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-20T14:50:27.256Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
