@@ -1,0 +1,2264 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.8.5.1.SMB 共享创建 · TrueNAS中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="EASTMOE">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Home_Shares.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    1.TrueNAS Core和Enterprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../gettingstarted/">
+            
+                <a href="../../gettingstarted/">
+            
+                    
+                    1.1.TrueNAS初探
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../gettingstarted/core_hardware_guide.html">
+            
+                <a href="../../gettingstarted/core_hardware_guide.html">
+            
+                    
+                    1.1.1.TrueNAS Core 硬件指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../gettingstarted/INSTALL.html">
+            
+                <a href="../../gettingstarted/INSTALL.html">
+            
+                    
+                    1.1.2.安装TrueNAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../gettingstarted/Console_Setup_Menu.html">
+            
+                <a href="../../gettingstarted/Console_Setup_Menu.html">
+            
+                    
+                    1.1.3.控制台设置菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../gettingstarted/log_in.html">
+            
+                <a href="../../gettingstarted/log_in.html">
+            
+                    
+                    1.1.4.登录到TrueNAS WebUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../gettingstarted/Storage_Configuration.html">
+            
+                <a href="../../gettingstarted/Storage_Configuration.html">
+            
+                    
+                    1.1.5.存储配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../../gettingstarted/Sharing_Storage.html">
+            
+                <a href="../../gettingstarted/Sharing_Storage.html">
+            
+                    
+                    1.1.6.存储共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../../gettingstarted/Data_Backups.html">
+            
+                <a href="../../gettingstarted/Data_Backups.html">
+            
+                    
+                    1.1.7.数据备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../../gettingstarted/Applications.html">
+            
+                <a href="../../gettingstarted/Applications.html">
+            
+                    
+                    1.1.8.应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Accounts/">
+            
+                <a href="../../Accounts/">
+            
+                    
+                    1.2.账户
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../Accounts/Groups.html">
+            
+                <a href="../../Accounts/Groups.html">
+            
+                    
+                    1.2.1.TrueNAS用户组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../Accounts/Users.html">
+            
+                <a href="../../Accounts/Users.html">
+            
+                    
+                    1.2.2.TrueNAS用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../System/">
+            
+                <a href="../../System/">
+            
+                    
+                    1.3.系统设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../System/General/">
+            
+                <a href="../../System/General/">
+            
+                    
+                    1.3.1.通用设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="../../System/General/Setting.html">
+            
+                <a href="../../System/General/Setting.html">
+            
+                    
+                    1.3.1.1.通用设置页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="../../System/General/System_Config_Backups.html">
+            
+                <a href="../../System/General/System_Config_Backups.html">
+            
+                    
+                    1.3.1.2.系统备份设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="../../System/General/Managing_TLS_Ciphers.html">
+            
+                <a href="../../System/General/Managing_TLS_Ciphers.html">
+            
+                    
+                    1.3.1.3.管理TLS加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../System/NTP_Servers.html">
+            
+                <a href="../../System/NTP_Servers.html">
+            
+                    
+                    1.3.2.时间同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../System/Boot/">
+            
+                <a href="../../System/Boot/">
+            
+                    
+                    1.3.3.启动与引导
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.3.1" data-path="../../System/Boot/Boot_Screen.html">
+            
+                <a href="../../System/Boot/Boot_Screen.html">
+            
+                    
+                    1.3.3.1.引导备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3.2" data-path="../../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                <a href="../../System/Boot/Mirroring_the_Boot_Pool.html">
+            
+                    
+                    1.3.3.2.启动池镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../../System/Advanced.html">
+            
+                <a href="../../System/Advanced.html">
+            
+                    
+                    1.3.4.高级设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../../System/View_Enclosure.html">
+            
+                <a href="../../System/View_Enclosure.html">
+            
+                    
+                    1.3.5.机箱监视
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="../../System/Email.html">
+            
+                <a href="../../System/Email.html">
+            
+                    
+                    1.3.6.电子邮件通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7" data-path="../../System_Dataset.md">
+            
+                <span>
+            
+                    
+                    1.3.7.系统数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.8" data-path="../../System/Reporting.html">
+            
+                <a href="../../System/Reporting.html">
+            
+                    
+                    1.3.8.系统报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.9" data-path="../../System/Alert.html">
+            
+                <a href="../../System/Alert.html">
+            
+                    
+                    1.3.9.警告服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.10" data-path="../../System/Cloud_Credentials.html">
+            
+                <a href="../../System/Cloud_Credentials.html">
+            
+                    
+                    1.3.10.云服务凭据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.11" data-path="../../System/SSH.html">
+            
+                <a href="../../System/SSH.html">
+            
+                    
+                    1.3.11.SSH客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.12" data-path="../../System/Tunables.html">
+            
+                <a href="../../System/Tunables.html">
+            
+                    
+                    1.3.12.可调参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.13" data-path="../../System/Update.html">
+            
+                <a href="../../System/Update.html">
+            
+                    
+                    1.3.13.系统更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.14" data-path="../../System/CAs.html">
+            
+                <a href="../../System/CAs.html">
+            
+                    
+                    1.3.14.证书颁发机构（CA）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.15" data-path="../../System/Certificates.html">
+            
+                <a href="../../System/Certificates.html">
+            
+                    
+                    1.3.15.证书管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.16" data-path="../../System/KMIP.html">
+            
+                <a href="../../System/KMIP.html">
+            
+                    
+                    1.3.16.密钥管理互通协议（KMIP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.17" data-path="../../System/Failover_HA.html">
+            
+                <a href="../../System/Failover_HA.html">
+            
+                    
+                    1.3.17.故障转移与高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.18" data-path="../../System/Support.html">
+            
+                <a href="../../System/Support.html">
+            
+                    
+                    1.3.18.帮助与支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.19" data-path="../../System/2FA.html">
+            
+                <a href="../../System/2FA.html">
+            
+                    
+                    1.3.19.两步验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../Tasks/">
+            
+                <a href="../../Tasks/">
+            
+                    
+                    1.4.任务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../Tasks/Cron_Jobs.html">
+            
+                <a href="../../Tasks/Cron_Jobs.html">
+            
+                    
+                    1.4.1.定时任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../Tasks/Init_Shutdown_Scripts.html">
+            
+                <a href="../../Tasks/Init_Shutdown_Scripts.html">
+            
+                    
+                    1.4.2.开/关机脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../Tasks/Rsync_Tasks.html">
+            
+                <a href="../../Tasks/Rsync_Tasks.html">
+            
+                    
+                    1.4.3.同步任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../../Tasks/SMART_TEST.html">
+            
+                <a href="../../Tasks/SMART_TEST.html">
+            
+                    
+                    1.4.4.硬盘检测任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../../Tasks/Periodic_Snapshot_Tasks.html">
+            
+                <a href="../../Tasks/Periodic_Snapshot_Tasks.html">
+            
+                    
+                    1.4.5.定期快照任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6" data-path="../../Tasks/Replication_Tasks/">
+            
+                <a href="../../Tasks/Replication_Tasks/">
+            
+                    
+                    1.4.6.复制任务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.6.1" data-path="../../Tasks/Replication_Tasks/Local.html">
+            
+                <a href="../../Tasks/Replication_Tasks/Local.html">
+            
+                    
+                    1.4.6.1.本地复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.2" data-path="../../Tasks/Replication_Tasks/Remote.html">
+            
+                <a href="../../Tasks/Replication_Tasks/Remote.html">
+            
+                    
+                    1.4.6.2.远程复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.3" data-path="../../Tasks/Replication_Tasks/Advanced.html">
+            
+                <a href="../../Tasks/Replication_Tasks/Advanced.html">
+            
+                    
+                    1.4.6.3.高级复制任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6.4" data-path="../../Tasks/Replication_Tasks/Troubleshooting_Tips.html">
+            
+                <a href="../../Tasks/Replication_Tasks/Troubleshooting_Tips.html">
+            
+                    
+                    1.4.6.4.故障排除提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.7" data-path="../../Tasks/Resilver_Priority.html">
+            
+                <a href="../../Tasks/Resilver_Priority.html">
+            
+                    
+                    1.4.7.重新同步优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.8" data-path="../../Tasks/Scrub_Tasks.html">
+            
+                <a href="../../Tasks/Scrub_Tasks.html">
+            
+                    
+                    1.4.8.清理任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.9" data-path="../../Tasks/Cloud_Sync_Tasks.html">
+            
+                <a href="../../Tasks/Cloud_Sync_Tasks.html">
+            
+                    
+                    1.4.9.云同步任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.10" data-path="../../Tasks/How_To_Back_Up_Google_Drive_to_TrueNAS_CORE.html">
+            
+                <a href="../../Tasks/How_To_Back_Up_Google_Drive_to_TrueNAS_CORE.html">
+            
+                    
+                    1.4.10.将 Google 云端硬盘 备份到 TrueNAS CORE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../Network/">
+            
+                <a href="../../Network/">
+            
+                    
+                    1.5.网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../Network/Network_Summary.html">
+            
+                <a href="../../Network/Network_Summary.html">
+            
+                    
+                    1.5.1.网络概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../Network/Global_Configuration.html">
+            
+                <a href="../../Network/Global_Configuration.html">
+            
+                    
+                    1.5.2.全局设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../../Network/Interface/">
+            
+                <a href="../../Network/Interface/">
+            
+                    
+                    1.5.3.网络接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.3.1" data-path="../../Network/Interface/Network_Bridge.html">
+            
+                <a href="../../Network/Interface/Network_Bridge.html">
+            
+                    
+                    1.5.3.1.网桥
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.2" data-path="../../Network/Interface/Link_Aggregations.html">
+            
+                <a href="../../Network/Interface/Link_Aggregations.html">
+            
+                    
+                    1.5.3.2.链路聚合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.3" data-path="../../Network/Interface/VLAN.html">
+            
+                <a href="../../Network/Interface/VLAN.html">
+            
+                    
+                    1.5.3.3.虚拟局域网（VLAN）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.4" data-path="../../Network/Interface/Setting_a_Static_IP_Address_for_the_TrueNAS_UI.html">
+            
+                <a href="../../Network/Interface/Setting_a_Static_IP_Address_for_the_TrueNAS_UI.html">
+            
+                    
+                    1.5.3.4.在TrueNAS用户界面中设置静态IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.5" data-path="../../Network/Interface/Editing_a_Physical_Interface.html">
+            
+                <a href="../../Network/Interface/Editing_a_Physical_Interface.html">
+            
+                    
+                    1.5.3.5.编辑物理接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../../Network/Static_Routes.html">
+            
+                <a href="../../Network/Static_Routes.html">
+            
+                    
+                    1.5.4.静态路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="../../Network/Enabling_WireGuard.html">
+            
+                <a href="../../Network/Enabling_WireGuard.html">
+            
+                    
+                    1.5.5.启用WireGuard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.6" data-path="../../Network/IPMI.html">
+            
+                <a href="../../Network/IPMI.html">
+            
+                    
+                    1.5.6.IPMI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../Storage/">
+            
+                <a href="../../Storage/">
+            
+                    
+                    1.6.存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../../Storage/Pools/">
+            
+                <a href="../../Storage/Pools/">
+            
+                    
+                    1.6.1.存储池
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1.1" data-path="../../Storage/Pools/Pool_Creation.html">
+            
+                <a href="../../Storage/Pools/Pool_Creation.html">
+            
+                    
+                    1.6.1.1.创建存储池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.2" data-path="../../Storage/Pools/Pool_Import.html">
+            
+                <a href="../../Storage/Pools/Pool_Import.html">
+            
+                    
+                    1.6.1.2.导入存储池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.3" data-path="../../Storage/Pools/Managing_Pools.html">
+            
+                <a href="../../Storage/Pools/Managing_Pools.html">
+            
+                    
+                    1.6.1.3.存储池管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.4" data-path="../../Storage/Pools/Datasets.html">
+            
+                <a href="../../Storage/Pools/Datasets.html">
+            
+                    
+                    1.6.1.4.数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.5" data-path="../../Storage/Pools/Zvols.html">
+            
+                <a href="../../Storage/Pools/Zvols.html">
+            
+                    
+                    1.6.1.5.ZFS 卷 (Zvols)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.6" data-path="../../Storage/Pools/Permissions.html">
+            
+                <a href="../../Storage/Pools/Permissions.html">
+            
+                    
+                    1.6.1.6.权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.7" data-path="../../Storage/Pools/Storage_Encryption.html">
+            
+                <a href="../../Storage/Pools/Storage_Encryption.html">
+            
+                    
+                    1.6.1.7.存储加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.8" data-path="../../Storage/Pools/Fusion_Pools.html">
+            
+                <a href="../../Storage/Pools/Fusion_Pools.html">
+            
+                    
+                    1.6.1.8.融合池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.1.9" data-path="../../Storage/Pools/SLOG_Overprovisioning.html">
+            
+                <a href="../../Storage/Pools/SLOG_Overprovisioning.html">
+            
+                    
+                    1.6.1.9.SLOG 超配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../../Storage/Snapshots.html">
+            
+                <a href="../../Storage/Snapshots.html">
+            
+                    
+                    1.6.2.快照
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../../Storage/VMware-Snapshots.html">
+            
+                <a href="../../Storage/VMware-Snapshots.html">
+            
+                    
+                    1.6.3.VMware虚拟机快照
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../../Storage/Disks/">
+            
+                <a href="../../Storage/Disks/">
+            
+                    
+                    1.6.4.磁盘
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.4.1" data-path="../../Storage/Disks/Wipe.html">
+            
+                <a href="../../Storage/Disks/Wipe.html">
+            
+                    
+                    1.6.4.1.擦除磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4.2" data-path="../../Storage/Disks/Replacement.html">
+            
+                <a href="../../Storage/Disks/Replacement.html">
+            
+                    
+                    1.6.4.2.替换磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="../../Storage/Self-Encrypting_Drives.html">
+            
+                <a href="../../Storage/Self-Encrypting_Drives.html">
+            
+                    
+                    1.6.5.自加密驱动器（SEDs）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="../../Storage/Import_Disk.html">
+            
+                <a href="../../Storage/Import_Disk.html">
+            
+                    
+                    1.6.6.导入磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../Directory_Services/">
+            
+                <a href="../../Directory_Services/">
+            
+                    
+                    1.7.目录服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../../Directory_Services/Active_Directory.html">
+            
+                <a href="../../Directory_Services/Active_Directory.html">
+            
+                    
+                    1.7.1.活动目录（Active Directory）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="../../Directory_Services/LDAP.html">
+            
+                <a href="../../Directory_Services/LDAP.html">
+            
+                    
+                    1.7.2.轻型目录访问协议（LDAP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="../../Directory_Services/NIS.html">
+            
+                <a href="../../Directory_Services/NIS.html">
+            
+                    
+                    1.7.3.网络信息服务（NIS）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.4" data-path="../../Directory_Services/Kerberos.html">
+            
+                <a href="../../Directory_Services/Kerberos.html">
+            
+                    
+                    1.7.4.Kerberos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.8.数据共享
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="../Apple_Shares_AFP.html">
+            
+                <a href="../Apple_Shares_AFP.html">
+            
+                    
+                    1.8.1.Apple 共享协议（AFP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2" data-path="../Block_Shares_iSCSI/">
+            
+                <a href="../Block_Shares_iSCSI/">
+            
+                    
+                    1.8.2.块共享 (iSCSI)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.2.1" data-path="../Block_Shares_iSCSI/iSCSI_Shares.html">
+            
+                <a href="../Block_Shares_iSCSI/iSCSI_Shares.html">
+            
+                    
+                    1.8.2.1.SCSI 共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2.2" data-path="../Block_Shares_iSCSI/Fibre_Channel.html">
+            
+                <a href="../Block_Shares_iSCSI/Fibre_Channel.html">
+            
+                    
+                    1.8.2.2.基于光纤通道的iSCSI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.3" data-path="../Unix_Shares_NFS.html">
+            
+                <a href="../Unix_Shares_NFS.html">
+            
+                    
+                    1.8.3.UNIX 共享 (NFS)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.4" data-path="../WebDAV_Shares.html">
+            
+                <a href="../WebDAV_Shares.html">
+            
+                    
+                    1.8.4.WebDAV 共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.8.5.Windows 共享（SMB）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.8.5.1" data-path="Share_Creation.html">
+            
+                <a href="Share_Creation.html">
+            
+                    
+                    1.8.5.1.SMB 共享创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.5.2" data-path="Home_Shares.html">
+            
+                <a href="Home_Shares.html">
+            
+                    
+                    1.8.5.2.家庭共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.5.3" data-path="Shadow_Copies.html">
+            
+                <a href="Shadow_Copies.html">
+            
+                    
+                    1.8.5.3.卷影副本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../Services/">
+            
+                <a href="../../Services/">
+            
+                    
+                    1.9.服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.9.1" data-path="../../Services/Dynamic_DNS.html">
+            
+                <a href="../../Services/Dynamic_DNS.html">
+            
+                    
+                    1.9.1.动态域名解析（DDNS）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.2" data-path="../../Services/FTP_SFTP_and_TFTP.html">
+            
+                <a href="../../Services/FTP_SFTP_and_TFTP.html">
+            
+                    
+                    1.9.2.FTP相关服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.3" data-path="../../Services/LLDP.html">
+            
+                <a href="../../Services/LLDP.html">
+            
+                    
+                    1.9.3.链路层发现协议 (LLDP)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.4" data-path="../../Services/OpenVPN.html">
+            
+                <a href="../../Services/OpenVPN.html">
+            
+                    
+                    1.9.4.OpenVPN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.5" data-path="../../Services/S3.html">
+            
+                <a href="../../Services/S3.html">
+            
+                    
+                    1.9.5.亚马逊 S3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.6" data-path="../../Services/SNMP.html">
+            
+                <a href="../../Services/SNMP.html">
+            
+                    
+                    1.9.6.简单网络管理协议（SNMP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.7" data-path="../../Services/SSH.html">
+            
+                <a href="../../Services/SSH.html">
+            
+                    
+                    1.9.7.安全外壳协议（SSH）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.8" data-path="../../Services/UPS.html">
+            
+                <a href="../../Services/UPS.html">
+            
+                    
+                    1.9.8.不间断电源（UPS）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >1.8.5.1.SMB 共享创建</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#smb-&#x5171;&#x4EAB;&#x521B;&#x5EFA;"><b></b>SMB &#x5171;&#x4EAB;&#x521B;&#x5EFA;</a></li><ul><li><span class="title-icon "></span><a href="#&#x80CC;&#x666F;&#x77E5;&#x8BC6;"><b></b>&#x80CC;&#x666F;&#x77E5;&#x8BC6;</a></li><li><span class="title-icon "></span><a href="#&#x524D;&#x671F;&#x51C6;&#x5907;"><b></b>&#x524D;&#x671F;&#x51C6;&#x5907;</a></li><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;"><b></b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x672C;&#x5730;&#x7528;&#x6237;&#x5E10;&#x6237;"><b></b>&#x521B;&#x5EFA;&#x672C;&#x5730;&#x7528;&#x6237;&#x5E10;&#x6237;</a></li><li><span class="title-icon "></span><a href="#&#x8C03;&#x6574;&#x6570;&#x636E;&#x96C6;-acl"><b></b>&#x8C03;&#x6574;&#x6570;&#x636E;&#x96C6; ACL</a></li></ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;-smb-&#x5171;&#x4EAB;"><b></b>&#x521B;&#x5EFA; SMB &#x5171;&#x4EAB;</a></li><ul><li><span class="title-icon "></span><a href="#&#x9AD8;&#x7EA7;&#x9009;&#x9879;"><b></b>&#x9AD8;&#x7EA7;&#x9009;&#x9879;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5171;&#x4EAB;&#x7BA1;&#x7406;"><b></b>&#x5171;&#x4EAB;&#x7BA1;&#x7406;</a></li><ul><li><span class="title-icon "></span><a href="#&#x914D;&#x7F6E;&#x5171;&#x4EAB;acl"><b></b>&#x914D;&#x7F6E;&#x5171;&#x4EAB;ACL</a></li><li><span class="title-icon "></span><a href="#&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;acl"><b></b>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;ACL</a></li></ul><li><span class="title-icon "></span><a href="#&#x6FC0;&#x6D3B;-smb-&#x670D;&#x52A1;"><b></b>&#x6FC0;&#x6D3B; SMB &#x670D;&#x52A1;</a></li><ul><li><span class="title-icon "></span><a href="#&#x670D;&#x52A1;&#x914D;&#x7F6E;"><b></b>&#x670D;&#x52A1;&#x914D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#&#x9AD8;&#x7EA7;&#x9009;&#x9879;_1"><b></b>&#x9AD8;&#x7EA7;&#x9009;&#x9879;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5728;&#x53E6;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x4F7F;&#x7528;smb-&#x5171;&#x4EAB;&#x3002;"><b></b>&#x5728;&#x53E6;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x4F7F;&#x7528;SMB &#x5171;&#x4EAB;&#x3002;</a></li><ul><li><span class="title-icon "></span><a href="#linux"><b></b>Linux</a></li><li><span class="title-icon "></span><a href="#windows"><b></b>Windows</a></li><li><span class="title-icon "></span><a href="#apple"><b></b>Apple</a></li><li><span class="title-icon "></span><a href="#freebsd"><b></b>FreeBSD</a></li></ul></ul></ul></div><a href="#smb-&#x5171;&#x4EAB;&#x521B;&#x5EFA;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="smb-&#x5171;&#x4EAB;&#x521B;&#x5EFA;"><a name="smb-&#x5171;&#x4EAB;&#x521B;&#x5EFA;" class="anchor-navigation-ex-anchor" href="#smb-&#x5171;&#x4EAB;&#x521B;&#x5EFA;"><i class="fa fa-link" aria-hidden="true"></i></a>SMB &#x5171;&#x4EAB;&#x521B;&#x5EFA;</h1>
+<h2 id="&#x80CC;&#x666F;&#x77E5;&#x8BC6;"><a name="&#x80CC;&#x666F;&#x77E5;&#x8BC6;" class="anchor-navigation-ex-anchor" href="#&#x80CC;&#x666F;&#x77E5;&#x8BC6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x80CC;&#x666F;&#x77E5;&#x8BC6;</h2>
+<p>&#x65E7;&#x7248; SMB &#x5BA2;&#x6237;&#x7AEF;&#x4F9D;&#x9760; NetBIOS &#x540D;&#x79F0;&#x89E3;&#x6790;&#x6765;&#x53D1;&#x73B0;&#x7F51;&#x7EDC;&#x4E0A;&#x7684; SMB &#x670D;&#x52A1;&#x5668;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728; TrueNAS &#x4E2D;&#x7981;&#x7528; NetBIOS &#x540D;&#x79F0;&#x670D;&#x52A1;&#x5668; (nmbd)&#x3002; &#x5982;&#x679C;&#x9700;&#x8981;&#x6B64;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7F51;&#x7EDC;&#xFF08;<strong>Network</strong>&#xFF09; &gt; &#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF08;<strong>Global Configuration</strong>&#xFF09;&#x4E2D;&#x542F;&#x7528;&#x5B83;&#x3002;</p>
+<p>MacOS &#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528; mDNS &#x6765;&#x53D1;&#x73B0;&#x7F51;&#x7EDC;&#x4E0A;&#x662F;&#x5426;&#x5B58;&#x5728; SMB &#x670D;&#x52A1;&#x5668;&#x3002; &#x5728; TrueNAS &#x4E0A;&#x9ED8;&#x8BA4;&#x542F;&#x7528; mDNS &#x670D;&#x52A1;&#x5668; (avahi)&#x3002;</p>
+<p>Windows &#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528; <a href="https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01" target="_blank">WS-Discovery</a> &#x6765;&#x53D1;&#x73B0; SMB &#x670D;&#x52A1;&#x5668;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x4F46;&#x6839;&#x636E; Windows &#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x53EF;&#x4EE5;&#x7981;&#x7528;&#x7F51;&#x7EDC;&#x53D1;&#x73B0;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x5E7F;&#x64AD;&#x534F;&#x8BAE;&#x7684;&#x53EF;&#x53D1;&#x73B0;&#x6027;&#x662F;&#x4E00;&#x9879;&#x4FBF;&#x5229;&#x529F;&#x80FD;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8BBF;&#x95EE; SMB &#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<h2 id="&#x524D;&#x671F;&#x51C6;&#x5907;"><a name="&#x524D;&#x671F;&#x51C6;&#x5907;" class="anchor-navigation-ex-anchor" href="#&#x524D;&#x671F;&#x51C6;&#x5907;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x524D;&#x671F;&#x51C6;&#x5907;</h2>
+<h3 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;</h3>
+<p>&#x5EFA;&#x8BAE;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x5E76;&#x5C06;&#x65B0;&#x7684;&#x6570;&#x636E;&#x96C6;&#x7684;&#x5171;&#x4EAB;&#x7C7B;&#x578B;&#x8BBE;&#x7F6E;&#x4E3A; SMB&#x3002;</p>
+<p>ZFS &#x6570;&#x636E;&#x96C6;&#x662F;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x8BBE;&#x7F6E;&#x521B;&#x5EFA;&#x7684;&#xFF1A;</p>
+<ul>
+<li>&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868;&#xFF08;ACL&#xFF09;&#x6A21;&#x5F0F;&#xFF08;<strong>aclmode</strong>&#xFF09; = &#x53D7;&#x9650;&#xFF08;<strong>restricted</strong>&#xFF09;</li>
+<li>&#x5927;&#x5C0F;&#x5199;&#x654F;&#x611F;&#xFF08;<strong>case sensitivity</strong>&#xFF09; = &#x4E0D;&#x654F;&#x611F;&#xFF08;<strong>insensitive</strong>&#xFF09;</li>
+</ul>
+<p>&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868;&#x4E5F;&#x5E94;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x96C6;&#x3002; &#x6B64;&#x9ED8;&#x8BA4; ACL &#x662F;&#x9650;&#x5236;&#x6027;&#x7684;&#xFF0C;&#x4EC5;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x96C6;&#x6240;&#x6709;&#x8005;&#x548C;&#x7EC4;&#x3002; &#x7A0D;&#x540E;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x60A8;&#x7684;&#x7528;&#x4F8B;&#x4FEE;&#x6539;&#x6B64; ACL&#x3002;</p>
+<h3 id="&#x521B;&#x5EFA;&#x672C;&#x5730;&#x7528;&#x6237;&#x5E10;&#x6237;"><a name="&#x521B;&#x5EFA;&#x672C;&#x5730;&#x7528;&#x6237;&#x5E10;&#x6237;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x672C;&#x5730;&#x7528;&#x6237;&#x5E10;&#x6237;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x672C;&#x5730;&#x7528;&#x6237;&#x5E10;&#x6237;</h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6240;&#x6709;&#x65B0;&#x672C;&#x5730;&#x7528;&#x6237;&#x90FD;&#x662F;&#x5185;&#x7F6E; SMB &#x7EC4;&#xFF08;<strong>builtin users</strong>&#xFF09;&#x7684;&#x6210;&#x5458;&#x3002; &#x8BE5;&#x7EC4;&#x53EF;&#x7528;&#x4E8E;&#x5411;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x672C;&#x5730;&#x7528;&#x6237;&#x6388;&#x4E88;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002; &#x9644;&#x52A0;<a href="https://www.truenas.com/docs/core/accounts/groups/" target="_blank">&#x7EC4;</a>&#x53EF;&#x7528;&#x4E8E;&#x5FAE;&#x8C03;&#x5BF9;&#x5927;&#x91CF;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;&#x3002; TrueNAS &#x5185;&#x7F6E;&#x7684;&#x7528;&#x6237;&#x5E10;&#x6237;&#x6216;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E; smb &#x6807;&#x5FD7;&#x7684;&#x7528;&#x6237;&#x5E10;&#x6237;&#x4E0D;&#x80FD;&#x7528;&#x4E8E; SMB &#x8BBF;&#x95EE;&#x3002;</p>
+<p><strong>Q</strong>&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4EC5;&#x4EC5;&#x5141;&#x8BB8;&#x533F;&#x540D;&#x8BBF;&#x95EE;&#x5171;&#x4EAB;&#xFF1F;</p>
+<p><strong>A</strong>&#xFF1A;&#x5C3D;&#x7BA1;&#x53EF;&#x4EE5;&#x533F;&#x540D;&#x6216;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#x5171;&#x4EAB;&#xFF0C;&#x4F46;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5B89;&#x5168;&#x6F0F;&#x6D1E;&#xFF0C;&#x4E3B;&#x8981; SMB &#x5BA2;&#x6237;&#x7AEF;&#x4F9B;&#x5E94;&#x5546;&#x5DF2;&#x5F03;&#x7528;&#x3002; &#x8FD9;&#x90E8;&#x5206;&#x662F;&#x56E0;&#x4E3A;&#x6765;&#x5BBE;&#x4F1A;&#x8BDD;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x7B7E;&#x540D;&#x548C;&#x52A0;&#x5BC6;&#x3002;</p>
+<p>Q&#xFF1A;LDAP &#x7528;&#x6237;&#x5462;&#xFF1F;</p>
+<p>A&#xFF1A;&#x5F53;&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x5DF2;&#x7ECF;&#x914D;&#x7F6E;&#x4E86; LDAP &#xFF0C;&#x5E76;&#x4E14;&#x60A8;&#x5E0C;&#x671B;&#x6765;&#x81EA; LDAP &#x670D;&#x52A1;&#x5668;&#x7684;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; SMB &#x5171;&#x4EAB;&#x65F6;&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x76EE;&#x5F55;&#x670D;&#x52A1;&#xFF08;<strong>Directory Services</strong>&#xFF09; &gt; <strong>LDAP</strong> &gt; &#x9AD8;&#x7EA7;&#x6A21;&#x5F0F;&#xFF08;<strong>ADVANCED MODE</strong>&#xFF09;&#x5E76;&#x8BBE;&#x7F6E; Samba &#x6A21;&#x5F0F;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x672C;&#x5730; TrueNAS &#x7528;&#x6237;&#x5E10;&#x6237;&#x5C06;&#x65E0;&#x6CD5;&#x518D;&#x8BBF;&#x95EE;&#x5171;&#x4EAB;&#x3002;</p>
+<h3 id="&#x8C03;&#x6574;&#x6570;&#x636E;&#x96C6;-acl"><a name="&#x8C03;&#x6574;&#x6570;&#x636E;&#x96C6;-acl" class="anchor-navigation-ex-anchor" href="#&#x8C03;&#x6574;&#x6570;&#x636E;&#x96C6;-acl"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8C03;&#x6574;&#x6570;&#x636E;&#x96C6; ACL</h3>
+<p>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x96C6;&#x548C;&#x5E10;&#x6237;&#x540E;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x8BBF;&#x95EE;&#x9700;&#x6C42;&#xFF0C;&#x5E76;&#x8C03;&#x6574;&#x6570;&#x636E;&#x96C6; ACL &#x4EE5;&#x8FDB;&#x884C;&#x5339;&#x914D;&#x3002; &#x8981;&#x7F16;&#x8F91; ACL&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x5B58;&#x50A8;&#xFF08;<strong>Storage</strong>&#xFF09; &gt; &#x6C60;&#xFF08;<strong>Pools</strong>&#xFF09;&#xFF0C;&#x6253;&#x5F00;&#x65B0;&#x6570;&#x636E;&#x96C6;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB;&#x7F16;&#x8F91;&#x6743;&#x9650;&#xFF08;<strong>Edit Permissions</strong>&#xFF09;&#x3002; &#x8BB8;&#x591A;&#x5BB6;&#x5EAD;&#x7528;&#x6237;&#x901A;&#x5E38;&#x4F1A;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x6761;&#x76EE;&#xFF0C;&#x5C06;&#x5B8C;&#x5168;&#x63A7;&#x5236;&#xFF08;<strong>FULL_CONTROL</strong>&#xFF09; &#x6388;&#x4E88;&#x5185;&#x7F6E;SMB&#x7EC4;&#xFF08;<strong>builtin_users</strong>&#xFF09; &#x7EC4;&#xFF0C;&#x5E76;&#x5C06;&#x6807;&#x5FD7;&#x8BBE;&#x7F6E;&#x4E3A; &#x7EE7;&#x627F;&#xFF08;<strong>INHERIT</strong>&#xFF09;&#x3002; &#x6709;&#x5173;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;<a href="https://www.truenas.com/docs/core/storage/pools/permissions/" target="_blank">&#x6743;&#x9650;&#x6587;&#x7AE0;</a>&#x3002;</p>
+<h2 id="&#x521B;&#x5EFA;-smb-&#x5171;&#x4EAB;"><a name="&#x521B;&#x5EFA;-smb-&#x5171;&#x4EAB;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;-smb-&#x5171;&#x4EAB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA; SMB &#x5171;&#x4EAB;</h2>
+<p>&#x8981;&#x521B;&#x5EFA; Windows SMB &#x5171;&#x4EAB;&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x5171;&#x4EAB;&#xFF08;<strong>Sharing</strong>&#xFF09; &gt; Windows &#x5171;&#x4EAB; (SMB)&#xFF08;<strong>Windows Shares (SMB)</strong>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB;&#x6DFB;&#x52A0;&#xFF08;<strong>ADD</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/SharingSMBAdd.png" alt=""></p>
+<p>SMB &#x5171;&#x4EAB;&#x7684;&#x8DEF;&#x5F84;&#xFF08;<strong>Path</strong>&#xFF09;&#x548C;&#x540D;&#x79F0;&#xFF08;<strong>Name</strong>&#xFF09;&#x5B9A;&#x4E49;&#x4E86;&#x521B;&#x5EFA;&#x65B0; SMB &#x5171;&#x4EAB;&#x6240;&#x9700;&#x7684;&#x6700;&#x5C11;&#x4FE1;&#x606F;&#x91CF;&#x3002;&#x8DEF;&#x5F84;&#xFF08;<strong>Path</strong>&#xFF09;&#x662F;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x5C06;&#x901A;&#x8FC7; SMB &#x534F;&#x8BAE;&#x5BFC;&#x51FA;&#x7684;&#x76EE;&#x5F55;&#x6811;&#xFF0C;&#x540D;&#x79F0;&#xFF08;<strong>Name</strong>&#xFF09;&#x662F; SMB &#x5171;&#x4EAB;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5F53; SMB &#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x5230;&#x6B64; SMB &#x670D;&#x52A1;&#x5668;&#x65F6;&#xFF0C;&#x5B83;&#x6784;&#x6210;&#x201C;&#x5B8C;&#x6574;&#x5171;&#x4EAB;&#x8DEF;&#x5F84;&#x540D;&#x201D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002; &#x7531;&#x4E8E;&#x540D;&#x79F0;&#x5728; SMB &#x534F;&#x8BAE;&#x4E2D;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF0C;&#x5B83;&#x7684;&#x957F;&#x5EA6;&#x5FC5;&#x987B;&#x5C0F;&#x4E8E;&#x6216;&#x7B49;&#x4E8E; 80 &#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x5F97;&#x5305;&#x542B; Microsoft &#x6587;&#x6863; MS-FSCC &#x90E8;&#x5206; 2.1.6 &#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x4EFB;&#x4F55;&#x65E0;&#x6548;&#x5B57;&#x7B26;&#x3002; &#x5982;&#x679C;&#x672A;&#x63D0;&#x4F9B;&#x540D;&#x79F0;&#xFF0C;&#x5219;&#x8DEF;&#x5F84;&#x7684;&#x6700;&#x540E;&#x76EE;&#x5F55;&#x540D;&#x79F0;&#x5C06;&#x7528;&#x4F5C;&#x5171;&#x4EAB;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5171;&#x4EAB;&#x9884;&#x8BBE;&#xFF08;<strong>Purpose</strong>&#xFF09;&#x6765;&#x5E94;&#x7528;&#x548C;&#x9501;&#x5B9A;&#x5171;&#x4EAB;&#x7684;&#x9884;&#x5148;&#x5B9A;&#x4E49;&#x9AD8;&#x7EA7;&#x9009;&#x9879;&#x3002; &#x8981;&#x4FDD;&#x7559;&#x5BF9;&#x6240;&#x6709;&#x5171;&#x4EAB;&#x9AD8;&#x7EA7;&#x9009;&#x9879;&#x7684;&#x5B8C;&#x5168;&#x63A7;&#x5236;&#xFF0C;&#x8BF7;&#x9009;&#x62E9;&#x65E0;&#x9884;&#x8BBE;&#xFF08;<strong>No presets</strong>&#xFF09;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x663E;&#x793A;&#x4E86;&#x4E0D;&#x540C;&#x7528;&#x9014;&#x7684;&#x9884;&#x8BBE;&#x9009;&#x9879;&#x4EE5;&#x53CA;&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x662F;&#x5426;&#x88AB;&#x9501;&#x5B9A;&#x3002; [x] &#x8868;&#x793A;&#x8BE5;&#x9009;&#x9879;<strong>&#x5DF2;&#x542F;&#x7528;</strong>&#xFF0C;[ ] &#x8868;&#x793A;&#x8BE5;&#x9009;&#x9879;<strong>&#x5DF2;&#x7981;&#x7528;</strong>&#xFF0C;[text] &#x8868;&#x793A;<strong>&#x7279;&#x5B9A;&#x503C;</strong>&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x5171;&#x4EAB;&#x53C2;&#x6570;&#xFF08;Default share parameters&#xFF09;</th>
+<th>&#x591A;&#x7528;&#x6237;&#x65F6;&#x5149;&#x673A;&#xFF08;Multi-user time machine&#xFF09;</th>
+<th>&#x591A;&#x534F;&#x8BAE; (AFP/SMB) &#x5171;&#x4EAB;&#xFF08;Multi-protocol (AFP/SMB) shares&#xFF09;</th>
+<th>&#x591A;&#x534F;&#x8BAE; (NFSv3/SMB) &#x5171;&#x4EAB;&#xFF08;Multi-protocol (NFSv3/SMB) shares&#xFF09;</th>
+<th>&#x79C1;&#x6709; SMB &#x6570;&#x636E;&#x96C6;&#x548C;&#x5171;&#x4EAB;&#xFF08;Private SMB Datasets and Shares&#xFF09;</th>
+<th>5 &#x5206;&#x949F;&#x540E;&#x6587;&#x4EF6;&#x53D8;&#x4E3A; SMB &#x53EA;&#x8BFB;&#xFF08;Files become readonly of SMB after 5 minutes&#xFF09;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">[x] &#x5F00;&#x542F;ACL&#xFF08;<strong>Enable ACL</strong>&#xFF09; (locked)</td>
+<td>[x] &#x5F00;&#x542F;ACL&#xFF08;<strong>Enable ACL</strong>&#xFF09;(unlocked)</td>
+<td>[x] &#x5F00;&#x542F;ACL&#xFF08;<strong>Enable ACL</strong>&#xFF09;(locked)</td>
+<td>[ ] &#x5F00;&#x542F;ACL&#xFF08;<strong>Enable ACL</strong>&#xFF09;(locked)</td>
+<td>[ ]&#x5F00;&#x542F;ACL&#xFF08;<strong>Enable ACL</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x5F00;&#x542F;ACL&#xFF08;<strong>Enable ACL</strong>&#xFF09; (unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x4EE5;&#x53EA;&#x8BFB;&#x65B9;&#x5F0F;&#x5BFC;&#x51FA;&#xFF08;<strong>Export Read Only</strong>&#xFF09;(locked)</td>
+<td>[ ] &#x4EE5;&#x53EA;&#x8BFB;&#x65B9;&#x5F0F;&#x5BFC;&#x51FA;&#xFF08;<strong>Export Read Only</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x4EE5;&#x53EA;&#x8BFB;&#x65B9;&#x5F0F;&#x5BFC;&#x51FA;&#xFF08;<strong>Export Read Only</strong>&#xFF09;(unlocked)</td>
+<td>[ ]&#x4EE5;&#x53EA;&#x8BFB;&#x65B9;&#x5F0F;&#x5BFC;&#x51FA;&#xFF08;<strong>Export Read Only</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x4EE5;&#x53EA;&#x8BFB;&#x65B9;&#x5F0F;&#x5BFC;&#x51FA;&#xFF08;<strong>Export Read Only</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x4EE5;&#x53EA;&#x8BFB;&#x65B9;&#x5F0F;&#x5BFC;&#x51FA;&#xFF08;<strong>Export Read Only</strong>&#xFF09;(unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[x] &#x7F51;&#x7EDC;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x6D4F;&#x89C8;&#xFF08;<strong>Browsable to Network Clients</strong>&#xFF09; (locked)</td>
+<td>[x] &#x7F51;&#x7EDC;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x6D4F;&#x89C8;&#xFF08;<strong>Browsable to Network Clients</strong>&#xFF09;(unlocked)</td>
+<td>[x] &#x7F51;&#x7EDC;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x6D4F;&#x89C8;&#xFF08;<strong>Browsable to Network Clients</strong>&#xFF09;(unlocked)</td>
+<td>[x] &#x7F51;&#x7EDC;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x6D4F;&#x89C8;&#xFF08;<strong>Browsable to Network Clients</strong>&#xFF09;(unlocked)</td>
+<td>[x] &#x7F51;&#x7EDC;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x6D4F;&#x89C8;&#xFF08;<strong>Browsable to Network Clients</strong>&#xFF09; (unlocked)</td>
+<td>[x] &#x7F51;&#x7EDC;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x6D4F;&#x89C8;&#xFF08;<strong>Browsable to Network Clients</strong>&#xFF09;(unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x5141;&#x8BB8;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#xFF08;<strong>Allow Guest Access</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x5141;&#x8BB8;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#xFF08;<strong>Allow Guest Access</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x5141;&#x8BB8;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#xFF08;<strong>Allow Guest Access</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x5141;&#x8BB8;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#xFF08;<strong>Allow Guest Access</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x5141;&#x8BB8;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#xFF08;<strong>Allow Guest Access</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x5141;&#x8BB8;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#xFF08;<strong>Allow Guest Access</strong>&#xFF09;  (unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x57FA;&#x4E8E;&#x8BBF;&#x95EE;&#x7684;&#x5171;&#x4EAB;&#x679A;&#x4E3E;&#xFF08;<strong>Access Based Share Enumeration</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x57FA;&#x4E8E;&#x8BBF;&#x95EE;&#x7684;&#x5171;&#x4EAB;&#x679A;&#x4E3E;&#xFF08;<strong>Access Based Share Enumeration</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x57FA;&#x4E8E;&#x8BBF;&#x95EE;&#x7684;&#x5171;&#x4EAB;&#x679A;&#x4E3E;&#xFF08;<strong>Access Based Share Enumeration</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x57FA;&#x4E8E;&#x8BBF;&#x95EE;&#x7684;&#x5171;&#x4EAB;&#x679A;&#x4E3E;&#xFF08;<strong>Access Based Share Enumeration</strong>&#xFF09;  (unlocked)</td>
+<td>[ ] &#x57FA;&#x4E8E;&#x8BBF;&#x95EE;&#x7684;&#x5171;&#x4EAB;&#x679A;&#x4E3E;&#xFF08;<strong>Access Based Share Enumeration</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x57FA;&#x4E8E;&#x8BBF;&#x95EE;&#x7684;&#x5171;&#x4EAB;&#x679A;&#x4E3E;&#xFF08;<strong>Access Based Share Enumeration</strong>&#xFF09;  (unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09;(unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09;(unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x7528;&#x4F5C;&#x5BB6;&#x5EAD;&#x5171;&#x4EAB;&#xFF08;<strong>Use as Home Share</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x7528;&#x4F5C;&#x5BB6;&#x5EAD;&#x5171;&#x4EAB;&#xFF08;<strong>Use as Home Share</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x7528;&#x4F5C;&#x5BB6;&#x5EAD;&#x5171;&#x4EAB;&#xFF08;<strong>Use as Home Share</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x7528;&#x4F5C;&#x5BB6;&#x5EAD;&#x5171;&#x4EAB;&#xFF08;<strong>Use as Home Share</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x7528;&#x4F5C;&#x5BB6;&#x5EAD;&#x5171;&#x4EAB;&#xFF08;<strong>Use as Home Share</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x7528;&#x4F5C;&#x5BB6;&#x5EAD;&#x5171;&#x4EAB;&#xFF08;<strong>Use as Home Share</strong>&#xFF09;(unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x65F6;&#x5149;&#x673A;&#xFF08;<strong>Time Machine</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x65F6;&#x5149;&#x673A;&#xFF08;<strong>Time Machine</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x65F6;&#x5149;&#x673A;&#xFF08;<strong>Time Machine</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x65F6;&#x5149;&#x673A;&#xFF08;<strong>Time Machine</strong>&#xFF09; (unlocked)</td>
+<td>[ ]&#x65F6;&#x5149;&#x673A;&#xFF08;<strong>Time Machine</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x65F6;&#x5149;&#x673A;&#xFF08;<strong>Time Machine</strong>&#xFF09;(unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[x] &#x542F;&#x7528;&#x5377;&#x5F71;&#x526F;&#x672C;&#xFF08;<strong>Enable Shadow Copies</strong>&#xFF09; (locked)</td>
+<td>[x]&#x542F;&#x7528;&#x5377;&#x5F71;&#x526F;&#x672C;&#xFF08;<strong>Enable Shadow Copies</strong>&#xFF09;(unlocked)</td>
+<td>[x] &#x542F;&#x7528;&#x5377;&#x5F71;&#x526F;&#x672C;&#xFF08;<strong>Enable Shadow Copies</strong>&#xFF09;(unlocked)</td>
+<td>[x] &#x542F;&#x7528;&#x5377;&#x5F71;&#x526F;&#x672C;&#xFF08;<strong>Enable Shadow Copies</strong>&#xFF09;(unlocked)</td>
+<td>[x] &#x542F;&#x7528;&#x5377;&#x5F71;&#x526F;&#x672C;&#xFF08;<strong>Enable Shadow Copies</strong>&#xFF09;(unlocked)</td>
+<td>[x] &#x542F;&#x7528;&#x5377;&#x5F71;&#x526F;&#x672C;&#xFF08;<strong>Enable Shadow Copies</strong>&#xFF09; (unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x5BFC;&#x51FA;&#x56DE;&#x6536;&#x7AD9;&#xFF08;<strong>Export Recycle Bin</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x5BFC;&#x51FA;&#x56DE;&#x6536;&#x7AD9;&#xFF08;<strong>Export Recycle Bin</strong>&#xFF09;(unlocked)</td>
+<td>[ ]&#x5BFC;&#x51FA;&#x56DE;&#x6536;&#x7AD9;&#xFF08;<strong>Export Recycle Bin</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x5BFC;&#x51FA;&#x56DE;&#x6536;&#x7AD9;&#xFF08;<strong>Export Recycle Bin</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x5BFC;&#x51FA;&#x56DE;&#x6536;&#x7AD9;&#xFF08;<strong>Export Recycle Bin</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x5BFC;&#x51FA;&#x56DE;&#x6536;&#x7AD9;&#xFF08;<strong>Export Recycle Bin</strong>&#xFF09;(unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x4F7F;&#x7528; Apple &#x98CE;&#x683C;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF08;<strong>Use Apple-style Character Encoding</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x4F7F;&#x7528; Apple &#x98CE;&#x683C;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF08;<strong>Use Apple-style Character Encoding</strong>&#xFF09; (unlocked)</td>
+<td>[x] &#x4F7F;&#x7528; Apple &#x98CE;&#x683C;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF08;<strong>Use Apple-style Character Encoding</strong>&#xFF09; (locked)</td>
+<td>[x] &#x4F7F;&#x7528; Apple &#x98CE;&#x683C;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF08;<strong>Use Apple-style Character Encoding</strong>&#xFF09; (unlocked)</td>
+<td>[x] &#x4F7F;&#x7528; Apple &#x98CE;&#x683C;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF08;<strong>Use Apple-style Character Encoding</strong>&#xFF09; (unlocked)</td>
+<td>[x] &#x4F7F;&#x7528; Apple &#x98CE;&#x683C;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF08;<strong>Use Apple-style Character Encoding</strong>&#xFF09; (unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[x] &#x542F;&#x7528;&#x5907;&#x7528;&#x6570;&#x636E;&#x6D41;&#xFF08;<strong>Enable Alternate Data Streams</strong>&#xFF09; (locked)</td>
+<td>[x] &#x542F;&#x7528;&#x5907;&#x7528;&#x6570;&#x636E;&#x6D41;&#xFF08;<strong>Enable Alternate Data Streams</strong>&#xFF09; (unlocked)</td>
+<td>[x] &#x542F;&#x7528;&#x5907;&#x7528;&#x6570;&#x636E;&#x6D41;&#xFF08;<strong>Enable Alternate Data Streams</strong>&#xFF09;  (locked)</td>
+<td>[ ] &#x542F;&#x7528;&#x5907;&#x7528;&#x6570;&#x636E;&#x6D41;&#xFF08;<strong>Enable Alternate Data Streams</strong>&#xFF09;  (locked)</td>
+<td>[ ] &#x542F;&#x7528;&#x5907;&#x7528;&#x6570;&#x636E;&#x6D41;&#xFF08;<strong>Enable Alternate Data Streams</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x542F;&#x7528;&#x5907;&#x7528;&#x6570;&#x636E;&#x6D41;&#xFF08;<strong>Enable Alternate Data Streams</strong>&#xFF09; (unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[x] &#x542F;&#x7528; SMB2/3 &#x957F;&#x8FDE;&#x63A5;&#xFF08;<strong>Enable SMB2/3 Durable Handles</strong>&#xFF09; (locked)</td>
+<td>[x] &#x542F;&#x7528; SMB2/3 &#x957F;&#x8FDE;&#x63A5;&#xFF08;<strong>Enable SMB2/3 Durable Handles</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x542F;&#x7528; SMB2/3 &#x957F;&#x8FDE;&#x63A5;&#xFF08;<strong>Enable SMB2/3 Durable Handles</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x542F;&#x7528; SMB2/3 &#x957F;&#x8FDE;&#x63A5;&#xFF08;<strong>Enable SMB2/3 Durable Handles</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x542F;&#x7528; SMB2/3 &#x957F;&#x8FDE;&#x63A5;&#xFF08;<strong>Enable SMB2/3 Durable Handles</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x542F;&#x7528; SMB2/3 &#x957F;&#x8FDE;&#x63A5;&#xFF08;<strong>Enable SMB2/3 Durable Handles</strong>&#xFF09; (unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x542F;&#x7528; FSRVP&#xFF08;<strong>Enable FSRVP</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x542F;&#x7528; FSRVP&#xFF08;<strong>Enable FSRVP</strong>&#xFF09;(unlocked)</td>
+<td>[ ] &#x542F;&#x7528; FSRVP&#xFF08;<strong>Enable FSRVP</strong>&#xFF09;(locked)</td>
+<td>[ ] &#x542F;&#x7528; FSRVP&#xFF08;<strong>Enable FSRVP</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x542F;&#x7528; FSRVP&#xFF08;<strong>Enable FSRVP</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x542F;&#x7528; FSRVP&#xFF08;<strong>Enable FSRVP</strong>&#xFF09;(unlocked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x8DEF;&#x5F84;&#x540E;&#x7F00;&#xFF08;<strong>Path Suffix</strong>&#xFF09; (locked)</td>
+<td>[%U] &#x8DEF;&#x5F84;&#x540E;&#x7F00;&#xFF08;<strong>Path Suffix</strong>&#xFF09; (locked)</td>
+<td>[%U] &#x8DEF;&#x5F84;&#x540E;&#x7F00;&#xFF08;<strong>Path Suffix</strong>&#xFF09; (unlocked)</td>
+<td>[%U] &#x8DEF;&#x5F84;&#x540E;&#x7F00;&#xFF08;<strong>Path Suffix</strong>&#xFF09; (unlocked)</td>
+<td>[%U] &#x8DEF;&#x5F84;&#x540E;&#x7F00;&#xFF08;<strong>Path Suffix</strong>&#xFF09; (locked)</td>
+<td>[ ] &#x8DEF;&#x5F84;&#x540E;&#x7F00;&#xFF08;<strong>Path Suffix</strong>&#xFF09; (locked)</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ] &#x8F85;&#x52A9;&#x53C2;&#x6570;&#xFF08;<strong>Auxiliary Parameters</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x8F85;&#x52A9;&#x53C2;&#x6570;&#xFF08;<strong>Auxiliary Parameters</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x8F85;&#x52A9;&#x53C2;&#x6570;&#xFF08;<strong>Auxiliary Parameters</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x8F85;&#x52A9;&#x53C2;&#x6570;&#xFF08;<strong>Auxiliary Parameters</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x8F85;&#x52A9;&#x53C2;&#x6570;&#xFF08;<strong>Auxiliary Parameters</strong>&#xFF09; (unlocked)</td>
+<td>[ ] &#x8F85;&#x52A9;&#x53C2;&#x6570;&#xFF08;<strong>Auxiliary Parameters</strong>&#xFF09; (unlocked)</td>
+</tr>
+</tbody>
+</table>
+<p>&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x63CF;&#x8FF0;&#x6765;&#x5E2E;&#x52A9;&#x89E3;&#x91CA;&#x5171;&#x4EAB;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
+<p>&#x542F;&#x7528;&#xFF08;<strong>Enabled</strong>&#xFF09;&#x5141;&#x8BB8;&#x5728;&#x6FC0;&#x6D3B; SMB &#x670D;&#x52A1;&#x65F6;&#x5171;&#x4EAB;&#x6B64;&#x8DEF;&#x5F84;&#x3002;&#x4E0D;&#x52FE;&#x9009;&#x542F;&#x7528;&#xFF08;<strong>Enabled</strong>&#xFF09;&#x53EF;&#x4EE5;&#x7981;&#x7528;&#x5171;&#x4EAB;&#x800C;&#x4E0D;&#x5220;&#x9664;&#x914D;&#x7F6E;&#x3002;</p>
+<h3 id="&#x9AD8;&#x7EA7;&#x9009;&#x9879;"><a name="&#x9AD8;&#x7EA7;&#x9009;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x9AD8;&#x7EA7;&#x9009;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9AD8;&#x7EA7;&#x9009;&#x9879;</h3>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/SharingSMBAddAdvanced.png" alt=""></p>
+<p>&#x9009;&#x9879;&#x5206;&#x4E3A;&#x8BBF;&#x95EE;&#xFF08;<strong>Access</strong>&#xFF09;&#x548C;&#x5176;&#x4ED6;&#x9009;&#x9879;&#xFF08;<strong>Other Options</strong>&#xFF09;&#x3002; &#x8BBF;&#x95EE;&#x9009;&#x9879;&#x63A7;&#x5236;&#x5141;&#x8BB8;&#x7CFB;&#x7EDF;&#x6216;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x6216;&#x4FEE;&#x6539;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x7684;&#x5404;&#x79CD;&#x8BBE;&#x7F6E;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8BBE;&#x7F6E;&#x9009;&#x9879;</th>
+<th>&#x503C;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5F00;&#x542F;ACL&#xFF08;<strong>Enable ACL</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x8BBE;&#x7F6E;&#x4E3A;&#x5411;&#x5171;&#x4EAB;&#x6DFB;&#x52A0;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868; (ACL) &#x652F;&#x6301;&#x3002; &#x53D6;&#x6D88;&#x8BBE;&#x7F6E;&#x4F1A;&#x7981;&#x7528; ACL &#x652F;&#x6301;&#x5E76;&#x5220;&#x9664;&#x5171;&#x4EAB;&#x7684;&#x4EFB;&#x4F55;&#x73B0;&#x6709; ACL&#x3002;</td>
+</tr>
+<tr>
+<td>&#x4EE5;&#x53EA;&#x8BFB;&#x65B9;&#x5F0F;&#x5BFC;&#x51FA;&#xFF08;<strong>Export Read Only</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x7981;&#x6B62;&#x5199;&#x5165;&#x5171;&#x4EAB;&#x3002; &#x53D6;&#x6D88;&#x8BBE;&#x7F6E;&#x4EE5;&#x5141;&#x8BB8;&#x5199;&#x5165;&#x5171;&#x4EAB;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x7F51;&#x7EDC;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x6D4F;&#x89C8;&#xFF08;<strong>Browsable to Network Clients</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x786E;&#x5B9A;&#x6D4F;&#x89C8;&#x5171;&#x4EAB;&#x65F6;&#x662F;&#x5426;&#x5305;&#x542B;&#x6B64;&#x5171;&#x4EAB;&#x540D;&#x79F0;&#x3002; &#x65E0;&#x8BBA;&#x6B64;&#x8BBE;&#x7F6E;&#x5982;&#x4F55;&#xFF0C;&#x5BB6;&#x5EAD;&#x5171;&#x4EAB;&#x4EC5;&#x5BF9;&#x6240;&#x6709;&#x8005;&#x53EF;&#x89C1;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x5141;&#x8BB8;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#xFF08;<strong>Allow Guest Access</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x6743;&#x9650;&#x4E0E;&#x6765;&#x5BBE;&#x5E10;&#x6237;&#x76F8;&#x540C;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Windows 10 &#x7248;&#x672C; 1709 &#x548C; Windows Server &#x7248;&#x672C; 1903 &#x4E2D;&#x7981;&#x7528;&#x6765;&#x5BBE;&#x8BBF;&#x95EE;&#x3002;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;&#x6765;&#x63D0;&#x4F9B;&#x5BF9;&#x8FD9;&#x4E9B;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6765;&#x5BBE;&#x8BBF;&#x95EE;&#x3002; &#x5728;MacOS&#x4E2D;&#xFF0C;&#x5C1D;&#x8BD5;&#x4EE5; FreeNAS &#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x7528;&#x6237;&#x8EAB;&#x4EFD;&#x8FDE;&#x63A5;<strong>&#x4E0D;&#x4F1A;</strong>&#x81EA;&#x52A8;&#x4EE5;&#x8BBF;&#x5BA2;&#x5E10;&#x6237;&#x8EAB;&#x4EFD;&#x8FDE;&#x63A5;&#x3002; <em>Connect As: Guest</em> &#x9009;&#x9879;&#x5FC5;&#x987B;&#x5728; MacOS &#x4E2D;&#x7279;&#x522B;&#x9009;&#x62E9;&#x624D;&#x80FD;&#x4EE5;&#x8BBF;&#x5BA2;&#x5E10;&#x6237;&#x767B;&#x5F55;&#x3002; &#x6709;&#x5173;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; <a href="https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac" target="_blank">Apple &#x6587;&#x6863;</a>&#x3002;</td>
+</tr>
+<tr>
+<td>&#x57FA;&#x4E8E;&#x8BBF;&#x95EE;&#x7684;&#x5171;&#x4EAB;&#x679A;&#x4E3E;&#xFF08;<strong>Access Based Share Enumeration</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x8BBE;&#x7F6E;&#x6B64;&#x9879;&#x4F1A;&#x9650;&#x5236;&#x5BF9;&#x5171;&#x4EAB;&#x5177;&#x6709;&#x8BFB;&#x6216;&#x5199;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x7684;&#x7528;&#x6237;&#x7684;&#x5171;&#x4EAB;&#x53EF;&#x89C1;&#x6027;&#x3002; &#x8BF7;&#x53C2;&#x9605; <a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html" target="_blank">smb.conf</a> &#x624B;&#x518C;&#x9875;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x8F93;&#x5165;&#x5141;&#x8BB8;&#x7684;&#x4E3B;&#x673A;&#x540D;&#x6216; IP &#x5730;&#x5740;&#x7684;&#x5217;&#x8868;&#x3002; &#x6309; Enter &#x5206;&#x9694;&#x6761;&#x76EE;&#x3002; &#x53EF;&#x4EE5;&#x5728; <a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW" target="_blank">&#x6B64;&#x5904;</a> &#x4E2D;&#x627E;&#x5230;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x793A;&#x4F8B;&#x8BF4;&#x660E;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x8F93;&#x5165;&#x88AB;&#x62D2;&#x7EDD;&#x8FDE;&#x63A5;&#x7684;&#x4E3B;&#x673A;&#x540D;&#x6216; IP &#x5730;&#x5740;&#x7684;&#x5217;&#x8868;&#x3002; &#x6309; Enter &#x5206;&#x9694;&#x6761;&#x76EE;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09; &#x548C;&#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09; &#x5B57;&#x6BB5;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;&#x4EE5;&#x4EA7;&#x751F;&#x4E0D;&#x540C;&#x7684;&#x6548;&#x679C;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x679C; &#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09; &#x548C;&#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09; &#x90FD;&#x4E0D;&#x5305;&#x542B;&#x6761;&#x76EE;&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x4EFB;&#x4F55;&#x4E3B;&#x673A;&#x8BBF;&#x95EE; SMB &#x5171;&#x4EAB;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6709;&#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09; &#x4F46;&#x6CA1;&#x6709;&#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09; &#xFF0C;&#x5219;&#x53EA;&#x5141;&#x8BB8;&#x4E3B;&#x673A;&#x5141;&#x8BB8;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x4E3B;&#x673A;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6709; &#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09;&#x4F46;&#x6CA1;&#x6709; &#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09;&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x6240;&#x6709;&#x4E0D;&#x5728;&#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09;&#x4E2D;&#x7684;&#x4E3B;&#x673A;&#x8FDE;&#x63A5;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x540C;&#x65F6;&#x5B58;&#x5728;&#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09;&#x548C; &#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09;&#x5217;&#x8868;&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4E3B;&#x673A;&#x3002; &#x5982;&#x679C;&#x4E3B;&#x673A;&#x4E0D;&#x5728;&#x767D;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Allow</strong>&#xFF09; &#x548C;&#x9ED1;&#x540D;&#x5355;&#x4E3B;&#x673A;&#xFF08;<strong>Hosts Deny</strong>&#xFF09;&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x5B83;&#x3002;</li>
+</ul>
+<p>&#x5176;&#x4ED6;&#x9009;&#x9879;&#x5177;&#x6709;&#x7528;&#x4E8E;&#x63D0;&#x9AD8; Apple &#x8F6F;&#x4EF6;&#x517C;&#x5BB9;&#x6027;&#x3001;ZFS &#x5FEB;&#x7167;&#x529F;&#x80FD;&#x548C;&#x5176;&#x4ED6;&#x9AD8;&#x7EA7;&#x529F;&#x80FD;&#x7684;&#x8BBE;&#x7F6E;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8BBE;&#x7F6E;&#x9009;&#x9879;</th>
+<th>&#x503C;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x7528;&#x4F5C;&#x5BB6;&#x5EAD;&#x5171;&#x4EAB;&#xFF08;<strong>Use as Home Share</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x5141;&#x8BB8;&#x5171;&#x4EAB;&#x5BBF;&#x4E3B;&#x7528;&#x6237;&#x4E3B;&#x76EE;&#x5F55;&#x3002; &#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x5728;&#x8FDE;&#x63A5;&#x5230;&#x5176;&#x4ED6;&#x7528;&#x6237;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x7684;&#x5171;&#x4EAB;&#x65F6;&#x90FD;&#x4F1A;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;&#x4E2A;&#x4EBA;&#x4E3B;&#x76EE;&#x5F55;&#x3002; &#x8FD9;&#x5141;&#x8BB8;&#x4E2A;&#x4EBA;&#x7684;&#x3001;&#x52A8;&#x6001;&#x7684;&#x5171;&#x4EAB;&#x3002; &#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x5BB6;&#x5EAD;&#x5171;&#x4EAB;&#x3002; &#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x89C1;&#x914D;&#x7F6E;&#x3010;&#x9996;&#x9875;&#x5206;&#x4EAB;&#x6587;&#x7AE0;&#x3011;(<a href="https://www.truenas.com/docs/core/sharing/smb/homeshare/)&#x3002;" target="_blank">https://www.truenas.com/docs/core/sharing/smb/homeshare/)&#x3002;</a></td>
+</tr>
+<tr>
+<td>&#x65F6;&#x5149;&#x673A;&#xFF08;<strong>Time Machine</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x5728;&#x6B64;&#x5171;&#x4EAB;&#x4E0A;&#x542F;&#x7528; <a href="https://support.apple.com/en-us/HT201250" target="_blank">Apple Time Machine</a> &#x5907;&#x4EFD;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x542F;&#x7528;&#x5377;&#x5F71;&#x526F;&#x672C;&#xFF08;<strong>Enable Shadow Copies</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x5C06; ZFS &#x5FEB;&#x7167;&#x5BFC;&#x51FA;&#x4E3A; Microsoft &#x5377;&#x5F71;&#x590D;&#x5236;&#x670D;&#x52A1; (VSS) &#x7684; <a href="https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets" target="_blank">Shadow Copies</a> &#x5BA2;&#x6237;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x5BFC;&#x51FA;&#x56DE;&#x6536;&#x7AD9;&#xFF08;<strong>Export Recycle Bin</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x4ECE;&#x540C;&#x4E00;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x5220;&#x9664;&#x7684;&#x6587;&#x4EF6;&#x5C06;&#x79FB;&#x52A8;&#x5230;&#x56DE;&#x6536;&#x7AD9;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4F1A;&#x5360;&#x7528;&#x4EFB;&#x4F55;&#x989D;&#x5916;&#x7A7A;&#x95F4;&#x3002; <strong>&#x901A;&#x8FC7; NFS &#x5220;&#x9664;&#x6587;&#x4EF6;&#x5C06;&#x6C38;&#x4E45;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x3002;</strong> &#x5F53;&#x6587;&#x4EF6;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x96C6;&#x6216;&#x5B50;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x88AB;&#x590D;&#x5236;&#x5230;&#x56DE;&#x6536;&#x7AD9;&#x6240;&#x5728;&#x7684;&#x6570;&#x636E;&#x96C6;&#x3002; &#x4E3A;&#x9632;&#x6B62;&#x8FC7;&#x5EA6;&#x4F7F;&#x7528;&#x7A7A;&#x95F4;&#xFF0C;&#x5927;&#x4E8E;<em>20 MiB</em> &#x7684;&#x6587;&#x4EF6;&#x5C06;&#x88AB;&#x5220;&#x9664;&#x800C;&#x4E0D;&#x662F;&#x79FB;&#x52A8;&#x3002; &#x8C03;&#x6574; <strong>Auxiliary Parameter</strong> <code>crossrename:sizelimit=</code> &#x8BBE;&#x7F6E;&#x4EE5;&#x5141;&#x8BB8;&#x66F4;&#x5927;&#x7684;&#x6587;&#x4EF6;&#x3002; &#x4F8B;&#x5982;&#xFF0C;<code>crossrename:sizelimit=*50*</code> &#x5141;&#x8BB8;&#x79FB;&#x52A8;&#x6700;&#x5927;&#x4E3A; <em>50 MiB</em> &#x7684;&#x6587;&#x4EF6;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x4ECE;&#x56DE;&#x6536;&#x7AD9;&#x4E2D;&#x6C38;&#x4E45;&#x5220;&#x9664;&#x6216;&#x79FB;&#x52A8;&#x3002; <strong>&#x8FD9;&#x4E0D;&#x662F; ZFS &#x5FEB;&#x7167;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#x3002;</strong></td>
+</tr>
+<tr>
+<td>&#x4F7F;&#x7528; Apple &#x98CE;&#x683C;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF08;<strong>Use Apple-style Character Encoding</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Samba &#x5BF9; NTFS &#x975E;&#x6CD5;&#x5B57;&#x7B26;&#x4F7F;&#x7528;&#x6563;&#x5217;&#x7B97;&#x6CD5;&#x3002; &#x542F;&#x7528;&#x6B64;&#x9009;&#x9879;&#x4F1A;&#x4EE5;&#x4E0E; MacOS SMB &#x5BA2;&#x6237;&#x7AEF;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x8F6C;&#x6362; NTFS &#x975E;&#x6CD5;&#x5B57;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x542F;&#x7528;&#x5907;&#x7528;&#x6570;&#x636E;&#x6D41;&#xFF08;<strong>Enable Alternate Data Streams</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x5141;&#x8BB8;&#x591A;&#x4E2A; <a href="https://www.ntfs.com/ntfs-multiple.htm" target="_blank">NTFS &#x6570;&#x636E;&#x6D41;</a>&#x3002; &#x7981;&#x7528;&#x6B64;&#x9009;&#x9879;&#x4F1A;&#x5BFC;&#x81F4; MacOS &#x5C06;&#x6D41;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x542F;&#x7528; SMB2/3 &#x957F;&#x8FDE;&#x63A5;&#xFF08;<strong>Enable SMB2/3 Durable Handles</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x627F;&#x53D7;&#x77ED;&#x65F6;&#x95F4;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x7684;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x53E5;&#x67C4;&#x3002; Samba &#x4E2D;&#x5BF9; POSIX &#x5B57;&#x8282;&#x8303;&#x56F4;&#x9501;&#x7684;&#x652F;&#x6301;&#x4E5F;&#x88AB;&#x7981;&#x7528;&#x3002; &#x914D;&#x7F6E;&#x591A;&#x534F;&#x8BAE;&#x6216;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x65F6;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x6B64;&#x9009;&#x9879;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x542F;&#x7528; FSRVP&#xFF08;<strong>Enable FSRVP</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x542F;&#x7528;&#x5BF9;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x8FDC;&#x7A0B; VSS &#x534F;&#x8BAE;&#x7684;&#x652F;&#x6301; (<a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b" target="_blank">FSVRP</a>)&#x3002; &#x6B64;&#x534F;&#x8BAE;&#x5141;&#x8BB8;&#x8FDC;&#x7A0B;&#x8FC7;&#x7A0B;&#x8C03;&#x7528; (RPC) &#x5BA2;&#x6237;&#x7AEF;&#x7BA1;&#x7406;&#x7279;&#x5B9A; SMB &#x5171;&#x4EAB;&#x7684;&#x5FEB;&#x7167;&#x3002; &#x5171;&#x4EAB;&#x8DEF;&#x5F84;&#x5FC5;&#x987B;&#x662F;&#x6570;&#x636E;&#x96C6;&#x6302;&#x8F7D;&#x70B9;&#x3002; &#x5FEB;&#x7167;&#x5177;&#x6709;&#x524D;&#x7F00; <code>fss-</code> &#x540E;&#x8DDF;&#x5FEB;&#x7167;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&#x6233;&#x3002; &#x5FEB;&#x7167;&#x5FC5;&#x987B;&#x5177;&#x6709;&#x6B64;&#x524D;&#x7F00;&#xFF0C;RPC &#x7528;&#x6237;&#x624D;&#x80FD;&#x5C06;&#x5176;&#x5220;&#x9664;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x8DEF;&#x5F84;&#x540E;&#x7F00;&#xFF08;<strong>Path Suffix</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x5C06;&#x540E;&#x7F00;&#x9644;&#x52A0;&#x5230;&#x5171;&#x4EAB;&#x8FDE;&#x63A5;&#x8DEF;&#x5F84;&#x3002; &#x8FD9;&#x7528;&#x4E8E;&#x5728;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x3001;&#x6BCF;&#x4E2A;&#x8BA1;&#x7B97;&#x673A;&#x6216;&#x6BCF;&#x4E2A; IP &#x5730;&#x5740;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x63D0;&#x4F9B;&#x552F;&#x4E00;&#x7684;&#x5171;&#x4EAB;&#x3002; &#x540E;&#x7F00;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5B8F;&#x3002; &#x6709;&#x5173;&#x652F;&#x6301;&#x7684;&#x5B8F;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; <a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html" target="_blank">smb.conf</a> &#x624B;&#x518C;&#x9875;&#x3002; &#x5FC5;&#x987B;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x4E4B;&#x524D;&#x9884;&#x8BBE;&#x8FDE;&#x63A5;&#x8DEF;&#x5F84;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x8F85;&#x52A9;&#x53C2;&#x6570;&#xFF08;<strong>Auxiliary Parameters</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x9644;&#x52A0; <a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html" target="_blank">smb.conf</a> &#x8BBE;&#x7F6E;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5355;&#x51FB;&#x63D0;&#x4EA4;&#xFF08;<strong>Submit</strong>&#xFF09;&#x521B;&#x5EFA;&#x5171;&#x4EAB;&#x5E76;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x5230;&#x5171;&#x4EAB;&#xFF08;<strong>Sharing</strong>&#xFF09; &gt; Windows &#x5171;&#x4EAB; (SMB)&#xFF08;<strong>Windows Shares (SMB)</strong>&#xFF09;&#x5217;&#x8868;&#x3002; &#x6B64;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5F00;&#x542F;SMB&#x670D;&#x52A1;&#x3002;</p>
+<h2 id="&#x5171;&#x4EAB;&#x7BA1;&#x7406;"><a name="&#x5171;&#x4EAB;&#x7BA1;&#x7406;" class="anchor-navigation-ex-anchor" href="#&#x5171;&#x4EAB;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5171;&#x4EAB;&#x7BA1;&#x7406;</h2>
+<p>&#x521B;&#x5EFA; SMB &#x5171;&#x4EAB;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8F6C;&#x81F3;&#x5171;&#x4EAB;&#xFF08;<strong>Sharing</strong>&#xFF09; &gt; Windows &#x5171;&#x4EAB; (SMB)&#xFF08;<strong>Windows Shares (SMB)</strong>&#xFF09;&#x5E76;&#x5355;&#x51FB;&#x5171;&#x4EAB;&#x6761;&#x76EE;&#x7684;&#x4E09;&#x4E2A;&#x5C0F;&#x70B9;&#xFF08;&#x9009;&#x9879;&#xFF09;&#x6765;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7BA1;&#x7406;&#x9009;&#x9879;&#xFF1A;</p>
+<ul>
+<li>&#x7F16;&#x8F91;&#xFF08;<strong>Edit</strong>&#xFF09;: &#x6253;&#x5F00;<a href="https://www.truenas.com/docs/core/sharing/smb/smbshare/#creating-the-smb-share" target="_blank">&#x5171;&#x4EAB;&#x521B;&#x5EFA;&#x5C4F;&#x5E55;</a> &#x4EE5;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x5171;&#x4EAB;&#x6216;&#x7981;&#x7528;&#x5171;&#x4EAB;&#x3002;</li>
+<li>&#x7F16;&#x8F91;&#x5171;&#x4EAB;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868;&#xFF08;ACL&#xFF09;&#xFF08;<strong>Edit Share ACL</strong>&#xFF09;: &#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x5C4F;&#x5E55;&#x4EE5;&#x914D;&#x7F6E;&#x5171;&#x4EAB;&#x7684;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868; (ACL)&#x3002; &#x8FD9;&#x4E0E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6743;&#x9650;&#x4E0D;&#x540C;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x6574;&#x4E2A; SMB &#x5171;&#x4EAB;&#x7EA7;&#x522B;&#x3002; &#x6B64;&#x5904;&#x5B9A;&#x4E49;&#x7684;&#x6743;&#x9650;&#x4E0D;&#x4F1A;&#x88AB;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x5171;&#x4EAB;&#x534F;&#x8BAE;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x6216;&#x5BFC;&#x51FA;&#x76F8;&#x540C;&#x5171;&#x4EAB; &#x8DEF;&#x5F84;&#xFF08;<strong>Path</strong>&#xFF09; &#x7684;&#x5176;&#x4ED6; SMB &#x5171;&#x4EAB;&#x89E3;&#x91CA;&#x3002; &#x9ED8;&#x8BA4;&#x662F;&#x6253;&#x5F00;&#x7684;&#x3002; &#x5982;&#x679C;&#x542F;&#x7528;&#x4E86; &#x57FA;&#x4E8E;&#x8BBF;&#x95EE;&#x7684;&#x5171;&#x4EAB;&#x679A;&#x4E3E;&#xFF08;<strong>Access Based Share Enumeration</strong>&#xFF09;&#xFF0C;&#x5219;&#x6B64; ACL &#x7528;&#x4E8E;&#x786E;&#x5B9A;&#x6D4F;&#x89C8;&#x5217;&#x8868;&#x3002;</li>
+<li>&#x7F16;&#x8F91;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868;&#xFF08;<strong>Edit Filesystem ACL</strong>&#xFF09;: &#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x5C4F;&#x5E55;&#xFF0C;&#x4E3A;&#x5171;&#x4EAB; &#x8DEF;&#x5F84;&#xFF08;<strong>Path</strong>&#xFF09; &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x8DEF;&#x5F84;&#x914D;&#x7F6E;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868; (ACL)&#x3002;</li>
+<li>&#x5220;&#x9664;&#xFF08;<strong>Delete</strong>&#xFF09;: &#x4ECE; TrueNAS &#x4E2D;&#x5220;&#x9664;&#x5171;&#x4EAB;&#x914D;&#x7F6E;&#x3002; &#x6B63;&#x5728;&#x5171;&#x4EAB;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x53D7;&#x5F71;&#x54CD;&#x3002;</li>
+</ul>
+<h3 id="&#x914D;&#x7F6E;&#x5171;&#x4EAB;acl"><a name="&#x914D;&#x7F6E;&#x5171;&#x4EAB;acl" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;&#x5171;&#x4EAB;acl"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x5171;&#x4EAB;ACL</h3>
+<p>&#x8981;&#x67E5;&#x770B;&#x5171;&#x4EAB; ACL &#x9009;&#x9879;&#xFF0C;&#x8BF7;&#x5355;&#x51FB;&#x5171;&#x4EAB;&#x6761;&#x76EE;&#x7684;&#x4E09;&#x4E2A;&#x5C0F;&#x70B9;&#xFF08;&#x9009;&#x9879;&#xFF09; &gt; &#x7F16;&#x8F91;&#x5171;&#x4EAB; ACL&#xFF08;<strong>Edit Share ACL</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/SharingSMBShareACL.png" alt=""></p>
+<p>&#x663E;&#x793A;&#x5171;&#x4EAB;&#x540D;&#x79F0;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x66F4;&#x6539;&#x3002; ACL &#x6761;&#x76EE;&#xFF08;<strong>ACL Entries</strong>&#xFF09;&#x88AB;&#x5217;&#x4E3A;&#x4E00;&#x7EC4;&#x8BBE;&#x7F6E;&#x3002; &#x5355;&#x51FB;&#x6DFB;&#x52A0;&#xFF08;<strong>ADD</strong>&#xFF09;&#x4EE5;&#x6CE8;&#x518C;&#x65B0;&#x6761;&#x76EE;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8BBE;&#x7F6E;&#x9009;&#x9879;</th>
+<th>&#x503C;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SID</strong></td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x6B64; ACL &#x6761;&#x76EE; (ACE) &#x9002;&#x7528;&#x4E8E;&#x8C01;&#xFF0C;&#x663E;&#x793A;&#x4E3A; <a href="https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers" target="_blank">Windows &#x5B89;&#x5168;&#x6807;&#x8BC6;&#x7B26;</a>&#x3002; ACL &#x9700;&#x8981; <em>SID</em> &#x6216;&#x5E26;&#x6709; <em>Name</em> &#x7684; <em>Domain</em>&#x3002;</td>
+</tr>
+<tr>
+<td>&#x57DF;&#x540D;&#xFF08;<strong>Domain</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x7528;&#x6237; <em>Name</em> &#x7684;&#x57DF;&#x3002; &#x672A;&#x8F93;&#x5165; <strong>SID</strong> &#x65F6;&#x9700;&#x8981;&#x3002; &#x672C;&#x5730;&#x7528;&#x6237;&#x5177;&#x6709; SMB &#x670D;&#x52A1;&#x5668; NetBIOS &#x540D;&#x79F0;&#xFF1A;<em>truenas\smbusers</em>&#x3002;</td>
+</tr>
+<tr>
+<td>&#x6743;&#x9650;&#xFF08;<strong>Permission</strong>&#xFF09;</td>
+<td>&#x4E0B;&#x62C9;&#x83DC;&#x5355;/drop down</td>
+<td>&#x9884;&#x5B9A;&#x4E49;&#x6743;&#x9650;&#x7EC4;&#x5408;&#xFF1A; <em>&#x8BFB;&#x53D6;</em>&#xFF1A;&#x5BF9;&#x8C61; (RX) &#x7684;&#x8BFB;&#x53D6;&#x8BBF;&#x95EE;&#x548C;&#x6267;&#x884C;&#x6743;&#x9650;&#x3002; <em>&#x66F4;&#x6539;</em>&#xFF1A;&#x8BFB;&#x53D6;&#x6743;&#x9650;&#x3001;&#x6267;&#x884C;&#x6743;&#x9650;&#x3001;&#x5199;&#x5165;&#x6743;&#x9650;&#x548C;&#x5220;&#x9664;&#x5BF9;&#x8C61; (RXWD)&#x3002; <em>&#x5B8C;&#x6574;</em>&#xFF1A;&#x8BFB;&#x53D6;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3001;&#x6267;&#x884C;&#x6743;&#x9650;&#x3001;&#x5199;&#x5165;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3001;&#x5220;&#x9664;&#x5BF9;&#x8C61;&#x3001;&#x66F4;&#x6539;&#x6743;&#x9650;&#x548C;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x6743; (RXWDPO)&#x3002; &#x6709;&#x5173;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; <a href="https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html" target="_blank">smbacls(1)</a>&#x3002;</td>
+</tr>
+<tr>
+<td>&#x540D;&#x79F0;&#xFF08;<strong>Name</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x6B64; ACL &#x6761;&#x76EE;&#x9002;&#x7528;&#x4E8E;&#x8C01;&#xFF0C;&#x663E;&#x793A;&#x4E3A;&#x7528;&#x6237;&#x540D;&#x3002; &#x9700;&#x8981;&#x6DFB;&#x52A0;&#x7528;&#x6237;<strong>&#x57DF;</strong>&#x3002;</td>
+</tr>
+<tr>
+<td>&#x7C7B;&#x578B;&#xFF08;<strong>Type</strong>&#xFF09;</td>
+<td>&#x4E0B;&#x62C9;&#x83DC;&#x5355;/drop down</td>
+<td>&#x5982;&#x4F55;&#x5C06;&#x6743;&#x9650;&#x5E94;&#x7528;&#x4E8E;&#x5171;&#x4EAB;&#x3002; &#x5141;&#x8BB8;&#xFF08;<strong>Allowed</strong>&#xFF09; &#x9ED8;&#x8BA4;&#x62D2;&#x7EDD;&#x6240;&#x6709;&#x6743;&#x9650;&#xFF0C;&#x624B;&#x52A8;&#x5B9A;&#x4E49;&#x7684;&#x6743;&#x9650;&#x9664;&#x5916;&#x3002; &#x62D2;&#x7EDD;&#xFF08;<strong>Denied</strong>&#xFF09;&#x9ED8;&#x8BA4;&#x5141;&#x8BB8;&#x6240;&#x6709;&#x6743;&#x9650;&#xFF0C;&#x624B;&#x52A8;&#x5B9A;&#x4E49;&#x7684;&#x6743;&#x9650;&#x9664;&#x5916;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5355;&#x51FB;&#x201C;&#x4FDD;&#x5B58;&#x201D;&#xFF08;<strong>SAVE</strong>&#xFF09;&#x4F1A;&#x5B58;&#x50A8;&#x5171;&#x4EAB; ACL &#x5E76;&#x7ACB;&#x5373;&#x5C06;&#x5176;&#x5E94;&#x7528;&#x4E8E;&#x5171;&#x4EAB;&#x3002;</p>
+<h3 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;acl"><a name="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;acl" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;acl"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;ACL</h3>
+<p>&#x5355;&#x51FB; &#x5171;&#x4EAB;&#x6761;&#x76EE;&#x7684;&#x4E09;&#x4E2A;&#x5C0F;&#x70B9;&#xFF08;&#x9009;&#x9879;&#xFF09;  &gt; &#x7F16;&#x8F91;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868;&#xFF08;<strong>Edit Filesystem ACL</strong>&#xFF09;&#x53EF;&#x5FEB;&#x901F;&#x8FD4;&#x56DE; &#x5B58;&#x50A8;&#xFF08;<strong>Storage</strong>&#xFF09; &gt; &#x5B58;&#x50A8;&#x6C60;&#xFF08;<strong>Pools</strong>&#xFF09; &#x5E76;&#x7F16;&#x8F91;&#x6570;&#x636E;&#x96C6; ACL&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/StoragePoolsEditACLOwner.png" alt=""></p>
+<p>&#x6B64; ACL &#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x5BF9;&#x6B63;&#x5728;&#x5171;&#x4EAB;&#x7684;&#x6570;&#x636E;&#x96C6;&#x62E5;&#x6709;&#x6216;&#x5177;&#x6709;&#x7279;&#x5B9A;&#x6743;&#x9650;&#x7684;&#x7528;&#x6237;&#x5E10;&#x6237;&#x6216;&#x7EC4;&#x3002; &#x7528;&#x6237;&#x548C;&#x7EC4;&#x503C;&#x663E;&#x793A;&#x54EA;&#x4E9B;&#x5E10;&#x6237;&#x201C;&#x62E5;&#x6709;&#x201D;&#x6216;&#x5BF9;&#x6570;&#x636E;&#x96C6;&#x5177;&#x6709;&#x5B8C;&#x5168;&#x6743;&#x9650;&#x3002; &#x5C06;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x66F4;&#x6539;&#x4E3A;&#x60A8;&#x9996;&#x9009;&#x7684;&#x4E3B;&#x5E10;&#x6237;&#x548C;&#x7EC4;&#xFF0C;&#x5E76;&#x5728;&#x4FDD;&#x5B58;&#x4EFB;&#x4F55;&#x66F4;&#x6539;&#x4E4B;&#x524D;&#x8BBE;&#x7F6E;&#x5E94;&#x7528;&#x590D;&#x9009;&#x6846;&#x3002;</p>
+<h4 id="acl-&#x9884;&#x8BBE;"><a name="acl-&#x9884;&#x8BBE;" class="anchor-navigation-ex-anchor" href="#acl-&#x9884;&#x8BBE;"><i class="fa fa-link" aria-hidden="true"></i></a>ACL &#x9884;&#x8BBE;</h4>
+<p>&#x8981;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x5316;&#x9884;&#x8BBE;&#x91CD;&#x5199;&#x5F53;&#x524D; ACL&#xFF0C;&#x8BF7;&#x5355;&#x51FB; &#x4F7F;&#x7528;&#x4E00;&#x4E2A;ACL&#x9884;&#x8BBE;&#xFF08;<strong>SELECT AN ACL PRESET</strong>&#xFF09; &#x5E76;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#xFF1A;</p>
+<h5 id="&#x5F00;&#x653E;&#xFF08;open&#xFF09;"><a name="&#x5F00;&#x653E;&#xFF08;open&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x5F00;&#x653E;&#xFF08;open&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F00;&#x653E;&#xFF08;Open&#xFF09;</h5>
+<p>&#x6709;&#x4E09;&#x4E2A;&#x6761;&#x76EE;&#xFF1A;</p>
+<ul>
+<li><em>owner@</em> &#x6709;&#x5B8C;&#x6574;&#x7684;&#x6570;&#x636E;&#x96C6;&#x63A7;&#x5236;&#x6743;&#x3002;</li>
+<li><em>group@</em> &#x6709;&#x5B8C;&#x6574;&#x7684;&#x6570;&#x636E;&#x96C6;&#x63A7;&#x5236;&#x6743;&#x3002;</li>
+<li>&#x6240;&#x6709;&#x5176;&#x4ED6;&#x5E10;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x96C6;&#x5185;&#x5BB9;&#x3002;</li>
+</ul>
+<h5 id="&#x53D7;&#x9650;&#xFF08;restricted&#xFF09;"><a name="&#x53D7;&#x9650;&#xFF08;restricted&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x53D7;&#x9650;&#xFF08;restricted&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53D7;&#x9650;&#xFF08;Restricted&#xFF09;</h5>
+<p>&#x6709;&#x4E24;&#x4E2A;&#x6761;&#x76EE;&#xFF1A;</p>
+<ul>
+<li><em>owner@</em> &#x6709;&#x5B8C;&#x6574;&#x7684;&#x6570;&#x636E;&#x96C6;&#x63A7;&#x5236;&#x6743;&#x3002;</li>
+<li><em>group@</em> &#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x96C6;&#x5185;&#x5BB9;&#x3002;</li>
+</ul>
+<h5 id="&#x5BB6;&#x5EAD;&#xFF08;home&#xFF09;"><a name="&#x5BB6;&#x5EAD;&#xFF08;home&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x5BB6;&#x5EAD;&#xFF08;home&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BB6;&#x5EAD;&#xFF08;Home&#xFF09;</h5>
+<p>&#x6709;&#x4E09;&#x4E2A;&#x6761;&#x76EE;&#xFF1A;</p>
+<ul>
+<li><em>owner@</em> &#x6709;&#x5B8C;&#x6574;&#x7684;&#x6570;&#x636E;&#x96C6;&#x63A7;&#x5236;&#x6743;&#x3002;</li>
+<li><em>group@</em> &#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x96C6;&#x5185;&#x5BB9;&#x3002;</li>
+<li>&#x6240;&#x6709;&#x5176;&#x4ED6;&#x5E10;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x904D;&#x5386;&#xFF08;<strong>traverse through</strong>&#xFF09;&#xFF08;&#x663E;&#x793A;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x6253;&#x5F00;&#xFF09;&#x6570;&#x636E;&#x96C6;&#x3002;</li>
+</ul>
+<h4 id="&#x6DFB;&#x52A0;-acl-&#x6761;&#x76EE;-ace"><a name="&#x6DFB;&#x52A0;-acl-&#x6761;&#x76EE;-ace" class="anchor-navigation-ex-anchor" href="#&#x6DFB;&#x52A0;-acl-&#x6761;&#x76EE;-ace"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6DFB;&#x52A0; ACL &#x6761;&#x76EE; (ACE)</h4>
+<p>&#x8981;&#x4E3A;&#x7279;&#x5B9A;&#x7528;&#x6237;&#x5E10;&#x6237;&#x6216;&#x7EC4;&#x5B9A;&#x4E49;&#x6743;&#x9650;&#xFF0C;&#x8BF7;&#x5355;&#x51FB;&#x6DFB;&#x52A0; ACL&#x9879;&#x76EE;&#xFF08;<strong>ADD ACL ITEM</strong>&#xFF09;&#x3002; &#x6253;&#x5F00; Who &#x4E0B;&#x62C9;&#x83DC;&#x5355;&#xFF0C;&#x9009;&#x62E9; &#x7528;&#x6237;&#xFF08;<strong>User</strong>&#xFF09; &#x6216; &#x7528;&#x6237;&#x7EC4;&#xFF08;<strong>Group</strong>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x7279;&#x5B9A;&#x7684;&#x7528;&#x6237;&#x6216;&#x7EC4;&#x5E10;&#x6237;&#x3002; &#x5B9A;&#x4E49;&#x5982;&#x4F55;&#x5C06;&#x8BE5;&#x6743;&#x9650;&#x8BBE;&#x7F6E;&#x5E94;&#x7528;&#x4E8E;&#x76F8;&#x5173;&#x5E10;&#x6237;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x8981;&#x5E94;&#x7528;&#x4E8E;&#x8BE5;&#x5E10;&#x6237;&#x7684;&#x6743;&#x9650;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x8981;&#x4EC5;&#x5141;&#x8BB8; tmoore &#x7528;&#x6237;&#x6743;&#x9650;&#x67E5;&#x770B;&#x6570;&#x636E;&#x96C6;&#x5185;&#x5BB9;&#x800C;&#x4E0D;&#x8FDB;&#x884C;&#x66F4;&#x6539;&#xFF0C;&#x8BF7;&#x5C06; ACL &#x7C7B;&#x578B;&#xFF08;<strong>ACL Type</strong>&#xFF09;&#x8BBE;&#x7F6E;&#x4E3A;&#x5141;&#x8BB8;&#xFF08;<strong>Allow</strong>&#xFF09;&#xFF0C;&#x5C06;&#x6743;&#x9650;&#xFF08;<strong>Permissions</strong>&#xFF09;&#x8BBE;&#x7F6E;&#x4E3A;&#x8BFB;&#x53D6;&#xFF08;<strong>Read</strong>&#xFF09;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/StoragePoolsEditACLExample.png" alt=""></p>
+<h2 id="&#x6FC0;&#x6D3B;-smb-&#x670D;&#x52A1;"><a name="&#x6FC0;&#x6D3B;-smb-&#x670D;&#x52A1;" class="anchor-navigation-ex-anchor" href="#&#x6FC0;&#x6D3B;-smb-&#x670D;&#x52A1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6FC0;&#x6D3B; SMB &#x670D;&#x52A1;</h2>
+<p>&#x5F53;&#x76F8;&#x5173;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x672A;&#x6FC0;&#x6D3B;&#x65F6;&#xFF0C;&#x65E0;&#x6CD5;&#x8FDE;&#x63A5;&#x5230; SMB &#x5171;&#x4EAB;&#x3002; &#x8981;&#x4F7F; SMB &#x5171;&#x4EAB;&#x5728;&#x7F51;&#x7EDC;&#x4E0A;&#x53EF;&#x7528;&#xFF0C;&#x8BF7;&#x5355;&#x51FB;&#x670D;&#x52A1;&#xFF08;<strong>Services</strong>&#xFF09;&#x5E76;&#x5355;&#x51FB; SMB &#x5207;&#x6362;&#x4E3A;&#x542F;&#x52A8;&#x3002; &#x5982;&#x679C;&#x60A8;&#x5E0C;&#x671B;&#x5728; TrueNAS &#x542F;&#x52A8;&#x65F6;&#x6FC0;&#x6D3B;&#x8BE5;&#x670D;&#x52A1;&#xFF0C;&#x8BF7;&#x8BBE;&#x7F6E;&#x81EA;&#x52A8;&#x542F;&#x52A8;&#xFF08;<strong>Start Automatically</strong>&#xFF09;&#x3002;</p>
+<h3 id="&#x670D;&#x52A1;&#x914D;&#x7F6E;"><a name="&#x670D;&#x52A1;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x670D;&#x52A1;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x670D;&#x52A1;&#x914D;&#x7F6E;</h3>
+<p>SMB &#x670D;&#x52A1;&#x901A;&#x8FC7;&#x5355;&#x51FB;&#x7F16;&#x8F91;&#x56FE;&#x6807;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002; &#x9664;&#x975E;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x7279;&#x5B9A;&#x8BBE;&#x7F6E;&#x6216;&#x9488;&#x5BF9;&#x7279;&#x5B9A;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x5426;&#x5219;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; SMB &#x670D;&#x52A1;&#x7684;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/ServicesSMBOptions.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>&#x8BBE;&#x7F6E;&#x9009;&#x9879;</th>
+<th>&#x503C;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NetBIOS&#x540D;&#x5B57;&#xFF08;<strong>NetBIOS Name</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x81EA;&#x52A8;&#x586B;&#x5145;&#x7CFB;&#x7EDF;&#x7684;&#x539F;&#x59CB;&#x4E3B;&#x673A;&#x540D;&#x3002; &#x6B64;&#x540D;&#x79F0;&#x9650;&#x5236;&#x4E3A; 15 &#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x80FD;&#x662F;&#x5DE5;&#x4F5C;&#x7EC4;&#xFF08;<strong>Workgroup</strong>&#xFF09;&#x540D;&#x79F0;&#x3002;</td>
+</tr>
+<tr>
+<td>NetBIOS &#x522B;&#x540D;&#xFF08;<strong>NetBIOS Alias</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x8F93;&#x5165;&#x4EFB;&#x4F55;&#x522B;&#x540D;&#xFF0C;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x3002; &#x6BCF;&#x4E2A;&#x522B;&#x540D;&#x6700;&#x957F;&#x53EF;&#x8FBE; 15 &#x4E2A;&#x5B57;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x5DE5;&#x4F5C;&#x7EC4;&#xFF08;<strong>Workgroup</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x5FC5;&#x987B;&#x4E0E; Windows &#x5DE5;&#x4F5C;&#x7EC4;&#x540D;&#x79F0;&#x5339;&#x914D;&#x3002; &#x5F53;&#x672A;&#x914D;&#x7F6E;&#x4E14; Active Directory &#x6216; LDAP &#x5904;&#x4E8E;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#x65F6;&#xFF0C;TrueNAS &#x5C06;&#x4ECE;&#x8FD9;&#x4E9B;&#x670D;&#x52A1;&#x4E2D;&#x68C0;&#x6D4B;&#x5E76;&#x8BBE;&#x7F6E;&#x6B63;&#x786E;&#x7684;&#x5DE5;&#x4F5C;&#x7EC4;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x63CF;&#x8FF0;&#xFF08;<strong>Description</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x8FD9;&#x5141;&#x8BB8;&#x8F93;&#x5165;&#x6709;&#x5173;&#x670D;&#x52A1;&#x914D;&#x7F6E;&#x7684;&#x4EFB;&#x4F55;&#x6CE8;&#x91CA;&#x6216;&#x63CF;&#x8FF0;&#x6027;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x542F;&#x7528;SMB 1&#x652F;&#x6301;&#xFF08;<strong>Enable SMB1 support</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x5141;&#x8BB8;&#x65E7;&#x7248; SMB1 &#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x5230;&#x670D;&#x52A1;&#x5668;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;SMB1 &#x5DF2;&#x88AB;&#x5F03;&#x7528;&#xFF0C;&#x5EFA;&#x8BAE;&#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x5347;&#x7EA7;&#x5230;&#x652F;&#x6301; SMB &#x534F;&#x8BAE;&#x73B0;&#x4EE3;&#x7248;&#x672C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x3002;</td>
+</tr>
+<tr>
+<td>NTLMv1 &#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#xFF08;<strong>NTLMv1 Auth</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x8BBE;&#x7F6E;&#x540E;&#xFF0C;<a href="https://www.samba.org/samba/docs/current/man-html/smbd.8.html" target="_blank">smbd</a> &#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x4E0D;&#x5B89;&#x5168;&#x4E14;&#x6613;&#x53D7;&#x653B;&#x51FB;&#x7684; NTLMv1 &#x52A0;&#x5BC6;&#x5BF9;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x3002; &#x6B64;&#x8BBE;&#x7F6E;&#x5141;&#x8BB8;&#x4E0E;&#x65E7;&#x7248;&#x672C;&#x7684; Windows &#x5411;&#x540E;&#x517C;&#x5BB9;&#xFF0C;&#x4F46;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x4E0D;&#x5E94;&#x5728;&#x4E0D;&#x53D7;&#x4FE1;&#x4EFB;&#x7684;&#x7F51;&#x7EDC;&#x4E0A;&#x4F7F;&#x7528;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x9AD8;&#x7EA7;&#x9009;&#x9879;_1"><a name="&#x9AD8;&#x7EA7;&#x9009;&#x9879;_1" class="anchor-navigation-ex-anchor" href="#&#x9AD8;&#x7EA7;&#x9009;&#x9879;_1"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9AD8;&#x7EA7;&#x9009;&#x9879;</h3>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/ServicesSMBOptionsAdvanced.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>&#x8BBE;&#x7F6E;&#x9009;&#x9879;</th>
+<th>&#x503C;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UNIX &#x5B57;&#x7B26;&#x96C6;&#xFF08;<strong>UNIX Charset</strong>&#xFF09;</td>
+<td>&#x4E0B;&#x62C9;&#x83DC;&#x5355;/drop down</td>
+<td>&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#x3002; <em>UTF-8</em> &#x662F;&#x5927;&#x591A;&#x6570;&#x7CFB;&#x7EDF;&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x652F;&#x6301;&#x6240;&#x6709;&#x8BED;&#x8A00;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#xFF08;<strong>Log Level</strong>&#xFF09;</td>
+<td>&#x4E0B;&#x62C9;&#x83DC;&#x5355;/drop down</td>
+<td>&#x5C06; SMB &#x670D;&#x52A1;&#x6D88;&#x606F;&#x8BB0;&#x5F55;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x65E5;&#x5FD7;&#x7EA7;&#x522B;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F1A;&#x8BB0;&#x5F55;&#x9519;&#x8BEF;&#x548C;&#x8B66;&#x544A;&#x7EA7;&#x522B;&#x7684;&#x6D88;&#x606F;&#x3002; &#x4E0D;&#x5EFA;&#x8BAE;&#x5BF9;&#x751F;&#x4EA7;&#x670D;&#x52A1;&#x5668;&#x4F7F;&#x7528;&#x9AD8;&#x4E8E; MINIMUM &#x7684;&#x65E5;&#x5FD7;&#x7EA7;&#x522B;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x4EC5;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;&#xFF08;<strong>Use Syslog Only</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x8BBE;&#x7F6E;&#x4E3A;&#x5728; <em>/var/log/messages</em> &#x4E2D;&#x8BB0;&#x5F55;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x9ED8;&#x8BA4;&#x7684; <em>/var/log/samba4/log.smbd</em>&#x3002;</td>
+</tr>
+<tr>
+<td>&#x672C;&#x5730;&#x638C;&#x63A7;&#xFF08;<strong>Local Master</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>&#x8BBE;&#x7F6E;&#x4EE5;&#x786E;&#x5B9A;&#x7CFB;&#x7EDF;&#x662F;&#x5426;&#x53C2;&#x4E0E;&#x6D4F;&#x89C8;&#x5668;&#x679A;&#x4E3E;&#x3002; &#x5F53;&#x7F51;&#x7EDC;&#x5305;&#x542B; AD &#x6216; LDAP &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6216;&#x8005;&#x5B58;&#x5728; Vista &#x6216; Windows 7 &#x673A;&#x5668;&#x65F6;&#x53D6;&#x6D88;&#x8BBE;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x542F;&#x7528; Apple SMB2/3 &#x534F;&#x8BAE;&#x6269;&#x5C55;&#xFF08;<strong>Enable Apple SMB2/3 Protocol Extensions</strong>&#xFF09;</td>
+<td>&#x590D;&#x9009;&#x6846;/checkbox</td>
+<td>macOS &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B; <a href="https://support.apple.com/en-us/HT210803" target="_blank">&#x534F;&#x8BAE;&#x6269;&#x5C55;</a> &#x6765;&#x6539;&#x5584; SMB &#x5171;&#x4EAB;&#x7684;&#x6027;&#x80FD;&#x548C;&#x884C;&#x4E3A;&#x7279;&#x5F81;&#x3002; &#x8FD9;&#x662F; Time Machine &#x652F;&#x6301;&#x6240;&#x5FC5;&#x9700;&#x7684;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x7BA1;&#x7406;&#x5458;&#x7EC4;&#xFF08;<strong>Administrators Group</strong>&#xFF09;</td>
+<td>&#x4E0B;&#x62C9;&#x83DC;&#x5355;/drop down</td>
+<td>&#x8BE5;&#x7EC4;&#x7684;&#x6210;&#x5458;&#x662F;&#x672C;&#x5730;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x5E76;&#x4E14;&#x81EA;&#x52A8;&#x62E5;&#x6709;&#x83B7;&#x53D6; SMB &#x5171;&#x4EAB;&#x4E2D;&#x4EFB;&#x4F55;&#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6743;&#x3001;&#x91CD;&#x7F6E;&#x6743;&#x9650;&#x4EE5;&#x53CA;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x673A;&#x7BA1;&#x7406; MMC &#x7BA1;&#x7406;&#x5355;&#x5143;&#x7BA1;&#x7406; SMB &#x670D;&#x52A1;&#x5668;&#x7684;&#x7279;&#x6743;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x6765;&#x5BBE;&#x7528;&#x6237;&#x7EC4;&#xFF08;<strong>Guest Account</strong>&#xFF09;</td>
+<td>&#x4E0B;&#x62C9;&#x83DC;&#x5355;/drop down</td>
+<td>&#x7528;&#x4E8E;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#x7684;&#x5E10;&#x6237;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A;<em>&#x6CA1;&#x4EBA;</em>&#x3002; &#x6240;&#x9009;&#x5E10;&#x6237;&#x5FC5;&#x987B;&#x5177;&#x6709;&#x5171;&#x4EAB;&#x6C60;&#x6216;&#x6570;&#x636E;&#x96C6;&#x7684;&#x6743;&#x9650;&#x3002; &#x8981;&#x8C03;&#x6574;&#x6743;&#x9650;&#xFF0C;&#x8BF7;&#x7F16;&#x8F91;&#x6570;&#x636E;&#x96C6;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868; (ACL)&#xFF0C;&#x4E3A;&#x6240;&#x9009;&#x8BBF;&#x5BA2;&#x5E10;&#x6237;&#x6DFB;&#x52A0;&#x65B0;&#x6761;&#x76EE;&#xFF0C;&#x5E76;&#x5728;&#x8BE5;&#x6761;&#x76EE;&#x4E2D;&#x914D;&#x7F6E;&#x6743;&#x9650;&#x3002; &#x5982;&#x679C;&#x9009;&#x5B9A;&#x7684;<strong>&#x8BBF;&#x5BA2;&#x5E10;&#x6237;</strong> &#x88AB;&#x5220;&#x9664;&#xFF0C;&#x8BE5;&#x5B57;&#x6BB5;&#x5C06;&#x91CD;&#x7F6E;&#x4E3A; <em>nobody</em>&#x3002;</td>
+</tr>
+<tr>
+<td>&#x6587;&#x4EF6;&#x63A9;&#x7801;&#xFF08;<strong>File Mask</strong>&#xFF09;</td>
+<td>&#x6574;&#x6570;/integer</td>
+<td>&#x8986;&#x76D6; <em>0666</em> &#x7684;&#x9ED8;&#x8BA4;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x63A9;&#x7801;&#xFF0C;&#x5B83;&#x4E3A;&#x6BCF;&#x4E2A;&#x4EBA;&#x521B;&#x5EFA;&#x5177;&#x6709;&#x8BFB;&#x5199;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x7684;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x76EE;&#x5F55;&#x63A9;&#x7801;&#xFF08;<strong>Directory Mask</strong>&#xFF09;</td>
+<td>&#x6574;&#x6570;/integer</td>
+<td>&#x8986;&#x76D6;<em>0777</em> &#x7684;&#x9ED8;&#x8BA4;&#x76EE;&#x5F55;&#x521B;&#x5EFA;&#x63A9;&#x7801;&#xFF0C;&#x5B83;&#x4E3A;&#x6BCF;&#x4E2A;&#x4EBA;&#x6388;&#x4E88;&#x76EE;&#x5F55;&#x8BFB;&#x53D6;&#x3001;&#x5199;&#x5165;&#x548C;&#x6267;&#x884C;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002;</td>
+</tr>
+<tr>
+<td>IP&#x5730;&#x5740;&#x7ED1;&#x5B9A;&#xFF08;<strong>Bind IP Addresses</strong>&#xFF09;</td>
+<td>&#x4E0B;&#x62C9;&#x83DC;&#x5355;/drop down</td>
+<td>SMB &#x4FA6;&#x542C;&#x8FDE;&#x63A5;&#x7684;&#x9759;&#x6001; IP &#x5730;&#x5740;&#x3002; &#x4FDD;&#x7559;&#x6240;&#x6709;&#x672A;&#x9009;&#x62E9;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4EE5;&#x4FA6;&#x542C;&#x6240;&#x6709;&#x6D3B;&#x52A8;&#x63A5;&#x53E3;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x8F85;&#x52A9;&#x53C2;&#x6570;&#xFF08;<strong>Auxiliary Parameters</strong>&#xFF09;</td>
+<td>&#x5B57;&#x7B26;&#x4E32;/string</td>
+<td>&#x5B58;&#x50A8;&#x989D;&#x5916;&#x7684; <a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html" target="_blank">smb.conf</a>&#x3002; &#x8F85;&#x52A9;&#x53C2;&#x6570;&#x53EF;&#x7528;&#x4E8E;&#x8986;&#x76D6;&#x9ED8;&#x8BA4; SMB &#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;&#xFF0C;&#x4F46;&#x6B64;&#x7C7B;&#x66F4;&#x6539;&#x53EF;&#x80FD;&#x4F1A;&#x5BF9; SMB &#x670D;&#x52A1;&#x5668;&#x7A33;&#x5B9A;&#x6027;&#x6216;&#x884C;&#x4E3A;&#x4EA7;&#x751F;&#x4E0D;&#x5229;&#x5F71;&#x54CD;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x5728;&#x53E6;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x4F7F;&#x7528;smb-&#x5171;&#x4EAB;&#x3002;"><a name="&#x5728;&#x53E6;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x4F7F;&#x7528;smb-&#x5171;&#x4EAB;&#x3002;" class="anchor-navigation-ex-anchor" href="#&#x5728;&#x53E6;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x4F7F;&#x7528;smb-&#x5171;&#x4EAB;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x53E6;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x4F7F;&#x7528;SMB &#x5171;&#x4EAB;&#x3002;</h2>
+<h3 id="linux"><a name="linux" class="anchor-navigation-ex-anchor" href="#linux"><i class="fa fa-link" aria-hidden="true"></i></a>Linux</h3>
+<p>&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x4E3A;&#x60A8;&#x7684; Linux &#x53D1;&#x884C;&#x7248;&#x5B89;&#x88C5;&#x4E86;&#x6240;&#x9700;&#x7684; CIFS &#x8F6F;&#x4EF6;&#x5305;&#x3002; &#x7136;&#x540E;&#x521B;&#x5EFA;&#x6302;&#x8F7D;&#x70B9;&#xFF1A;<code>sudo mkdir /mnt/smb_share</code>&#x3002;</p>
+<p>&#x6302;&#x8F7D;&#x5377;&#x3002; <code>sudo mount -t cifs //computer_name/share_name /mnt/smb_share</code>.</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x7684;&#x5171;&#x4EAB;&#x9700;&#x8981;&#x7528;&#x6237;&#x51ED;&#x636E;&#xFF0C;&#x8BF7;&#x5728; cifs &#x4E4B;&#x540E;&#x548C;&#x5171;&#x4EAB;&#x5730;&#x5740;&#x4E4B;&#x524D;&#x6DFB;&#x52A0;&#x5E26;&#x6709;&#x60A8;&#x7684;&#x7528;&#x6237;&#x540D;&#x7684;&#x5F00;&#x5173; <code>-o username=</code>&#x3002;</p>
+<h3 id="windows"><a name="windows" class="anchor-navigation-ex-anchor" href="#windows"><i class="fa fa-link" aria-hidden="true"></i></a>Windows</h3>
+<p>&#x8981;&#x5C06; SMB &#x5171;&#x4EAB;&#x6302;&#x8F7D;&#x5230; Windows &#x4E0A;&#x7684;&#x9A71;&#x52A8;&#x5668;&#x53F7;&#xFF0C;&#x8BF7;&#x6253;&#x5F00;&#x547D;&#x4EE4;&#x884C;&#x5E76;&#x4F7F;&#x7528;&#x9002;&#x5F53;&#x7684;&#x9A71;&#x52A8;&#x5668;&#x53F7;&#x3001;&#x8BA1;&#x7B97;&#x673A;&#x540D;&#x79F0;&#x548C;&#x5171;&#x4EAB;&#x540D;&#x79F0;&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x3002;</p>
+<p><code>net use Z: \\computer_name\share_name /PERSISTENT:YES</code></p>
+<h3 id="apple"><a name="apple" class="anchor-navigation-ex-anchor" href="#apple"><i class="fa fa-link" aria-hidden="true"></i></a>Apple</h3>
+<p>&#x6253;&#x5F00; &#x8BBF;&#x8FBE;&#xFF08;<strong>Finder</strong>&#xFF09; &gt; &#x524D;&#x5F80;&#xFF08;<strong>Go</strong>&#xFF09; &gt; &#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;&#xFF08;<strong>Connect To Server</strong>&#xFF09; &#x8F93;&#x5165; SMB &#x5730;&#x5740;&#xFF1A;<code>smb://192.168.1.111</code>&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5728;&#x5171;&#x4EAB;&#x4E0A;&#x542F;&#x7528;&#x4E86;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#xFF0C;&#x5219;&#x8F93;&#x5165;&#x5206;&#x914D;&#x7ED9;&#x8BE5;&#x6C60;&#x6216;&#x8BBF;&#x5BA2;&#x7684;&#x7528;&#x6237;&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x3002;</p>
+<h3 id="freebsd"><a name="freebsd" class="anchor-navigation-ex-anchor" href="#freebsd"><i class="fa fa-link" aria-hidden="true"></i></a>FreeBSD</h3>
+<p>&#x521B;&#x5EFA;&#x6302;&#x8F7D;&#x70B9;&#xFF1A;<code>sudo mkdir /mnt/smb_share</code>&#x3002;</p>
+<p>&#x6302;&#x8F7D;&#x5377;&#x3002; <code>sudo mount_smbfs -I computer_name\share_name /mnt/smb_share</code>.</p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 1.8.5.Windows 共享（SMB）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Home_Shares.html" class="navigation navigation-next " aria-label="Next page: 1.8.5.2.家庭共享">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.8.5.1.SMB 共享创建","level":"1.2.8.5.1","depth":4,"next":{"title":"1.8.5.2.家庭共享","level":"1.2.8.5.2","depth":4,"path":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/Home_Shares.md","ref":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/Home_Shares.md","articles":[]},"previous":{"title":"1.8.5.Windows 共享（SMB）","level":"1.2.8.5","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/README.md","ref":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/README.md","articles":[{"title":"1.8.5.1.SMB 共享创建","level":"1.2.8.5.1","depth":4,"path":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/Share_Creation.md","ref":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/Share_Creation.md","articles":[]},{"title":"1.8.5.2.家庭共享","level":"1.2.8.5.2","depth":4,"path":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/Home_Shares.md","ref":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/Home_Shares.md","articles":[]},{"title":"1.8.5.3.卷影副本","level":"1.2.8.5.3","depth":4,"path":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/Shadow_Copies.md","ref":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/Shadow_Copies.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","ancre-navigation","popup","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Sharing/Windows_Shares_SMB/Share_Creation.md","mtime":"2021-11-21T11:09:53.557Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-21T12:05:11.294Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

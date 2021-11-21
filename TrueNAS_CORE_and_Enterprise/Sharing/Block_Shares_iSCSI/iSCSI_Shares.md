@@ -113,7 +113,7 @@
 
 ### 授权访问（Authorized Access）
 
-授权访问（Authorized Access）选项卡允许用户创建新的授权访问网络或编辑列表中的现有网络。
+授权访问（**Authorized Access**）选项卡允许用户创建新的授权访问网络或编辑列表中的现有网络。
 
 ![](https://www.truenas.com/docs/images/CORE/12.0/SharingISCSIManualAuthorizedAccess.png)
 
@@ -185,7 +185,7 @@
 | ----------------------- | ------------------------------------------------------------ |
 | 名称（**Name**）        | 范围的名称。 如果 *Extent* 大小不为 0，则它不能是池或数据集中的现有文件。 |
 | 描述（**Description**） | 关于这个范围的注释。                                         |
-| 启用（**Enabled**）     | 设置为启用 iSCSI 扩展。                                      |
+| 启用（**Enabled**）     | 设置为启用这个 iSCSI 范围。                                  |
 
 #### 类型（Type）
 

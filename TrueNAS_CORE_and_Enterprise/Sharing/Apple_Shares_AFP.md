@@ -4,7 +4,7 @@ Apple 文件协议 (AFP) 是一种允许通过网络共享文件的网络协议�
 
 从 2013 年开始，Apple 开始使用 SMB 共享协议作为文件共享的默认选项，并停止开发 AFP 共享协议。 除非文件需要与旧 Apple 产品共享，否则建议使用 SMB 共享而不是 AFP。 请参阅 https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
 
-要创建新共享，请确保存在一个包含需要共享的数据的数据集可用。
+要创建新共享，请确保存在一个包含需要共享的数据的数据集。
 
 ## AFP 共享配置
 
