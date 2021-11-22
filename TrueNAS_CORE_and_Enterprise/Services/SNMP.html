@@ -1565,7 +1565,7 @@
                 <a href="S3.html">
             
                     
-                    1.9.5.亚马逊 S3
+                    1.9.5.S3 存储服务
             
                 </a>
             
@@ -1667,7 +1667,99 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;snmp&#xFF09;"><b></b>&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;SNMP&#xFF09;</a></li></ul></div><a href="#&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;snmp&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;snmp&#xFF09;"><a name="&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;snmp&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;snmp&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;SNMP&#xFF09;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;snmp&#xFF09;"><b></b>&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;SNMP&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x6BB5;&#x8BF4;&#x660E;"><b></b>&#x5B57;&#x6BB5;&#x8BF4;&#x660E;</a></li><ul><li><span class="title-icon "></span><a href="#&#x901A;&#x7528;&#x9009;&#x9879;"><b></b>&#x901A;&#x7528;&#x9009;&#x9879;</a></li><li><span class="title-icon "></span><a href="#snmp-v3&#x9009;&#x9879;"><b></b>SNMP v3&#x9009;&#x9879;</a></li><li><span class="title-icon "></span><a href="#&#x5176;&#x5B83;&#x9009;&#x9879;"><b></b>&#x5176;&#x5B83;&#x9009;&#x9879;</a></li></ul><li><span class="title-icon "></span><a href="#&#x7BA1;&#x7406;&#x4FE1;&#x606F;&#x5E93;-mib"><b></b>&#x7BA1;&#x7406;&#x4FE1;&#x606F;&#x5E93; (MIB)</a></li></ul></ul></div><a href="#&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;snmp&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;snmp&#xFF09;"><a name="&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;snmp&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;snmp&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF08;SNMP&#xFF09;</h1>
+<p><a href="https://tools.ietf.org/html/rfc1157" target="_blank">SNMP&#xFF08;&#x7B80;&#x5355;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF09;</a>&#x76D1;&#x63A7;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x8BBE;&#x5907;&#x662F;&#x5426;&#x5B58;&#x5728;&#x9700;&#x8981;&#x7BA1;&#x7406;&#x5173;&#x6CE8;&#x7684;&#x60C5;&#x51B5;&#x3002; TrueNAS &#x4F7F;&#x7528; <a href="https://sourceforge.net/projects/net-snmp/" target="_blank">Net-SNMP</a> &#x6765;&#x63D0;&#x4F9B; SNMP&#x3002; &#x8981;&#x914D;&#x7F6E; SNMP&#xFF0C;&#x8BF7;&#x8F6C;&#x5230;&#x201C;&#x670D;&#x52A1;&#x201D;&#xFF08;<strong>Services</strong>&#xFF09;&#x9875;&#x9762;&#xFF0C;&#x627E;&#x5230; <strong>SNMP</strong> &#x6761;&#x76EE;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x51FB;&#x7F16;&#x8F91;&#x56FE;&#x6807; &#x3002;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/ServicesSNMPOptions.png" alt=""></p>
+<h2 id="&#x5B57;&#x6BB5;&#x8BF4;&#x660E;"><a name="&#x5B57;&#x6BB5;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x6BB5;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x6BB5;&#x8BF4;&#x660E;</h2>
+<h3 id="&#x901A;&#x7528;&#x9009;&#x9879;"><a name="&#x901A;&#x7528;&#x9009;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x901A;&#x7528;&#x9009;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x901A;&#x7528;&#x9009;&#x9879;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x8BBE;&#x7F6E;&#x9009;&#x9879;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x4F4D;&#x7F6E;&#xFF08;<strong>Location</strong>&#xFF09;</td>
+<td>&#x8F93;&#x5165;&#x7CFB;&#x7EDF;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x8054;&#x7CFB;&#x65B9;&#x5F0F;&#xFF08;<strong>Contact</strong>&#xFF09;</td>
+<td>&#x63A5;&#x6536; SNMP &#x670D;&#x52A1;&#x6D88;&#x606F;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x5730;&#x5740;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x5171;&#x540C;&#x4F53;&#xFF08;<strong>Community</strong>&#xFF09;</td>
+<td>&#x4ECE; &#x516C;&#x5171;&#xFF08;<strong>public</strong>&#xFF09; &#x66F4;&#x6539;&#x4EE5;&#x63D0;&#x9AD8;&#x7CFB;&#x7EDF;&#x5B89;&#x5168;&#x6027;&#x3002; &#x53EA;&#x80FD;&#x5305;&#x542B;&#x5B57;&#x6BCD;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x3001;&#x4E0B;&#x5212;&#x7EBF; (<code>_</code>)&#x3001;&#x7834;&#x6298;&#x53F7; (<code>-</code>)&#x3001;&#x53E5;&#x70B9; (<code>.</code>) &#x548C;&#x7A7A;&#x683C;&#x3002; &#x5BF9;&#x4E8E; SNMPv3 &#x7F51;&#x7EDC;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x7559;&#x7A7A;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="snmp-v3&#x9009;&#x9879;"><a name="snmp-v3&#x9009;&#x9879;" class="anchor-navigation-ex-anchor" href="#snmp-v3&#x9009;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>SNMP v3&#x9009;&#x9879;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x8BBE;&#x7F6E;&#x9009;&#x9879;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x652F;&#x6301;SNMP v3&#xFF08;<strong>SNMP v3 Support</strong>&#xFF09;</td>
+<td>&#x8BBE;&#x7F6E;&#x4E3A;&#x542F;&#x7528;&#x5BF9; <a href="https://tools.ietf.org/html/rfc3410" target="_blank">SNMP &#x7248;&#x672C; 3</a> &#x7684;&#x652F;&#x6301;&#x3002; &#x6709;&#x5173;&#x914D;&#x7F6E;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; <a href="https://net-snmp.sourceforge.io/docs/man/snmpd.conf.html" target="_blank">snmpd.conf(5)</a>&#x3002;</td>
+</tr>
+<tr>
+<td>&#x7528;&#x6237;&#x540D;&#xFF08;<strong>Username</strong>&#xFF09;</td>
+<td>&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x4EE5;&#x6CE8;&#x518C;&#x6B64;&#x670D;&#x52A1;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x6388;&#x6743;&#x65B9;&#x5F0F;&#xFF08;<strong>Authentication Type</strong>&#xFF09;</td>
+<td>&#x9009;&#x62E9;&#x4E00;&#x79CD;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x65B9;&#x6CD5;&#xFF1A;<code>---</code> &#x8868;&#x793A;&#x65E0;&#x3001;<em><a href="https://tools.ietf.org/html/rfc4634" target="_blank">SHA</a></em> &#x6216; <em><a href="https://tools.ietf.org/ html/rfc1321" target="_blank">MD5</a></em></td>
+</tr>
+<tr>
+<td>&#x5BC6;&#x7801;&#xFF08;<strong>Password</strong>&#xFF09;</td>
+<td>&#x8F93;&#x5165;&#x81F3;&#x5C11;&#x516B;&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x5BC6;&#x7801;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x9690;&#x79C1;&#x534F;&#x8BAE;&#xFF08;<strong>Privacy Protocol</strong>&#xFF09;</td>
+<td>&#x9009;&#x62E9;&#x9690;&#x79C1;&#x534F;&#x8BAE;&#xFF1A;<code>---</code> &#x8868;&#x793A;&#x65E0;&#x3001;<em><a href="https://tools.ietf.org/doc/tcllib/html/aes.html" target="_blank">AES</a></em> &#x6216; <em><a href="https:// tools.ietf.org/doc/tcllib/html/des.html" target="_blank">DES</a></em></td>
+</tr>
+<tr>
+<td>&#x9690;&#x79C1;&#x77ED;&#x8BED;&#xFF08;<strong>Privacy Passphrase</strong>&#xFF09;</td>
+<td>&#x8F93;&#x5165;&#x5355;&#x72EC;&#x7684;&#x9690;&#x79C1;&#x5BC6;&#x7801;&#x3002; <em>&#x5BC6;&#x7801;</em>&#x5728;&#x7559;&#x7A7A;&#x65F6;&#x4F7F;&#x7528;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x5176;&#x5B83;&#x9009;&#x9879;"><a name="&#x5176;&#x5B83;&#x9009;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x5176;&#x5B83;&#x9009;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x5B83;&#x9009;&#x9879;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x8BBE;&#x7F6E;&#x9009;&#x9879;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8F85;&#x52A9;&#x53C2;&#x6570;&#xFF08;<strong>Auxiliary Parameters</strong>&#xFF09;</td>
+<td>&#x8F93;&#x5165;&#x4EFB;&#x4F55;&#x5176;&#x4ED6; <a href="https://net-snmp.sourceforge.io/docs/man/snmpd.conf.html" target="_blank">snmpd.conf</a> &#x9009;&#x9879;&#x3002; &#x4E3A;&#x6BCF;&#x4E00;&#x884C;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x901A;&#x8FC7; SNMP &#x66B4;&#x9732; zilstat&#xFF08;<strong>Expose zilstat via SNMP</strong>&#xFF09;</td>
+<td>&#x542F;&#x7528;&#x6B64;&#x9009;&#x9879;&#x53EF;&#x80FD;&#x4F1A;&#x5BF9;&#x60A8;&#x7684;&#x6C60;&#x4EA7;&#x751F;&#x6027;&#x80FD;&#x5F71;&#x54CD;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#xFF08;<strong>Log Level</strong>&#xFF09;</td>
+<td>&#x9009;&#x62E9;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x65E5;&#x5FD7;&#x6761;&#x76EE;&#x6570;&#x3002; &#x9009;&#x62E9;&#x8303;&#x56F4;&#x4ECE;&#x6700;&#x5C11;&#xFF08;&#x7D27;&#x6025;&#xFF09;<strong>(Emergency)</strong>&#x5230;&#x6700;&#x591A;&#xFF08;&#x8C03;&#x8BD5;&#xFF09;<strong>(Debug)</strong>&#x3002;</td>
+</tr>
+<tr>
+<td>&#x542F;&#x7528;&#x7F51;&#x7EDC;&#x6027;&#x80FD;&#x7EDF;&#x8BA1;&#xFF08;<strong>Enable Network Performance Statistics</strong>&#xFF09;</td>
+<td>&#x5728; SNMP &#x6D88;&#x606F;&#x4E2D;&#x5305;&#x542B; <a href="https://linuxcommandlibrary.com/man/iftop" target="_blank">iftop</a> &#x7F51;&#x7EDC;&#x6027;&#x80FD;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x542F;&#x52A8; SNMP &#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x7AEF;&#x53E3; UDP 161 &#x4FA6;&#x542C; SNMP &#x8BF7;&#x6C42;&#x3002;</p>
+<h2 id="&#x7BA1;&#x7406;&#x4FE1;&#x606F;&#x5E93;-mib"><a name="&#x7BA1;&#x7406;&#x4FE1;&#x606F;&#x5E93;-mib" class="anchor-navigation-ex-anchor" href="#&#x7BA1;&#x7406;&#x4FE1;&#x606F;&#x5E93;-mib"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7BA1;&#x7406;&#x4FE1;&#x606F;&#x5E93; (MIB)</h2>
+<p>&#x53EF;&#x7528;&#x7684;&#x7BA1;&#x7406;&#x4FE1;&#x606F;&#x5E93; (MIB) &#x4F4D;&#x4E8E; /usr/local/share/snmp/mibs&#x3002; &#x8BE5;&#x76EE;&#x5F55;&#x5305;&#x542B;&#x8BB8;&#x591A;&#x7ECF;&#x5E38;&#x5728;&#x76EE;&#x5F55;&#x4E2D;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x7684;&#x6587;&#x4EF6;&#x3002; &#x901A;&#x8FC7;&#x5355;&#x51FB; <strong>Shell</strong> &#x5E76;&#x8F93;&#x5165; <code>ls /usr/local/share/snmp/mibs</code> &#x68C0;&#x67E5;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x76EE;&#x5F55;&#x3002; &#x4EE5;&#x4E0B;&#x662F;&#x76EE;&#x5F55;&#x5185;&#x5BB9;&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
+<p><img src="https://www.truenas.com/docs/images/CORE/12.0/ServicesSNMPMibSample.png" alt=""></p>
 
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -1696,7 +1788,7 @@
 
             
                 
-                <a href="S3.html" class="navigation navigation-prev " aria-label="Previous page: 1.9.5.亚马逊 S3">
+                <a href="S3.html" class="navigation navigation-prev " aria-label="Previous page: 1.9.5.S3 存储服务">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1712,7 +1804,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.9.6.简单网络管理协议（SNMP）","level":"1.2.9.6","depth":3,"next":{"title":"1.9.7.安全外壳协议（SSH）","level":"1.2.9.7","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Services/SSH.md","ref":"TrueNAS_CORE_and_Enterprise/Services/SSH.md","articles":[]},"previous":{"title":"1.9.5.亚马逊 S3","level":"1.2.9.5","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Services/S3.md","ref":"TrueNAS_CORE_and_Enterprise/Services/S3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","ancre-navigation","popup","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Services/SNMP.md","mtime":"2021-11-21T11:59:56.440Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-21T14:04:36.865Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.9.6.简单网络管理协议（SNMP）","level":"1.2.9.6","depth":3,"next":{"title":"1.9.7.安全外壳协议（SSH）","level":"1.2.9.7","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Services/SSH.md","ref":"TrueNAS_CORE_and_Enterprise/Services/SSH.md","articles":[]},"previous":{"title":"1.9.5.S3 存储服务","level":"1.2.9.5","depth":3,"path":"TrueNAS_CORE_and_Enterprise/Services/S3.md","ref":"TrueNAS_CORE_and_Enterprise/Services/S3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","ancre-navigation","popup","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"EASTMOE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TrueNAS中文文档","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"TrueNAS_CORE_and_Enterprise/Services/SNMP.md","mtime":"2021-11-22T07:54:58.590Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-22T08:45:33.068Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
